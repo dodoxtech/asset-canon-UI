@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "asset-canon": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-canon/SKILL.md",
+      "computedHash": "fe556d4a822cf53368e2918fd31091e317e3e226a81aaaa8a0ded7517e96dacd"
+    },
+    "asset-icon": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-icon/SKILL.md",
+      "computedHash": "4ba57b806e01cbeb036e6ea89c22c644409c47bbde6ab842c1af4ee176e18daa"
+    },
+    "asset-illustration": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-illustration/SKILL.md",
+      "computedHash": "9ab7ae3df97ac4932be8b7c8a252dbeeaddfd7b66b4028883e141d408df813e9"
+    },
+    "asset-sprite": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-sprite/SKILL.md",
+      "computedHash": "f88d9c7b784a208955e5a829b8295e5014d7a284ab022949a7afdd1c70db143b"
+    },
+    "asset-texture": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-texture/SKILL.md",
+      "computedHash": "798b0f0fac57e3d59fc2fc50feb81f60687e57102d67dad536f37c37cf00b7c1"
+    }
+  }
+}
