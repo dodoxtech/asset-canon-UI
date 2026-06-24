@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "image": "fx-cartridge-sheet-192x48.png",
+    "sheet": {
+      "w": 192,
+      "h": 48
+    },
+    "cell": {
+      "w": 64,
+      "h": 48
+    },
+    "gutter": 0,
+    "columns": 3,
+    "count": 3,
+    "fps": 8,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "fx-cartridge": [
+        0,
+        2
+      ]
+    }
+  },
+  "frames": {
+    "fx-cartridge_00": {
+      "x": 0,
+      "y": 0,
+      "w": 64,
+      "h": 48
+    },
+    "fx-cartridge_01": {
+      "x": 64,
+      "y": 0,
+      "w": 64,
+      "h": 48
+    },
+    "fx-cartridge_02": {
+      "x": 128,
+      "y": 0,
+      "w": 64,
+      "h": 48
+    }
+  }
+}

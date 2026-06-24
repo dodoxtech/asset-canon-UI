@@ -1,0 +1,49 @@
+id: fx-assemble-glow
+type: sprite
+subject: Assemble glow FX
+description: >
+  Eight-frame shard assembly charge and radial dithered flare.
+keywords: ["fx", "assemble", "glow", "canon-quest"]
+placement:
+  intended_use: "Assemble glow FX"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 512x64
+  aspect: "512:64"
+safe_area: full
+accessibility:
+  alt_text: "Assemble glow FX"
+animation:
+  sheet: assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
+  cell: { w: 64, h: 64 }
+  columns: 8
+  count: 8
+  fps: 12
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { fx-assemble-glow: [0, 7] }
+files:
+  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
+    size: 512x64
+    format: png
+    bytes: 54504
+  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.webp
+    size: 512x64
+    format: webp
+    bytes: 37798
+  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.json
+    size: 512x64
+    format: json
+    bytes: 1151
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

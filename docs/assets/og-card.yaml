@@ -1,0 +1,36 @@
+id: og-card
+type: social
+subject: og-card CANON QUEST share card
+description: >
+  Opaque social share card showing Pix in the lit workshop with the CANON QUEST title, tagline, and PLAY cue.
+keywords: ["social", "og", "twitter", "canon-quest", "share-card"]
+placement:
+  intended_use: "og-card link-preview image"
+  context: "Open Graph / Twitter summary-large-image metadata"
+  do: ["use as opaque metadata image", "keep text inside platform safe area"]
+  dont: ["crop again for metadata", "overlay extra text"]
+style:
+  art_style: "GBA pixel social card"
+  stroke: "pixel title and frame outlines"
+  shading: "warm dithered workshop lighting"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: full-bleed
+dimensions:
+  master: 1200x630
+  aspect: "1200:630"
+safe_area: inner 90%
+accessibility:
+  alt_text: "CANON QUEST social card"
+files:
+  - path: assets/generated/social/og-card-1200x630.png
+    size: 1200x630
+    format: png
+    bytes: 1263697
+  - path: assets/generated/social/og-card-1200x630.webp
+    size: 1200x630
+    format: webp
+    bytes: 726972
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

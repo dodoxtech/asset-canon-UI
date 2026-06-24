@@ -1,0 +1,49 @@
+id: fx-dust-motes
+type: sprite
+subject: Dust motes FX
+description: >
+  Subtle four-frame drifting dust motes loop.
+keywords: ["fx", "dust", "motes", "canon-quest"]
+placement:
+  intended_use: "Dust motes FX"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 128x32
+  aspect: "128:32"
+safe_area: full
+accessibility:
+  alt_text: "Dust motes FX"
+animation:
+  sheet: assets/generated/sprites/fx-dust-motes-sheet-128x32.png
+  cell: { w: 32, h: 32 }
+  columns: 4
+  count: 4
+  fps: 4
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { fx-dust-motes: [0, 3] }
+files:
+  - path: assets/generated/sprites/fx-dust-motes-sheet-128x32.png
+    size: 128x32
+    format: png
+    bytes: 5254
+  - path: assets/generated/sprites/fx-dust-motes-sheet-128x32.webp
+    size: 128x32
+    format: webp
+    bytes: 3034
+  - path: assets/generated/sprites/fx-dust-motes-sheet-128x32.json
+    size: 128x32
+    format: json
+    bytes: 750
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

@@ -14,8 +14,8 @@ const rooms = [
 ];
 
 for (const [id, desc, subject, rect] of rooms) {
-  const png = `assets/generated/backdrops/${id}-480x270.png`;
-  const webp = `assets/generated/backdrops/${id}-480x270.webp`;
+  const png = `public/assets/generated/backdrops/${id}-480x270.png`;
+  const webp = `public/assets/generated/backdrops/${id}-480x270.webp`;
   await cropResize(source, rect, png, 480, 270, { fit: "cover" });
   await webpFromPng(png, webp);
   await descriptor({

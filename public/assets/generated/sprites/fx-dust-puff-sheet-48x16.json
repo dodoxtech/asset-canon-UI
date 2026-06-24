@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "image": "fx-dust-puff-sheet-48x16.png",
+    "sheet": {
+      "w": 48,
+      "h": 16
+    },
+    "cell": {
+      "w": 16,
+      "h": 16
+    },
+    "gutter": 0,
+    "columns": 3,
+    "count": 3,
+    "fps": 10,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "fx-dust-puff": [
+        0,
+        2
+      ]
+    }
+  },
+  "frames": {
+    "fx-dust-puff_00": {
+      "x": 0,
+      "y": 0,
+      "w": 16,
+      "h": 16
+    },
+    "fx-dust-puff_01": {
+      "x": 16,
+      "y": 0,
+      "w": 16,
+      "h": 16
+    },
+    "fx-dust-puff_02": {
+      "x": 32,
+      "y": 0,
+      "w": 16,
+      "h": 16
+    }
+  }
+}

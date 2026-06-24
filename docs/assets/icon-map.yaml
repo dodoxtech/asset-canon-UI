@@ -1,0 +1,36 @@
+id: icon-map
+type: icon
+subject: Map icon
+description: >
+  Folded map button icon.
+keywords: ["icon", "map", "ui"]
+placement:
+  intended_use: "Map icon"
+  context: "HUD, controls, title, or call-to-action UI"
+  do: ["render at native size then integer-scale", "use as a 9-slice where named"]
+  dont: ["anti-alias", "stretch icons without 9-slice rules"]
+style:
+  art_style: "GBA pixel UI"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered highlights"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 16x16
+  aspect: "16:16"
+safe_area: full
+accessibility:
+  alt_text: "Map icon"
+files:
+  - path: assets/generated/icons/icon-map-16x16.png
+    size: 16x16
+    format: png
+    bytes: 993
+  - path: assets/generated/icons/icon-map-16x16.webp
+    size: 16x16
+    format: webp
+    bytes: 836
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

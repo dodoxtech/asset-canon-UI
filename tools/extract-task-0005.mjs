@@ -20,7 +20,7 @@ for (const [id, desc, x0, y0] of tilePanels) {
       rects.push({ left: x, top: y, width: 95, height: 95 });
     }
   }
-  const png = `assets/generated/tilesets/${id}-sheet-64x32.png`;
+  const png = `public/assets/generated/tilesets/${id}-sheet-64x32.png`;
   const webp = png.replace(/\.png$/, ".webp");
   await contactCrop(source, rects, png, { w: 16, h: 16 }, 4);
   await keyPng(png);
@@ -79,9 +79,9 @@ const textures = [
 ];
 
 for (const [id, desc, subject, rect] of textures) {
-  const png = `assets/generated/textures/${id}-32x32.png`;
+  const png = `public/assets/generated/textures/${id}-32x32.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  const repeat = `assets/generated/textures/${id}-repeat-64x64.png`;
+  const repeat = `public/assets/generated/textures/${id}-repeat-64x64.png`;
   await cropResize(source, rect, png, 32, 32, { fit: "cover" });
   await webpFromPng(png, webp);
   const tile = await sharp(png).png().toBuffer();

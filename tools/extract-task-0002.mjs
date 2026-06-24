@@ -112,7 +112,7 @@ const jobs = [
 for (const job of jobs) {
   const w = job.cell.w * job.columns;
   const h = job.cell.h * Math.ceil(job.rects.length / job.columns);
-  const png = `assets/generated/${job.dir}/${job.id}-sheet-${w}x${h}.png`;
+  const png = `public/assets/generated/${job.dir}/${job.id}-sheet-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
   await contactCrop(source, job.rects, png, job.cell, job.columns);
   await keyPng(png);

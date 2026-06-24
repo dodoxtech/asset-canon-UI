@@ -1,0 +1,49 @@
+id: fx-dust-puff
+type: sprite
+subject: Dust puff FX
+description: >
+  Three-frame ground dust puff.
+keywords: ["fx", "dust", "puff", "canon-quest"]
+placement:
+  intended_use: "Dust puff FX"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 48x16
+  aspect: "48:16"
+safe_area: full
+accessibility:
+  alt_text: "Dust puff FX"
+animation:
+  sheet: assets/generated/sprites/fx-dust-puff-sheet-48x16.png
+  cell: { w: 16, h: 16 }
+  columns: 3
+  count: 3
+  fps: 10
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { fx-dust-puff: [0, 2] }
+files:
+  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.png
+    size: 48x16
+    format: png
+    bytes: 2143
+  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.webp
+    size: 48x16
+    format: webp
+    bytes: 1614
+  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.json
+    size: 48x16
+    format: json
+    bytes: 653
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

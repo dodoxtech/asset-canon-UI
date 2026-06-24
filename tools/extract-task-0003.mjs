@@ -22,7 +22,7 @@ for (const [id, desc, subject, cellSize, frames, y, xs] of jobs) {
   const rects = xs.slice(0, frames).map((x) => ({ left: x, top: y, width: rectSize.w, height: rectSize.h }));
   const width = cellSize * frames;
   const height = cellSize;
-  const png = `assets/generated/sprites/${id}-sheet-${width}x${height}.png`;
+  const png = `public/assets/generated/sprites/${id}-sheet-${width}x${height}.png`;
   const webp = png.replace(/\.png$/, ".webp");
   await contactCrop(source, rects, png, { w: cellSize, h: cellSize }, frames);
   await keyPng(png);

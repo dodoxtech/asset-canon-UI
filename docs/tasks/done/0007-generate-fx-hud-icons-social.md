@@ -1,6 +1,6 @@
 # 0007. Generate FX, HUD/UI, favicon & social
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 

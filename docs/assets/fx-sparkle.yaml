@@ -1,0 +1,49 @@
+id: fx-sparkle
+type: sprite
+subject: Gold pickup sparkle FX
+description: >
+  Shared four-frame gold pickup sparkle.
+keywords: ["fx", "sparkle", "canon-quest"]
+placement:
+  intended_use: "Gold pickup sparkle FX"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 64x16
+  aspect: "64:16"
+safe_area: full
+accessibility:
+  alt_text: "Gold pickup sparkle FX"
+animation:
+  sheet: assets/generated/sprites/fx-sparkle-sheet-64x16.png
+  cell: { w: 16, h: 16 }
+  columns: 4
+  count: 4
+  fps: 10
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { fx-sparkle: [0, 3] }
+files:
+  - path: assets/generated/sprites/fx-sparkle-sheet-64x16.png
+    size: 64x16
+    format: png
+    bytes: 2309
+  - path: assets/generated/sprites/fx-sparkle-sheet-64x16.webp
+    size: 64x16
+    format: webp
+    bytes: 1490
+  - path: assets/generated/sprites/fx-sparkle-sheet-64x16.json
+    size: 64x16
+    format: json
+    bytes: 731
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

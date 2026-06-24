@@ -1,0 +1,49 @@
+id: fx-cartridge
+type: sprite
+subject: Boot cartridge FX
+description: >
+  Boot cartridge click-in shudder frames.
+keywords: ["fx", "cartridge", "canon-quest"]
+placement:
+  intended_use: "Boot cartridge FX"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 192x48
+  aspect: "192:48"
+safe_area: full
+accessibility:
+  alt_text: "Boot cartridge FX"
+animation:
+  sheet: assets/generated/sprites/fx-cartridge-sheet-192x48.png
+  cell: { w: 64, h: 48 }
+  columns: 3
+  count: 3
+  fps: 8
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { fx-cartridge: [0, 2] }
+files:
+  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.png
+    size: 192x48
+    format: png
+    bytes: 22494
+  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.webp
+    size: 192x48
+    format: webp
+    bytes: 12716
+  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.json
+    size: 192x48
+    format: json
+    bytes: 655
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

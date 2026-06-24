@@ -1,6 +1,6 @@
 # 0008a. Move assets to `/public/assets` + typed manifest
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 - **Parent:** [0008](0008-build-engine-mvp.md)

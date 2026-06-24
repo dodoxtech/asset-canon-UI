@@ -9,14 +9,14 @@ await contactCrop(
     { left: 136, top: 143, width: 127, height: 264 },
     { left: 315, top: 143, width: 127, height: 264 },
   ],
-  "assets/generated/sprites/pix-idle-sheet-32x24.png",
+  "public/assets/generated/sprites/pix-idle-sheet-32x24.png",
   { w: 16, h: 24 },
   2,
 );
-await webpFromPng("assets/generated/sprites/pix-idle-sheet-32x24.png", "assets/generated/sprites/pix-idle-sheet-32x24.webp");
+await webpFromPng("public/assets/generated/sprites/pix-idle-sheet-32x24.png", "public/assets/generated/sprites/pix-idle-sheet-32x24.webp");
 await makeAtlas({
   slug: "pix-idle",
-  image: "assets/generated/sprites/pix-idle-sheet-32x24.png",
+  image: "public/assets/generated/sprites/pix-idle-sheet-32x24.png",
   cell: { w: 16, h: 24 },
   columns: 2,
   count: 2,
@@ -27,12 +27,12 @@ await makeAtlas({
 await cropResize(
   source,
   { left: 547, top: 38, width: 985, height: 405 },
-  "assets/generated/backdrops/bg-workshop-480x270.png",
+  "public/assets/generated/backdrops/bg-workshop-480x270.png",
   480,
   270,
   { fit: "cover" },
 );
-await webpFromPng("assets/generated/backdrops/bg-workshop-480x270.png", "assets/generated/backdrops/bg-workshop-480x270.webp");
+await webpFromPng("public/assets/generated/backdrops/bg-workshop-480x270.png", "public/assets/generated/backdrops/bg-workshop-480x270.webp");
 
 const tileRects = [];
 for (const y of [521, 641, 760, 856]) {
@@ -43,14 +43,14 @@ for (const y of [521, 641, 760, 856]) {
 await contactCrop(
   source,
   tileRects,
-  "assets/generated/tilesets/tiles-base-sheet-64x64.png",
+  "public/assets/generated/tilesets/tiles-base-sheet-64x64.png",
   { w: 16, h: 16 },
   4,
 );
-await webpFromPng("assets/generated/tilesets/tiles-base-sheet-64x64.png", "assets/generated/tilesets/tiles-base-sheet-64x64.webp");
+await webpFromPng("public/assets/generated/tilesets/tiles-base-sheet-64x64.png", "public/assets/generated/tilesets/tiles-base-sheet-64x64.webp");
 await makeAtlas({
   slug: "tiles-base",
-  image: "assets/generated/tilesets/tiles-base-sheet-64x64.png",
+  image: "public/assets/generated/tilesets/tiles-base-sheet-64x64.png",
   cell: { w: 16, h: 16 },
   columns: 4,
   count: 16,
@@ -77,12 +77,12 @@ await descriptor({
   dimensions: { master: "32x24", aspect: "4:3" },
   alt_text: "Pix idle sprite",
   files: [
-    { path: "assets/generated/sprites/pix-idle-sheet-32x24.png", size: "32x24", format: "png" },
-    { path: "assets/generated/sprites/pix-idle-sheet-32x24.webp", size: "32x24", format: "webp" },
-    { path: "assets/generated/sprites/pix-idle-sheet-32x24.json", size: "32x24", format: "json" },
+    { path: "public/assets/generated/sprites/pix-idle-sheet-32x24.png", size: "32x24", format: "png" },
+    { path: "public/assets/generated/sprites/pix-idle-sheet-32x24.webp", size: "32x24", format: "webp" },
+    { path: "public/assets/generated/sprites/pix-idle-sheet-32x24.json", size: "32x24", format: "json" },
   ],
   animation: {
-    sheet: "assets/generated/sprites/pix-idle-sheet-32x24.png",
+    sheet: "public/assets/generated/sprites/pix-idle-sheet-32x24.png",
     cell: { w: 16, h: 24 },
     columns: 2,
     count: 2,
@@ -111,8 +111,8 @@ await descriptor({
   dimensions: { master: "480x270", aspect: "16:9" },
   alt_text: "Cozy pixel-art workshop backdrop",
   files: [
-    { path: "assets/generated/backdrops/bg-workshop-480x270.png", size: "480x270", format: "png" },
-    { path: "assets/generated/backdrops/bg-workshop-480x270.webp", size: "480x270", format: "webp" },
+    { path: "public/assets/generated/backdrops/bg-workshop-480x270.png", size: "480x270", format: "png" },
+    { path: "public/assets/generated/backdrops/bg-workshop-480x270.webp", size: "480x270", format: "webp" },
   ],
   composition: "Consistent floor line across the lower band; visual interest on far wall while leaving foreground clear for sprites.",
   source: { model: "built-in image_gen", prompt },
@@ -135,12 +135,12 @@ await descriptor({
   dimensions: { master: "64x64", aspect: "1:1" },
   alt_text: "Base room tileset",
   files: [
-    { path: "assets/generated/tilesets/tiles-base-sheet-64x64.png", size: "64x64", format: "png" },
-    { path: "assets/generated/tilesets/tiles-base-sheet-64x64.webp", size: "64x64", format: "webp" },
-    { path: "assets/generated/tilesets/tiles-base-sheet-64x64.json", size: "64x64", format: "json" },
+    { path: "public/assets/generated/tilesets/tiles-base-sheet-64x64.png", size: "64x64", format: "png" },
+    { path: "public/assets/generated/tilesets/tiles-base-sheet-64x64.webp", size: "64x64", format: "webp" },
+    { path: "public/assets/generated/tilesets/tiles-base-sheet-64x64.json", size: "64x64", format: "json" },
   ],
   animation: {
-    sheet: "assets/generated/tilesets/tiles-base-sheet-64x64.png",
+    sheet: "public/assets/generated/tilesets/tiles-base-sheet-64x64.png",
     cell: { w: 16, h: 16 },
     columns: 4,
     count: 16,

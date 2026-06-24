@@ -26,7 +26,7 @@ for (const [id, desc, subject, cell, columns, count, fps, rectList] of jobs) {
   const rows = Math.ceil(count / columns);
   const w = cell.w * columns;
   const h = cell.h * rows;
-  const png = `assets/generated/sprites/${id}-sheet-${w}x${h}.png`;
+  const png = `public/assets/generated/sprites/${id}-sheet-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
   await contactCrop(source, rects, png, cell, columns);
   await keyPng(png);

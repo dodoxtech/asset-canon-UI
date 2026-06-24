@@ -1,0 +1,36 @@
+id: minimap-rooms
+type: icon
+subject: Minimap room glyph sheet
+description: >
+  Six room glyphs for minimap fast travel.
+keywords: ["minimap", "rooms", "ui"]
+placement:
+  intended_use: "Minimap room glyph sheet"
+  context: "HUD, controls, title, or call-to-action UI"
+  do: ["render at native size then integer-scale", "use as a 9-slice where named"]
+  dont: ["anti-alias", "stretch icons without 9-slice rules"]
+style:
+  art_style: "GBA pixel UI"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered highlights"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 96x16
+  aspect: "96:16"
+safe_area: full
+accessibility:
+  alt_text: "Minimap room glyph sheet"
+files:
+  - path: assets/generated/icons/minimap-rooms-96x16.png
+    size: 96x16
+    format: png
+    bytes: 4819
+  - path: assets/generated/icons/minimap-rooms-96x16.webp
+    size: 96x16
+    format: webp
+    bytes: 3636
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24

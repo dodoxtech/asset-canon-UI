@@ -1,0 +1,49 @@
+id: ui-cursor
+type: icon
+subject: Blinking UI cursor
+description: >
+  Two-frame blinking advance/menu cursor.
+keywords: ["ui", "cursor", "canon-quest"]
+placement:
+  intended_use: "Blinking UI cursor"
+  context: "boot, pickup, HUD, and cutscene animation"
+  do: ["render at native size then integer-scale", "use atlas metadata for timing"]
+  dont: ["anti-alias", "stretch cells", "recolor off palette"]
+style:
+  art_style: "GBA pixel FX"
+  stroke: "1px selective ink where applicable"
+  shading: "ordered dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 16x8
+  aspect: "16:8"
+safe_area: full
+accessibility:
+  alt_text: "Blinking UI cursor"
+animation:
+  sheet: assets/generated/icons/ui-cursor-sheet-16x8.png
+  cell: { w: 8, h: 8 }
+  columns: 2
+  count: 2
+  fps: 2
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { ui-cursor: [0, 1] }
+files:
+  - path: assets/generated/icons/ui-cursor-sheet-16x8.png
+    size: 16x8
+    format: png
+    bytes: 466
+  - path: assets/generated/icons/ui-cursor-sheet-16x8.webp
+    size: 16x8
+    format: webp
+    bytes: 326
+  - path: assets/generated/icons/ui-cursor-sheet-16x8.json
+    size: 16x8
+    format: json
+    bytes: 541
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  generated: 2026-06-24
