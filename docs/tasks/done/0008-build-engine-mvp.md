@@ -1,6 +1,6 @@
 # 0008. Build the playable engine MVP (grey-box) — epic
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 - **Updated:** 2026-06-24
@@ -44,8 +44,8 @@ perf/launch (0010).
 All six sub-tasks are in `done/` and the acceptance criteria below hold end-to-end.
 
 ## Epic acceptance criteria
-- [ ] Stage scales by integer factor only, centered with letterbox, recomputes on resize.
-- [ ] Fills the viewport and is fully playable on desktop and phone (portrait + landscape).
-- [ ] Character moves via arrows/WASD, click-to-walk, and touch.
-- [ ] Walking into the collectible increments `◆ 1/5` and opens the dialogue window.
-- [ ] Runs at 60 fps with a fixed-timestep loop; pauses when the tab is hidden.
+- [x] Stage scales by integer factor only, centered with letterbox, recomputes on resize.
+- [x] Fills the viewport and is fully playable on desktop and phone (portrait + landscape).
+- [x] Character moves via arrows/WASD, click-to-walk, and touch.
+- [x] Walking into the collectible increments `◆ 1/5` and opens the dialogue window.
+- [x] Runs at 60 fps with a fixed-timestep loop; pauses when the tab is hidden.
