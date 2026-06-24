@@ -1,7 +1,5 @@
+import GameStage from "./game/GameStage"
+
 export default function Home() {
-  return (
-    <main>
-      <h1>Welcome to Asset Canon UI</h1>
-    </main>
-  )
+  return <GameStage />
 }
