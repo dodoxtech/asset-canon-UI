@@ -1,0 +1,109 @@
+# docs/style-profile.yaml
+# Shared style brief for every asset on the asset-canon landing page ("CANON QUEST").
+# Authored from docs/landing-page/art-direction.md — that doc is the human-readable
+# source of truth; this file is the machine-readable input every generation inherits.
+# Apply on EVERY generation: append `prompt_suffix`, append `Avoid: <negative>`,
+# carry `seed` if the backend supports one.
+
+id: canon-quest
+name: CANON QUEST — GBA pixel workshop
+description: >
+  Late-era Game Boy Advance pixel-art look (Minish Cap / Golden Sun / Pokémon
+  Emerald): chunky readable pixels, warm interior workshop lighting, depth via
+  dithering not smooth gradients, and a 1px selective ink outline rather than a
+  full black key line. Cozy and nostalgic but clean and legible. One palette only.
+
+# --- REQUIRED ----------------------------------------------------------------
+
+# Single shared palette (the "one palette per batch" rule). Hex is authoritative;
+# names match docs/landing-page/art-direction.md#color-palette.
+palette:
+  # core / environment
+  - "#0B0E1A"  # ink        — deepest shadow, 1px outlines, letterbox bars
+  - "#141A30"  # night      — stage / page background
+  - "#1E2A44"  # panel-dark — dialogue window fill, far walls
+  - "#324063"  # panel-mid  — floors, mid surfaces
+  - "#5B6B96"  # stone      — mid-tone props, inactive UI
+  - "#8A9AC8"  # border     — window borders, light edges
+  - "#E8ECF8"  # paper      — primary text, UI highlights
+  # accents (brand + signal)
+  - "#00B140"  # canon-green   — PRIMARY brand / Canon Shard / primary CTA
+  - "#3CE07A"  # green-lite    — green highlight / glow
+  - "#157A3A"  # green-dark    — green shadow
+  - "#FF2CC0"  # canon-magenta — SECONDARY accent / Descriptor Rune / hover
+  - "#FFC83C"  # gold          — collectibles, coins, the Key, "+1" pops
+  - "#C8821E"  # gold-dark     — gold shadow
+  - "#3CA0FF"  # sky           — links, water/sky parallax, info
+  - "#FF5C5C"  # alert         — errors, "play required" nudges (sparing)
+
+# The positive style anchor appended to every prompt.
+prompt_suffix: >
+  16-bit GBA-era pixel art, low-resolution chunky pixels on a 16x16 tile grid,
+  1px selective dark-ink outline (#0B0E1A), flat cel shading with 3-step color
+  ramps, depth and glows built from ordered dithering (Bayer 2x2 / 4x4) never
+  smooth gradients, warm cozy workshop lighting, strictly limited to the shared
+  palette, crisp and pixel-perfect with no anti-aliasing, no sub-pixel detail.
+
+# --- RECOMMENDED -------------------------------------------------------------
+
+line:
+  outline: "1px selective ink (#0B0E1A), not a full black keyline"
+  weight: "1px @ native resolution"
+  grid: "16x16 px world tiles; 8px UI spacing grid"
+
+shading:
+  model: "flat cel with 3-step ramps (dark -> base -> lite) per accent"
+  depth: "ordered dithering (Bayer 2x2/4x4), no smooth gradients"
+  lighting: "warm top-left key, cool ambient fill"
+
+# Anti-slop guard appended as `Avoid: ...` on every prompt.
+negative:
+  - smooth gradients and soft airbrushed blends
+  - anti-aliasing, blur, glow bloom, drop shadows, fake-3D bevels
+  - high resolution / photorealistic / painterly rendering
+  - default purple-blue AI glow, floating blobs, lens flares
+  - off-palette colors or new hues outside the shared palette
+  - generic green chroma in the subject (reserved for the plate — see chroma)
+  - text, watermarks, signatures, UI chrome baked into the art
+
+# gpt-image-1 has no seed param; carry this only on backends that support seeding.
+seed: 114000
+
+# --- PROJECT-SPECIFIC CONTEXT (read by specialists & the frontend) -----------
+
+# IMPORTANT: the project's PRIMARY accent is canon-green #00B140, which is the
+# default chroma-key plate. Keying green would punch holes in green sprites, so
+# this project pins the transparent-asset plate to chroma-MAGENTA and forbids
+# magenta in subjects instead (asset-canon HARD RULE #9).
+chroma:
+  plate: "#FF00FF"          # magenta — because #00B140 is an in-palette subject color
+  forbid_in_subject: "magenta family (~#E000C0–#FF40FF)"
+  note: canon-magenta accent #FF2CC0 must NOT be used on transparent/keyed assets
+
+# Authored at 1x on a fixed virtual resolution; scaled by INTEGER factors only.
+canvas:
+  virtual_resolution: 480x270   # 16:9 logical stage
+  scaling: "integer-only (2x/3x/4x), image-rendering: pixelated"
+  tile: 16x16
+  character: 16x24
+
+# Typography is rendered in the DOM/HUD, not baked into generated art.
+# Listed here so asset prompts never include lettering and the frontend stays consistent.
+typography:
+  display: "Press Start 2P"   # H1–H2, short strings only
+  ui: "Silkscreen"            # HUD, labels, buttons
+  body: "Pixelify Sans"       # dialogue / paragraphs
+  mono: "VT323"               # terminal / install commands
+
+mood_keywords:
+  - cozy pixel workshop
+  - GBA dusk lighting
+  - dithered glow
+  - chunky 1px outline
+  - neon-green magic accents
+  - readable HUD
+  - nostalgic but clean
+
+source:
+  derived_from: docs/landing-page/art-direction.md
+  authored: 2026-06-24

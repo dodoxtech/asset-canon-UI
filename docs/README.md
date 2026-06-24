@@ -19,6 +19,7 @@ tree is the human- and agent-readable knowledge base around them.
 
 | Folder | What's inside | Read it when you want to… |
 |---|---|---|
+| [landing-page/](landing-page/) | Design spec for the GBA-style playable marketing landing page | Build or change the public landing page |
 | [architecture/](architecture/) | How the orchestrator + specialist skills and the pipeline fit together | Understand the system end-to-end |
 | [guides/](guides/) | Task-oriented how-tos (install skills, generate a batch, key chroma) | Actually do something |
 | [reference/](reference/) | Specs & contracts: descriptor schema, naming, palette/canvas rules | Look up an exact rule or format |
