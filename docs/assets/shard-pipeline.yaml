@@ -1,0 +1,49 @@
+id: shard-pipeline
+type: sprite
+subject: Pipeline Scroll pickup
+description: >
+  Pipeline Scroll pickup, a parchment scroll with sky-blue arrow-chain motif and sparkle loop.
+keywords: ["shard", "pipeline", "collectible", "pickup"]
+placement:
+  intended_use: "Pipeline Scroll pickup collectible in CANON QUEST"
+  context: "pickup sprites, HUD arcs, and reward cutscenes"
+  do: ["play as short looping sparkle while uncollected", "render at native size then integer-scale"]
+  dont: ["use on a non-integer scale", "place on very bright backgrounds without outline"]
+style:
+  art_style: "GBA pixel pickup"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 64x16
+  aspect: "64:16"
+safe_area: full
+accessibility:
+  alt_text: "Pipeline Scroll pickup"
+animation:
+  sheet: assets/generated/sprites/shard-pipeline-sheet-64x16.png
+  cell: { w: 16, h: 16 }
+  columns: 4
+  count: 4
+  fps: 8
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { loop: [0, 3] }
+files:
+  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.png
+    size: 64x16
+    format: png
+    bytes: 3235
+  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.webp
+    size: 64x16
+    format: webp
+    bytes: 2796
+  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.json
+    size: 64x16
+    format: json
+    bytes: 746
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate."
+  generated: 2026-06-24

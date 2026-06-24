@@ -1,0 +1,49 @@
+id: canon-artifact
+type: sprite
+subject: Assembled Canon artifact
+description: >
+  Assembled Canon artifact, the five shard motifs fused into one radiant emblem with two-frame glow pulse.
+keywords: ["canon", "artifact", "collectible", "pickup"]
+placement:
+  intended_use: "Assembled Canon artifact collectible in CANON QUEST"
+  context: "pickup sprites, HUD arcs, and reward cutscenes"
+  do: ["play as short looping sparkle while uncollected", "render at native size then integer-scale"]
+  dont: ["use on a non-integer scale", "place on very bright backgrounds without outline"]
+style:
+  art_style: "GBA pixel pickup"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 64x32
+  aspect: "64:32"
+safe_area: full
+accessibility:
+  alt_text: "Assembled Canon artifact"
+animation:
+  sheet: assets/generated/sprites/canon-artifact-sheet-64x32.png
+  cell: { w: 32, h: 32 }
+  columns: 2
+  count: 2
+  fps: 4
+  loop: true
+  anchor: [0.5, 0.5]
+  clips: { loop: [0, 1] }
+files:
+  - path: assets/generated/sprites/canon-artifact-sheet-64x32.png
+    size: 64x32
+    format: png
+    bytes: 6142
+  - path: assets/generated/sprites/canon-artifact-sheet-64x32.webp
+    size: 64x32
+    format: webp
+    bytes: 5086
+  - path: assets/generated/sprites/canon-artifact-sheet-64x32.json
+    size: 64x32
+    format: json
+    bytes: 562
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate."
+  generated: 2026-06-24

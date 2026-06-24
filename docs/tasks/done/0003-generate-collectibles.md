@@ -1,6 +1,6 @@
 # 0003. Generate collectibles — shards, key & coin
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 
