@@ -1,0 +1,37 @@
+id: bg-workshop
+type: illustration
+subject: cozy artist workshop backdrop
+description: >
+  Lit workshop far-wall backdrop with easels, paint shelves, hanging lamp, dusk window, and wood floor horizon for the home room.
+keywords: ["workshop", "backdrop", "studio", "room", "gba"]
+placement:
+  intended_use: "home room far-wall background"
+  context: "layered behind walkable tiles and props"
+  do: ["place behind tilemap", "use CSS tint for dim opening state"]
+  dont: ["use as foreground collision layer", "crop away the floor horizon"]
+style:
+  art_style: "GBA pixel illustration"
+  stroke: "1px selective ink details"
+  shading: "warm cel lighting with dithered depth"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: full-bleed
+dimensions:
+  master: 480x270
+  aspect: "16:9"
+safe_area: full
+accessibility:
+  alt_text: "Cozy pixel-art workshop backdrop"
+composition: "Consistent floor line across the lower band; visual interest on far wall while leaving foreground clear for sprites."
+files:
+  - path: assets/generated/backdrops/bg-workshop-480x270.png
+    size: 480x270
+    format: png
+    bytes: 313419
+  - path: assets/generated/backdrops/bg-workshop-480x270.webp
+    size: 480x270
+    format: webp
+    bytes: 182140
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate."
+  generated: 2026-06-24

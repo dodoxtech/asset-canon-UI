@@ -1,0 +1,49 @@
+id: tiles-base
+type: sprite
+subject: shared structural tile kit
+description: >
+  A 4x4 sheet of structural room tiles: wood floor, blue wall, wall top, side edges, corners, baseboards, and repeatable trim pieces.
+keywords: ["tiles", "base", "floor", "wall", "corners"]
+placement:
+  intended_use: "shared tilemap skeleton for every room"
+  context: "foreground walkable and collision-aligned tile layer"
+  do: ["snap to 16x16 grid", "reuse edges and corners across rooms"]
+  dont: ["scale non-integer", "mix with off-palette tiles"]
+style:
+  art_style: "GBA pixel tileset"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered texture"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 64x64
+  aspect: "1:1"
+safe_area: full
+accessibility:
+  alt_text: "Base room tileset"
+animation:
+  sheet: assets/generated/tilesets/tiles-base-sheet-64x64.png
+  cell: { w: 16, h: 16 }
+  columns: 4
+  count: 16
+  fps: 1
+  loop: false
+  anchor: [0, 0]
+  clips: { tiles: [0, 15] }
+files:
+  - path: assets/generated/tilesets/tiles-base-sheet-64x64.png
+    size: 64x64
+    format: png
+    bytes: 10321
+  - path: assets/generated/tilesets/tiles-base-sheet-64x64.webp
+    size: 64x64
+    format: webp
+    bytes: 6316
+  - path: assets/generated/tilesets/tiles-base-sheet-64x64.json
+    size: 64x64
+    format: json
+    bytes: 1791
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate."
+  generated: 2026-06-24

@@ -1,0 +1,49 @@
+id: pix-idle
+type: sprite
+subject: Pix hero idle animation
+description: >
+  Two-frame idle sprite of Pix, the small artist hero, facing right with beret, apron, and brush. Upright and confident for the lit workshop state.
+keywords: ["pix", "hero", "idle", "artist", "sprite"]
+placement:
+  intended_use: "default player idle after the first shard lights the studio"
+  context: "CANON QUEST side-scrolling stage"
+  do: ["render at native 16x24 then integer-scale", "flip in code for facing left"]
+  dont: ["anti-alias", "stretch frames", "recolor outside the shared palette"]
+style:
+  art_style: "GBA pixel sprite"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with ordered dithering"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 32x24
+  aspect: "4:3"
+safe_area: full
+accessibility:
+  alt_text: "Pix idle sprite"
+animation:
+  sheet: assets/generated/sprites/pix-idle-sheet-32x24.png
+  cell: { w: 16, h: 24 }
+  columns: 2
+  count: 2
+  fps: 3
+  loop: true
+  anchor: [0.5, 1]
+  clips: { idle: [0, 1] }
+files:
+  - path: assets/generated/sprites/pix-idle-sheet-32x24.png
+    size: 32x24
+    format: png
+    bytes: 2401
+  - path: assets/generated/sprites/pix-idle-sheet-32x24.webp
+    size: 32x24
+    format: webp
+    bytes: 1946
+  - path: assets/generated/sprites/pix-idle-sheet-32x24.json
+    size: 32x24
+    format: json
+    bytes: 542
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate."
+  generated: 2026-06-24
