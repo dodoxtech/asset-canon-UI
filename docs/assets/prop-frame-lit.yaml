@@ -1,0 +1,49 @@
+id: prop-frame-lit
+type: sprite
+subject: Lit gallery sample frames
+description: >
+  Five lit gallery frames showing icon, illustration, sprite, texture, and social-card samples.
+keywords: ["prop", "frame", "lit", "prop", "animation"]
+placement:
+  intended_use: "Lit gallery sample frames in the CANON QUEST room reward flow"
+  context: "interactive props, reveal states, and room activation animations"
+  do: ["use atlas metadata for state frames", "render at native size then integer-scale"]
+  dont: ["anti-alias", "stretch cells", "detach lit/on frames from pickup state"]
+style:
+  art_style: "GBA pixel prop sprite"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 120x24
+  aspect: "120:24"
+safe_area: full
+accessibility:
+  alt_text: "Lit gallery sample frames"
+animation:
+  sheet: assets/generated/sprites/prop-frame-lit-sheet-120x24.png
+  cell: { w: 24, h: 24 }
+  columns: 5
+  count: 5
+  fps: 1
+  loop: true
+  anchor: [0.5, 1]
+  clips: { frame-lit: [0, 4] }
+files:
+  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.png
+    size: 120x24
+    format: png
+    bytes: 8898
+  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.webp
+    size: 120x24
+    format: webp
+    bytes: 6316
+  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.json
+    size: 120x24
+    format: json
+    bytes: 843
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."
+  generated: 2026-06-24

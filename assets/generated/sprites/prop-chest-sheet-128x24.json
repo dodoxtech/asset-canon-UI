@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "image": "prop-chest-sheet-128x24.png",
+    "sheet": {
+      "w": 128,
+      "h": 24
+    },
+    "cell": {
+      "w": 32,
+      "h": 24
+    },
+    "gutter": 0,
+    "columns": 4,
+    "count": 4,
+    "fps": 8,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "chest": [
+        0,
+        3
+      ]
+    }
+  },
+  "frames": {
+    "prop-chest_00": {
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 24
+    },
+    "prop-chest_01": {
+      "x": 32,
+      "y": 0,
+      "w": 32,
+      "h": 24
+    },
+    "prop-chest_02": {
+      "x": 64,
+      "y": 0,
+      "w": 32,
+      "h": 24
+    },
+    "prop-chest_03": {
+      "x": 96,
+      "y": 0,
+      "w": 32,
+      "h": 24
+    }
+  }
+}

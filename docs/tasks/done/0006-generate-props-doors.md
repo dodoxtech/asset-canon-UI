@@ -1,6 +1,6 @@
 # 0006. Generate animated props & doors
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 

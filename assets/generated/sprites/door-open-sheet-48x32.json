@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "image": "door-open-sheet-48x32.png",
+    "sheet": {
+      "w": 48,
+      "h": 32
+    },
+    "cell": {
+      "w": 24,
+      "h": 32
+    },
+    "gutter": 0,
+    "columns": 2,
+    "count": 2,
+    "fps": 4,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "open": [
+        0,
+        1
+      ]
+    }
+  },
+  "frames": {
+    "door-open_00": {
+      "x": 0,
+      "y": 0,
+      "w": 24,
+      "h": 32
+    },
+    "door-open_01": {
+      "x": 24,
+      "y": 0,
+      "w": 24,
+      "h": 32
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "image": "door-lockbreak-sheet-72x32.png",
+    "sheet": {
+      "w": 72,
+      "h": 32
+    },
+    "cell": {
+      "w": 24,
+      "h": 32
+    },
+    "gutter": 0,
+    "columns": 3,
+    "count": 3,
+    "fps": 8,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "lockbreak": [
+        0,
+        2
+      ]
+    }
+  },
+  "frames": {
+    "door-lockbreak_00": {
+      "x": 0,
+      "y": 0,
+      "w": 24,
+      "h": 32
+    },
+    "door-lockbreak_01": {
+      "x": 24,
+      "y": 0,
+      "w": 24,
+      "h": 32
+    },
+    "door-lockbreak_02": {
+      "x": 48,
+      "y": 0,
+      "w": 24,
+      "h": 32
+    }
+  }
+}

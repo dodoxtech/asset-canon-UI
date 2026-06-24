@@ -1,0 +1,49 @@
+id: door-lockbreak
+type: sprite
+subject: Door lock break animation
+description: >
+  Three-frame final door lock-shatter reveal.
+keywords: ["door", "lockbreak", "prop", "animation"]
+placement:
+  intended_use: "Door lock break animation in the CANON QUEST room reward flow"
+  context: "interactive props, reveal states, and room activation animations"
+  do: ["use atlas metadata for state frames", "render at native size then integer-scale"]
+  dont: ["anti-alias", "stretch cells", "detach lit/on frames from pickup state"]
+style:
+  art_style: "GBA pixel prop sprite"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 72x32
+  aspect: "72:32"
+safe_area: full
+accessibility:
+  alt_text: "Door lock break animation"
+animation:
+  sheet: assets/generated/sprites/door-lockbreak-sheet-72x32.png
+  cell: { w: 24, h: 32 }
+  columns: 3
+  count: 3
+  fps: 8
+  loop: true
+  anchor: [0.5, 1]
+  clips: { lockbreak: [0, 2] }
+files:
+  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.png
+    size: 72x32
+    format: png
+    bytes: 6650
+  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.webp
+    size: 72x32
+    format: webp
+    bytes: 5062
+  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.json
+    size: 72x32
+    format: json
+    bytes: 657
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."
+  generated: 2026-06-24

@@ -1,0 +1,49 @@
+id: prop-anvil-sparks
+type: sprite
+subject: Anvil spark burst prop
+description: >
+  Three-frame additive anvil spark burst.
+keywords: ["prop", "anvil", "sparks", "prop", "animation"]
+placement:
+  intended_use: "Anvil spark burst prop in the CANON QUEST room reward flow"
+  context: "interactive props, reveal states, and room activation animations"
+  do: ["use atlas metadata for state frames", "render at native size then integer-scale"]
+  dont: ["anti-alias", "stretch cells", "detach lit/on frames from pickup state"]
+style:
+  art_style: "GBA pixel prop sprite"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered glow"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 48x16
+  aspect: "48:16"
+safe_area: full
+accessibility:
+  alt_text: "Anvil spark burst prop"
+animation:
+  sheet: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
+  cell: { w: 16, h: 16 }
+  columns: 3
+  count: 3
+  fps: 10
+  loop: true
+  anchor: [0.5, 1]
+  clips: { anvil-sparks: [0, 2] }
+files:
+  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
+    size: 48x16
+    format: png
+    bytes: 2300
+  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.webp
+    size: 48x16
+    format: webp
+    bytes: 1586
+  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.json
+    size: 48x16
+    format: json
+    bytes: 673
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."
+  generated: 2026-06-24

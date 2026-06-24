@@ -1,0 +1,42 @@
+{
+  "meta": {
+    "image": "prop-lamp-sheet-32x24.png",
+    "sheet": {
+      "w": 32,
+      "h": 24
+    },
+    "cell": {
+      "w": 16,
+      "h": 24
+    },
+    "gutter": 0,
+    "columns": 2,
+    "count": 2,
+    "fps": 4,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "clips": {
+      "lamp": [
+        0,
+        1
+      ]
+    }
+  },
+  "frames": {
+    "prop-lamp_00": {
+      "x": 0,
+      "y": 0,
+      "w": 16,
+      "h": 24
+    },
+    "prop-lamp_01": {
+      "x": 16,
+      "y": 0,
+      "w": 16,
+      "h": 24
+    }
+  }
+}
