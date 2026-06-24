@@ -86,11 +86,23 @@ export class AssetStore {
       })
     })
 
-    const imageJobs = Object.entries(statics).map(async ([id, path]) => {
+    await Promise.all([...sheetJobs, ...this.imageJobs(statics)])
+  }
+
+  /**
+   * Stream in more static images after boot (later-room backdrops). Resolves
+   * when they're decoded; callers can fire-and-forget since renders tolerate a
+   * not-yet-loaded image via `tryImage`.
+   */
+  async loadMore(statics: Record<string, string>): Promise<void> {
+    await Promise.all(this.imageJobs(statics))
+  }
+
+  private imageJobs(statics: Record<string, string>): Promise<void>[] {
+    return Object.entries(statics).map(async ([id, path]) => {
+      if (this.images.has(id)) return
       this.images.set(id, await loadImage(`${ROOT}/${path}`))
     })
-
-    await Promise.all([...sheetJobs, ...imageJobs])
   }
 
   atlas(id: string): Atlas {
@@ -107,5 +119,10 @@ export class AssetStore {
     const img = this.images.get(id)
     if (!img) throw new Error(`Image not loaded: ${id}`)
     return img
+  }
+
+  /** Like `image`, but returns undefined for a not-yet-loaded (lazy) asset. */
+  tryImage(id: string): HTMLImageElement | undefined {
+    return this.images.get(id)
   }
 }

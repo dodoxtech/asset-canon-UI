@@ -10,10 +10,14 @@ import { dom } from "../assets"
 
 interface BootScreenProps {
   ready: boolean
+  /** A returning visitor with saved progress — offer "continue" framing. */
+  returning?: boolean
   onStart: () => void
+  /** Reveal the readable fallback instead of playing. */
+  onSkip: () => void
 }
 
-export default function BootScreen({ ready, onStart }: BootScreenProps) {
+export default function BootScreen({ ready, returning, onStart, onSkip }: BootScreenProps) {
   useEffect(() => {
     if (!ready) return
     const onKey = (e: KeyboardEvent) => {
@@ -31,6 +35,8 @@ export default function BootScreen({ ready, onStart }: BootScreenProps) {
       className="boot-screen"
       style={{ backgroundImage: `url(${dom.bgBoot})` }}
       onPointerDown={(e) => {
+        // Let the skip control handle its own taps without starting the game.
+        if ((e.target as HTMLElement).closest(".boot-skip")) return
         e.preventDefault()
         if (ready) onStart()
       }}
@@ -42,8 +48,11 @@ export default function BootScreen({ ready, onStart }: BootScreenProps) {
       <img className="boot-logo" src={dom.logo} alt="CANON QUEST" />
       <p className="boot-tagline">Turn a brief into shippable art.</p>
       <p className="boot-prompt" data-ready={ready}>
-        {ready ? "▶ PRESS START" : "LOADING…"}
+        {ready ? (returning ? "▶ CONTINUE" : "▶ PRESS START") : "LOADING…"}
       </p>
+      <button type="button" className="boot-skip" onClick={onSkip}>
+        Skip the quest — just read it
+      </button>
     </div>
   )
 }

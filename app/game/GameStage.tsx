@@ -1,13 +1,15 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import { SHEETS, STATICS, dom } from "./assets"
+import { LAZY_STATICS, SHEETS, STATICS, dom } from "./assets"
 import { sectionForId, spawnIntro, type Section } from "./data/sections"
 import { rooms } from "./data/rooms"
 import { AssetStore } from "./engine/Assets"
 import { audio } from "./engine/Audio"
 import { GameLoop } from "./engine/GameLoop"
 import { Input } from "./engine/Input"
+import { loadProgress, saveProgress } from "./engine/progress"
+import { READING_EVENT, setReading } from "./engine/reading"
 import { Stage } from "./engine/Stage"
 import { UPDATES_PER_SECOND } from "./engine/constants"
 import { WorldScene } from "./scenes/WorldScene"
@@ -28,10 +30,15 @@ export default function GameStage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
   const sceneRef = useRef<WorldScene | null>(null)
+  const loopRef = useRef<GameLoop | null>(null)
   const pausedRef = useRef(false)
+  /** True when the readable fallback is showing (game loop paused). */
+  const readingRef = useRef(false)
+  const returningRef = useRef(false)
 
   const [ready, setReady] = useState(false)
   const [started, setStarted] = useState(false)
+  const [returning, setReturning] = useState(false)
   const [dialogue, setDialogue] = useState<Section | null>(null)
   const [cano, setCano] = useState<{ id: number; text: string }>({ id: 0, text: "" })
   const [mapOpen, setMapOpen] = useState(false)
@@ -71,6 +78,9 @@ export default function GameStage() {
     const assets = new AssetStore()
     void assets.load(SHEETS, STATICS).then(() => {
       if (cancelled) return
+      // Stream later-room backdrops in the background; renders tolerate the gap.
+      void assets.loadMore(LAZY_STATICS)
+
       const scene = new WorldScene(assets)
       scene.reducedMotion = reduced
       sceneRef.current = scene
@@ -87,8 +97,25 @@ export default function GameStage() {
         setVisited((v) => (v[index] ? v : v.map((seen, i) => (i === index ? true : seen))))
       }))
       offs.push(scene.events.on("phase", ({ phase }) => {
-        if (phase === "cta") setShowCta(true)
+        if (phase === "cta") {
+          setShowCta(true)
+          saveProgress({ shards: scene.collectedIds(), complete: true })
+        }
       }))
+
+      // Returning visitor: rebuild progress so the studio comes back lit.
+      const progress = loadProgress()
+      if (progress && (progress.shards.length > 0 || progress.complete)) {
+        scene.restore(progress.shards, progress.complete)
+        returningRef.current = true
+        setReturning(true)
+      }
+      // Persist after each pickup so a reload mid-quest keeps what was found.
+      offs.push(
+        scene.events.on("pickup", () =>
+          saveProgress({ shards: scene.collectedIds(), complete: scene.phase === "cta" }),
+        ),
+      )
 
       loop = new GameLoop(
         {
@@ -99,13 +126,30 @@ export default function GameStage() {
         },
         UPDATES_PER_SECOND,
       )
+      loopRef.current = loop
 
       const onVisibility = () => {
-        if (document.hidden) loop?.pause()
+        if (document.hidden || readingRef.current) loop?.pause()
         else loop?.resume()
       }
       document.addEventListener("visibilitychange", onVisibility)
       offs.push(() => document.removeEventListener("visibilitychange", onVisibility))
+
+      // Reading mode (the HTML fallback): pause the loop and let assistive tech
+      // see the page, not the now-hidden canvas.
+      const onReading = (e: Event) => {
+        const on = (e as CustomEvent<{ reading: boolean }>).detail.reading
+        readingRef.current = on
+        canvas.setAttribute("aria-hidden", on ? "true" : "false")
+        document.getElementById("fallback")?.setAttribute("aria-hidden", on ? "false" : "true")
+        if (on) loop?.pause()
+        else if (!document.hidden) loop?.resume()
+      }
+      window.addEventListener(READING_EVENT, onReading)
+      offs.push(() => window.removeEventListener(READING_EVENT, onReading))
+      // Game is the default view: hide the fallback from the a11y tree.
+      canvas.setAttribute("aria-hidden", "true")
+      document.getElementById("fallback")?.setAttribute("aria-hidden", "true")
 
       // Render one frame behind the boot screen, but don't simulate until start.
       pausedRef.current = true
@@ -121,7 +165,10 @@ export default function GameStage() {
       offs.forEach((off) => off())
       input.detach()
       loop?.stop()
+      loopRef.current = null
       sceneRef.current = null
+      // Leave reading mode if we tore down while the fallback was showing.
+      setReading(false)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -133,6 +180,12 @@ export default function GameStage() {
   const handleStart = () => {
     audio.unlock()
     setStarted(true)
+    if (returningRef.current) {
+      // A maker who already lit the studio: welcome them back, skip the intro.
+      showCanoLine("Welcome back, maker. The studio's yours — poke around.")
+      pausedRef.current = false
+      return
+    }
     // Spawn intro: Cano's framing line + the controls dialogue (world frozen).
     showCanoLine(spawnIntro.cano)
     pausedRef.current = true
@@ -180,8 +233,8 @@ export default function GameStage() {
           <button
             type="button"
             className="hud-btn"
-            aria-label="Skip quest"
-            onPointerDown={() => sceneRef.current?.skipQuest()}
+            aria-label="Skip quest — read the page instead"
+            onPointerDown={() => setReading(true)}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={dom.iconSkip} alt="" width={16} height={16} />
@@ -203,7 +256,14 @@ export default function GameStage() {
 
       {showCta && <CtaPanel />}
 
-      {!started && <BootScreen ready={ready} onStart={handleStart} />}
+      {!started && (
+        <BootScreen
+          ready={ready}
+          returning={returning}
+          onStart={handleStart}
+          onSkip={() => setReading(true)}
+        />
+      )}
     </div>
   )
 }

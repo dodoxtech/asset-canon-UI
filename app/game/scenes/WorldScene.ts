@@ -163,6 +163,50 @@ export class WorldScene {
 
   // --- Public control surface (called from the React shell) ---
 
+  /** Ids of Shards collected so far (for localStorage persistence). */
+  collectedIds(): string[] {
+    return this.collectibles.filter((c) => c.picked).map((c) => c.id)
+  }
+
+  /**
+   * Re-seed scene state for a returning visitor (persisted progress). Collected
+   * Shards are marked found and their rooms snap to fully lit (no staggered
+   * reveal); a completed visitor lands in a fully lit studio with the door open,
+   * the Canon assembled, but free to roam — no cutscene replays.
+   */
+  restore(shardIds: string[], complete: boolean): void {
+    for (const c of this.collectibles) {
+      if (!shardIds.includes(c.id)) continue
+      c.picked = true
+      this.shards += 1
+      const room = rooms.find((r) => r.shard?.id === c.id)
+      if (room) {
+        this.lit[room.index] = true
+        this.litTime[room.index] = 99 // past every stagger threshold → instant
+      }
+      if (c.id === "shard-canon") this.player.tired = false
+    }
+
+    if (complete) {
+      this.lit.forEach((_, i) => {
+        this.lit[i] = true
+        this.litTime[i] = 99
+      })
+      this.shards = TOTAL_SHARDS
+      this.player.tired = false
+      this.assembleStarted = true
+      this.keyDropped = true
+      this.doorState = "open"
+      this.chestOpen = true
+      this.visited.forEach((_, i) => {
+        if (!this.visited[i]) {
+          this.visited[i] = true
+          this.events.emit("visit", { index: i })
+        }
+      })
+    }
+  }
+
   /** Begin the assemble cutscene once all five Shards are in. */
   startAssemble(): void {
     if (this.assembleStarted) return
@@ -497,8 +541,16 @@ export class WorldScene {
     const first = Math.max(0, Math.floor(camX / ROOM_WIDTH))
     const last = Math.min(rooms.length - 1, Math.floor((camX + VIRTUAL_WIDTH) / ROOM_WIDTH))
     for (let i = first; i <= last; i++) {
-      const img = this.assets.image(rooms[i].backdrop)
-      ctx.drawImage(img, i * ROOM_WIDTH - camX, 0, ROOM_WIDTH, VIRTUAL_HEIGHT)
+      const x = i * ROOM_WIDTH - camX
+      const img = this.assets.tryImage(rooms[i].backdrop)
+      if (img) {
+        ctx.drawImage(img, x, 0, ROOM_WIDTH, VIRTUAL_HEIGHT)
+      } else {
+        // Lazy backdrop still streaming in: paint the room's dark base so there's
+        // never a flash of blank canvas (the dim overlay layers on top of this).
+        ctx.fillStyle = "#0a0c16"
+        ctx.fillRect(x, 0, ROOM_WIDTH, VIRTUAL_HEIGHT)
+      }
     }
   }
 

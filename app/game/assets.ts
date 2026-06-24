@@ -47,15 +47,24 @@ export const SHEETS: Record<string, string> = {
   "fx-assemble-glow": "sprites/fx-assemble-glow-sheet-512x64.json",
 }
 
-/** Static (single-image) id → PNG path. Drawn on the canvas. */
+// Static (single-image) ids → webp path (smaller than png, decoded on canvas).
+// Split for the perf budget: only the first room + texture wash load before the
+// player can start; the later-room backdrops stream in via LAZY_STATICS right
+// after boot, so first load stays light and rooms are ready by walk-time.
+
+/** Loaded up front (gates "PRESS START"). */
 export const STATICS: Record<string, string> = {
-  "bg-workshop": "backdrops/bg-workshop-480x270.png",
-  "bg-hallway": "backdrops/bg-hallway-480x270.png",
-  "bg-gallery": "backdrops/bg-gallery-480x270.png",
-  "bg-archive": "backdrops/bg-archive-480x270.png",
-  "bg-forge": "backdrops/bg-forge-480x270.png",
-  "bg-cta": "backdrops/bg-cta-480x270.png",
+  "bg-workshop": "backdrops/bg-workshop-480x270.webp",
   "tex-glow": "textures/tex-dither-glow-repeat-64x64.png",
+}
+
+/** Streamed in after boot (rooms the player reaches later). */
+export const LAZY_STATICS: Record<string, string> = {
+  "bg-hallway": "backdrops/bg-hallway-480x270.webp",
+  "bg-gallery": "backdrops/bg-gallery-480x270.webp",
+  "bg-archive": "backdrops/bg-archive-480x270.webp",
+  "bg-forge": "backdrops/bg-forge-480x270.webp",
+  "bg-cta": "backdrops/bg-cta-480x270.webp",
 }
 
 /** Resolve a public URL for DOM chrome (HUD icons, logo, buttons). */
@@ -63,19 +72,19 @@ export function url(path: string): string {
   return `${ROOT}/${path}`
 }
 
-/** Named URLs for DOM overlays. */
+/** Named URLs for DOM overlays (webp — smaller than the png siblings). */
 export const dom = {
-  bgBoot: url("backdrops/bg-boot-480x270.png"),
-  logo: url("sprites/logo-canonquest-240x72.png"),
-  cartridge: url("sprites/fx-cartridge-sheet-192x48.png"),
-  hudBar: url("icons/hud-bar-480x16.png"),
-  soundOn: url("icons/icon-sound-on-16x16.png"),
-  soundOff: url("icons/icon-sound-off-16x16.png"),
-  iconMap: url("icons/icon-map-16x16.png"),
-  iconSkip: url("icons/icon-skip-16x16.png"),
-  minimapSheet: url("icons/minimap-rooms-96x16.png"),
-  dpad: url("icons/ui-dpad-48x48.png"),
-  btnA: url("icons/ui-btn-a-24x24.png"),
-  ctaPrimary: url("icons/btn-cta-primary-96x24.png"),
-  ctaSecondary: url("icons/btn-cta-secondary-96x24.png"),
+  bgBoot: url("backdrops/bg-boot-480x270.webp"),
+  logo: url("sprites/logo-canonquest-240x72.webp"),
+  cartridge: url("sprites/fx-cartridge-sheet-192x48.webp"),
+  hudBar: url("icons/hud-bar-480x16.webp"),
+  soundOn: url("icons/icon-sound-on-16x16.webp"),
+  soundOff: url("icons/icon-sound-off-16x16.webp"),
+  iconMap: url("icons/icon-map-16x16.webp"),
+  iconSkip: url("icons/icon-skip-16x16.webp"),
+  minimapSheet: url("icons/minimap-rooms-96x16.webp"),
+  dpad: url("icons/ui-dpad-48x48.webp"),
+  btnA: url("icons/ui-btn-a-24x24.webp"),
+  ctaPrimary: url("icons/btn-cta-primary-96x24.webp"),
+  ctaSecondary: url("icons/btn-cta-secondary-96x24.webp"),
 } as const
