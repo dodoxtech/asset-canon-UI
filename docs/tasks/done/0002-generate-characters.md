@@ -1,6 +1,6 @@
 # 0002. Generate character sprites — Pix & Cano
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 

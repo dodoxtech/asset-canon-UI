@@ -58,6 +58,17 @@ export async function webpFromPng(png, webp) {
   await sharp(abs(png)).webp({ lossless: true, quality: 100 }).toFile(abs(webp));
 }
 
+export async function keyPng(png, key = "#FF00FF", tolerance = 58) {
+  const img = sharp(abs(png)).ensureAlpha().raw();
+  const { data, info } = await img.toBuffer({ resolveWithObject: true });
+  const [kr, kg, kb] = hexToRgb(key);
+  for (let i = 0; i < data.length; i += 4) {
+    const d = Math.abs(data[i] - kr) + Math.abs(data[i + 1] - kg) + Math.abs(data[i + 2] - kb);
+    if (d <= tolerance) data[i + 3] = 0;
+  }
+  await sharp(data, { raw: info }).png({ compressionLevel: 9 }).toFile(abs(png));
+}
+
 export async function makeAtlas({ slug, image, cell, columns, count, fps = 8, loop = true, anchor = [0.5, 1.0], clips }) {
   const rows = Math.ceil(count / columns);
   const frames = {};

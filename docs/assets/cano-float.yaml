@@ -1,11 +1,11 @@
-id: pix-idle
+id: cano-float
 type: sprite
-subject: Pix default idle animation
+subject: Cano floating companion animation
 description: >
-  Two-frame default Pix idle, upright and alert after the studio lights up.
-keywords: ["pix", "idle", "sprite", "animation"]
+  Four-frame Cano hover loop, a tiny canon-green cursor spirit with eyes and a contained dithered glow halo.
+keywords: ["cano", "float", "sprite", "animation"]
 placement:
-  intended_use: "Pix default idle animation in the CANON QUEST stage"
+  intended_use: "Cano floating companion animation in the CANON QUEST stage"
   context: "player and companion animation sheets"
   do: ["render at native size then integer-scale", "use atlas metadata for frame timing"]
   dont: ["anti-alias", "stretch cells", "recolor outside the shared palette"]
@@ -16,33 +16,33 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 32x24
-  aspect: "32:24"
+  master: 48x12
+  aspect: "48:12"
 safe_area: full
 accessibility:
-  alt_text: "Pix default idle animation"
+  alt_text: "Cano floating companion animation"
 animation:
-  sheet: assets/generated/sprites/pix-idle-sheet-32x24.png
-  cell: { w: 16, h: 24 }
-  columns: 2
-  count: 2
-  fps: 3
+  sheet: assets/generated/sprites/cano-float-sheet-48x12.png
+  cell: { w: 12, h: 12 }
+  columns: 4
+  count: 4
+  fps: 6
   loop: true
   anchor: [0.5, 1]
-  clips: { idle: [0, 1] }
+  clips: { float: [0, 3] }
 files:
-  - path: assets/generated/sprites/pix-idle-sheet-32x24.png
-    size: 32x24
+  - path: assets/generated/sprites/cano-float-sheet-48x12.png
+    size: 48x12
     format: png
-    bytes: 2469
-  - path: assets/generated/sprites/pix-idle-sheet-32x24.webp
-    size: 32x24
+    bytes: 1837
+  - path: assets/generated/sprites/cano-float-sheet-48x12.webp
+    size: 48x12
     format: webp
-    bytes: 1884
-  - path: assets/generated/sprites/pix-idle-sheet-32x24.json
-    size: 32x24
+    bytes: 1370
+  - path: assets/generated/sprites/cano-float-sheet-48x12.json
+    size: 48x12
     format: json
-    bytes: 542
+    bytes: 725
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."
