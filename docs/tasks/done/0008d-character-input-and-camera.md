@@ -1,6 +1,6 @@
 # 0008d. Movable grey-box character: input + camera
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 - **Parent:** [0008](0008-build-engine-mvp.md)

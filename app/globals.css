@@ -44,6 +44,8 @@ body {
 .stage-canvas {
   display: block;
   image-rendering: pixelated;
+  /* Touch gestures drive the game, never page scroll/zoom. */
+  touch-action: none;
   /* Sized in JS (CSS px); these are guards against any layout interference. */
   max-width: 100%;
   max-height: 100%;
