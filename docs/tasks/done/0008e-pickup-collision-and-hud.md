@@ -1,6 +1,6 @@
 # 0008e. Collision + pickup + HUD shard counter
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 - **Parent:** [0008](0008-build-engine-mvp.md)

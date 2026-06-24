@@ -4,10 +4,16 @@
 // (dialogue) hook in.
 
 import { Camera } from "../engine/Camera"
+import { EventBus, type GameEvents } from "../engine/EventBus"
 import type { Input } from "../engine/Input"
 import type { Stage } from "../engine/Stage"
 import { VIRTUAL_HEIGHT, VIRTUAL_WIDTH } from "../engine/constants"
+import { Collectible } from "../entities/Collectible"
 import { Player } from "../entities/Player"
+import { renderHud } from "../ui/Hud"
+
+/** Shards needed to complete a run (drives the `n/5` HUD). */
+const TOTAL_SHARDS = 5
 
 export class RoomScene {
   readonly worldWidth = 960
@@ -15,6 +21,13 @@ export class RoomScene {
 
   readonly player = new Player(this.worldWidth / 2, this.worldHeight / 2)
   readonly camera = new Camera()
+  readonly events = new EventBus<GameEvents>()
+
+  // One collectible for the MVP, at a fixed tile off to the side.
+  private readonly collectibles = [
+    new Collectible("shard-0", this.worldWidth / 2 + 160, this.worldHeight / 2 - 96),
+  ]
+  shards = 0
 
   constructor() {
     // Centre the camera on the player at start.
@@ -33,6 +46,17 @@ export class RoomScene {
 
     this.player.update(dt, input.direction(), this.worldWidth, this.worldHeight)
     this.camera.follow(this.player, this.worldWidth, this.worldHeight)
+
+    this.checkPickups()
+  }
+
+  private checkPickups(): void {
+    this.collectibles.forEach((c, index) => {
+      if (c.picked || !c.overlaps(this.player)) return
+      c.picked = true // guards double-count in a single frame
+      this.shards += 1
+      this.events.emit("pickup", { id: c.id, index })
+    })
   }
 
   render(stage: Stage): void {
@@ -67,6 +91,18 @@ export class RoomScene {
       this.worldHeight - 1,
     )
 
+    // Collectibles (skip picked ones).
+    ctx.fillStyle = "#ffc83c"
+    for (const c of this.collectibles) {
+      if (c.picked) continue
+      ctx.fillRect(
+        Math.round(c.x - c.width / 2) - camX,
+        Math.round(c.y - c.height / 2) - camY,
+        c.width,
+        c.height,
+      )
+    }
+
     // Player box.
     const p = this.player
     ctx.fillStyle = "#3ce07a"
@@ -76,5 +112,8 @@ export class RoomScene {
       p.width,
       p.height,
     )
+
+    // HUD overlay, pinned in stage space (drawn last, over the world).
+    renderHud(stage, this.shards, TOTAL_SHARDS)
   }
 }
