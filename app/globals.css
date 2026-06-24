@@ -50,3 +50,106 @@ body {
   max-width: 100%;
   max-height: 100%;
 }
+
+/* --- Dialogue overlay (0008f) --- */
+
+/* Full-stage scrim that dims the world ~40% and captures input to advance. */
+.dialogue-scrim {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(11, 14, 26, 0);
+  transition: background 220ms ease;
+  touch-action: none;
+  /* Sit above the canvas; pad to the safe area so it clears the home bar. */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    max(12px, env(safe-area-inset-bottom)) env(safe-area-inset-left);
+  z-index: 10;
+}
+.dialogue-scrim[data-open="true"] {
+  background: rgba(11, 14, 26, 0.4);
+}
+
+.dialogue-window {
+  position: relative;
+  width: min(560px, 100%);
+  /* Slightly off the very bottom so it reads as a GBA text box. */
+  margin-bottom: clamp(8px, 4vh, 40px);
+  padding: 14px 48px 16px 16px;
+  border: 2px solid #5b6b96;
+  border-radius: 8px;
+  background: #141a30;
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.35);
+  color: #e8ecf8;
+  transform: translateY(120%);
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.dialogue-window[data-open="true"] {
+  transform: translateY(0);
+}
+
+.dialogue-title {
+  margin: 0 0 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #3ce07a;
+}
+
+.dialogue-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  /* Reserve a stable height so the box doesn't grow as text types in. */
+  min-height: 4.5em;
+}
+
+.dialogue-caret {
+  color: #3ce07a;
+  animation: dialogue-blink 0.6s steps(1) infinite;
+}
+@keyframes dialogue-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.dialogue-advance {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid #5b6b96;
+  border-radius: 6px;
+  background: #1e2a44;
+  color: #3ce07a;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  animation: dialogue-nudge 1s ease-in-out infinite;
+}
+.dialogue-advance:active {
+  background: #324063;
+}
+@keyframes dialogue-nudge {
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dialogue-window,
+  .dialogue-scrim {
+    transition: none;
+  }
+  .dialogue-caret,
+  .dialogue-advance {
+    animation: none;
+  }
+}

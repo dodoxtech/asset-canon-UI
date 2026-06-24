@@ -1,18 +1,23 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import { sectionForIndex, type Section } from "./data/sections"
 import { GameLoop } from "./engine/GameLoop"
 import { Input } from "./engine/Input"
 import { Stage } from "./engine/Stage"
 import { UPDATES_PER_SECOND } from "./engine/constants"
 import { RoomScene } from "./scenes/RoomScene"
+import DialogueWindow from "./ui/DialogueWindow"
 
-// The game shell: owns the <canvas>, the Stage presenter (scaling/letterbox/DPR),
-// the Input layer, and the loop lifecycle, and drives the active scene.
+// The game shell: owns the <canvas>, Stage presenter, Input layer, and loop, and
+// drives the active scene. A pickup opens the dialogue overlay and freezes the
+// world (the loop keeps rendering, but skips scene.update) until it closes.
 
 export default function GameStage() {
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
+  const pausedRef = useRef(false)
+  const [dialogue, setDialogue] = useState<Section | null>(null)
 
   useEffect(() => {
     const container = containerRef.current
@@ -39,9 +44,17 @@ export default function GameStage() {
     window.addEventListener("orientationchange", scheduleFit)
     input.attach()
 
+    // Pickup → open the dialogue window with the matching section, freeze world.
+    const offPickup = scene.events.on("pickup", ({ index }) => {
+      pausedRef.current = true
+      setDialogue(sectionForIndex(index))
+    })
+
     const loop = new GameLoop(
       {
-        update: (dt) => scene.update(dt, input),
+        update: (dt) => {
+          if (!pausedRef.current) scene.update(dt, input)
+        },
         render: () => scene.render(stage),
       },
       UPDATES_PER_SECOND,
@@ -60,14 +73,24 @@ export default function GameStage() {
       window.removeEventListener("orientationchange", scheduleFit)
       ro.disconnect()
       if (resizeRaf) cancelAnimationFrame(resizeRaf)
+      offPickup()
       input.detach()
       loop.stop()
     }
   }, [])
 
+  const closeDialogue = () => {
+    // Returning control to play: resume the world on the next update tick.
+    pausedRef.current = false
+    setDialogue(null)
+  }
+
   return (
     <div ref={containerRef} className="stage-container">
       <canvas ref={canvasRef} className="stage-canvas" />
+      {dialogue && (
+        <DialogueWindow section={dialogue} onClose={closeDialogue} />
+      )}
     </div>
   )
 }
