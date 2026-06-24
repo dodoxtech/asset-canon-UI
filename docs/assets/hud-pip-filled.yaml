@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "Filled shard pip"
 files:
-  - path: assets/generated/icons/hud-pip-filled-8x8.png
+  - path: public/assets/generated/icons/hud-pip-filled-8x8.png
     size: 8x8
     format: png
-    bytes: 337
-  - path: assets/generated/icons/hud-pip-filled-8x8.webp
+    bytes: 212
+  - path: public/assets/generated/icons/hud-pip-filled-8x8.webp
     size: 8x8
     format: webp
-    bytes: 252
+    bytes: 176
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

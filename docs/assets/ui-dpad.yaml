@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "Mobile D-pad"
 files:
-  - path: assets/generated/icons/ui-dpad-48x48.png
+  - path: public/assets/generated/icons/ui-dpad-48x48.png
     size: 48x48
     format: png
-    bytes: 5041
-  - path: assets/generated/icons/ui-dpad-48x48.webp
+    bytes: 3071
+  - path: public/assets/generated/icons/ui-dpad-48x48.webp
     size: 48x48
     format: webp
-    bytes: 3182
+    bytes: 2132
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

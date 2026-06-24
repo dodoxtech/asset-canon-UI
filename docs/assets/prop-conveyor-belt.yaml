@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Conveyor belt prop"
 animation:
-  sheet: assets/generated/sprites/prop-conveyor-belt-sheet-64x16.png
+  sheet: public/assets/generated/sprites/prop-conveyor-belt-sheet-64x16.png
   cell: { w: 16, h: 16 }
   columns: 4
   count: 4
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { conveyor-belt: [0, 3] }
 files:
-  - path: assets/generated/sprites/prop-conveyor-belt-sheet-64x16.png
+  - path: public/assets/generated/sprites/prop-conveyor-belt-sheet-64x16.png
     size: 64x16
     format: png
-    bytes: 3126
-  - path: assets/generated/sprites/prop-conveyor-belt-sheet-64x16.webp
+    bytes: 2695
+  - path: public/assets/generated/sprites/prop-conveyor-belt-sheet-64x16.webp
     size: 64x16
     format: webp
-    bytes: 2362
-  - path: assets/generated/sprites/prop-conveyor-belt-sheet-64x16.json
+    bytes: 2164
+  - path: public/assets/generated/sprites/prop-conveyor-belt-sheet-64x16.json
     size: 64x16
     format: json
     bytes: 773

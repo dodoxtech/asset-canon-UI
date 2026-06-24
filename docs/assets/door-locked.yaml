@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Locked final door"
 animation:
-  sheet: assets/generated/sprites/door-locked-sheet-24x32.png
+  sheet: public/assets/generated/sprites/door-locked-sheet-24x32.png
   cell: { w: 24, h: 32 }
   columns: 1
   count: 1
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { locked: [0, 0] }
 files:
-  - path: assets/generated/sprites/door-locked-sheet-24x32.png
+  - path: public/assets/generated/sprites/door-locked-sheet-24x32.png
     size: 24x32
     format: png
-    bytes: 2329
-  - path: assets/generated/sprites/door-locked-sheet-24x32.webp
+    bytes: 1842
+  - path: public/assets/generated/sprites/door-locked-sheet-24x32.webp
     size: 24x32
     format: webp
-    bytes: 1662
-  - path: assets/generated/sprites/door-locked-sheet-24x32.json
+    bytes: 1472
+  - path: public/assets/generated/sprites/door-locked-sheet-24x32.json
     size: 24x32
     format: json
     bytes: 465

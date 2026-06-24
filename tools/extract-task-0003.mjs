@@ -1,4 +1,4 @@
-import { contactCrop, descriptor, keyPng, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b43917cfc81918328743bdeb86ce4.png";
 const prompt = "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate.";
@@ -24,8 +24,7 @@ for (const [id, desc, subject, cellSize, frames, y, xs] of jobs) {
   const height = cellSize;
   const png = `public/assets/generated/sprites/${id}-sheet-${width}x${height}.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, rects, png, { w: cellSize, h: cellSize }, frames);
-  await keyPng(png);
+  await contactCrop(source, rects, png, { w: cellSize, h: cellSize }, frames, { alphaKey: "#FF00FF", tolerance: 110 });
   await webpFromPng(png, webp);
   await makeAtlas({
     slug: id,

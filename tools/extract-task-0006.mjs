@@ -1,4 +1,4 @@
-import { contactCrop, descriptor, keyPng, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b4bb76cd48191a6053da70cc02b6e.png";
 const prompt = "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate.";
@@ -28,8 +28,7 @@ for (const [id, desc, subject, cell, columns, count, fps, rectList] of jobs) {
   const h = cell.h * rows;
   const png = `public/assets/generated/sprites/${id}-sheet-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, rects, png, cell, columns);
-  await keyPng(png);
+  await contactCrop(source, rects, png, cell, columns, { alphaKey: "#FF00FF", tolerance: 130 });
   await webpFromPng(png, webp);
   await makeAtlas({
     slug: id,

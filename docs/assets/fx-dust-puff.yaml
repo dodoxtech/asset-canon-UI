@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Dust puff FX"
 animation:
-  sheet: assets/generated/sprites/fx-dust-puff-sheet-48x16.png
+  sheet: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.png
   cell: { w: 16, h: 16 }
   columns: 3
   count: 3
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-dust-puff: [0, 2] }
 files:
-  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.png
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.png
     size: 48x16
     format: png
-    bytes: 2143
-  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.webp
+    bytes: 1226
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.webp
     size: 48x16
     format: webp
-    bytes: 1614
-  - path: assets/generated/sprites/fx-dust-puff-sheet-48x16.json
+    bytes: 978
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.json
     size: 48x16
     format: json
     bytes: 653

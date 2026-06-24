@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Pix walk animation"
 animation:
-  sheet: assets/generated/sprites/pix-walk-sheet-64x24.png
+  sheet: public/assets/generated/sprites/pix-walk-sheet-64x24.png
   cell: { w: 16, h: 24 }
   columns: 4
   count: 4
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { walk: [0, 3] }
 files:
-  - path: assets/generated/sprites/pix-walk-sheet-64x24.png
+  - path: public/assets/generated/sprites/pix-walk-sheet-64x24.png
     size: 64x24
     format: png
-    bytes: 4470
-  - path: assets/generated/sprites/pix-walk-sheet-64x24.webp
+    bytes: 3143
+  - path: public/assets/generated/sprites/pix-walk-sheet-64x24.webp
     size: 64x24
     format: webp
-    bytes: 3456
-  - path: assets/generated/sprites/pix-walk-sheet-64x24.json
+    bytes: 2548
+  - path: public/assets/generated/sprites/pix-walk-sheet-64x24.json
     size: 64x24
     format: json
     bytes: 714

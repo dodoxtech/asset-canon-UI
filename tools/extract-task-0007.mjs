@@ -1,5 +1,5 @@
 import sharp from "sharp";
-import { contactCrop, cropResize, descriptor, keyPng, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const uiSource = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b51dae57881919e5cd59af05288cf.png";
 const socialSource = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b525cea5881919f6f4469ecb55598.png";
@@ -21,8 +21,7 @@ for (const [id, desc, subject, cell, columns, count, fps, rectList] of spriteJob
   const dir = id.startsWith("ui-") ? "icons" : "sprites";
   const png = `public/assets/generated/${dir}/${id}-sheet-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(uiSource, rects, png, cell, columns);
-  await keyPng(png);
+  await contactCrop(uiSource, rects, png, cell, columns, { alphaKey: "#FF00FF", tolerance: 130 });
   await webpFromPng(png, webp);
   await makeAtlas({ slug: id, image: png, cell, columns, count, fps, loop: count > 1, clips: { [id]: [0, count - 1] } });
   await descriptor({
@@ -71,8 +70,7 @@ const singles = [
 for (const [id, dir, desc, subject, rect, w, h] of singles) {
   const png = `public/assets/generated/${dir}/${id}-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await cropResize(uiSource, rect, png, w, h, { fit: "cover" });
-  await keyPng(png);
+  await cropResize(uiSource, rect, png, w, h, { fit: "cover", alphaKey: "#FF00FF", tolerance: 130, keyBeforeResize: true });
   await webpFromPng(png, webp);
   await descriptor({
     id,

@@ -20,8 +20,14 @@ export class EventBus<Events extends Record<string, unknown>> {
   }
 }
 
-/** Gameplay events other systems can react to. */
+/** Gameplay events the React shell turns into UI. */
 export type GameEvents = {
-  /** A collectible was picked up. `index` is its 0-based slot in the run. */
-  pickup: { id: string; index: number }
+  /** A Shard's pickup beat finished — open its section panel. */
+  pickup: { id: string }
+  /** Cano says a transient one-liner (reaction / nudge / room hint). */
+  cano: { text: string }
+  /** The player entered a room for the first time (drives the minimap). */
+  visit: { index: number }
+  /** Scene phase changed (play → cutscene → cta). */
+  phase: { phase: "play" | "cutscene" | "cta" }
 }

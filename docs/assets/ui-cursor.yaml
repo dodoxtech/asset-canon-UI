@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Blinking UI cursor"
 animation:
-  sheet: assets/generated/icons/ui-cursor-sheet-16x8.png
+  sheet: public/assets/generated/icons/ui-cursor-sheet-16x8.png
   cell: { w: 8, h: 8 }
   columns: 2
   count: 2
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { ui-cursor: [0, 1] }
 files:
-  - path: assets/generated/icons/ui-cursor-sheet-16x8.png
+  - path: public/assets/generated/icons/ui-cursor-sheet-16x8.png
     size: 16x8
     format: png
-    bytes: 466
-  - path: assets/generated/icons/ui-cursor-sheet-16x8.webp
+    bytes: 261
+  - path: public/assets/generated/icons/ui-cursor-sheet-16x8.webp
     size: 16x8
     format: webp
-    bytes: 326
-  - path: assets/generated/icons/ui-cursor-sheet-16x8.json
+    bytes: 222
+  - path: public/assets/generated/icons/ui-cursor-sheet-16x8.json
     size: 16x8
     format: json
     bytes: 541

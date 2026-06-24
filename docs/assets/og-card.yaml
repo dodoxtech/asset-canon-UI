@@ -22,11 +22,11 @@ safe_area: inner 90%
 accessibility:
   alt_text: "CANON QUEST social card"
 files:
-  - path: assets/generated/social/og-card-1200x630.png
+  - path: public/assets/generated/social/og-card-1200x630.png
     size: 1200x630
     format: png
     bytes: 1263697
-  - path: assets/generated/social/og-card-1200x630.webp
+  - path: public/assets/generated/social/og-card-1200x630.webp
     size: 1200x630
     format: webp
     bytes: 726972

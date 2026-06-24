@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "CANON QUEST title logo"
 files:
-  - path: assets/generated/sprites/logo-canonquest-240x72.png
+  - path: public/assets/generated/sprites/logo-canonquest-240x72.png
     size: 240x72
     format: png
-    bytes: 47894
-  - path: assets/generated/sprites/logo-canonquest-240x72.webp
+    bytes: 46645
+  - path: public/assets/generated/sprites/logo-canonquest-240x72.webp
     size: 240x72
     format: webp
-    bytes: 26976
+    bytes: 31088
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Anvil spark burst prop"
 animation:
-  sheet: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
+  sheet: public/assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
   cell: { w: 16, h: 16 }
   columns: 3
   count: 3
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { anvil-sparks: [0, 2] }
 files:
-  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
+  - path: public/assets/generated/sprites/prop-anvil-sparks-sheet-48x16.png
     size: 48x16
     format: png
-    bytes: 2300
-  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.webp
+    bytes: 1538
+  - path: public/assets/generated/sprites/prop-anvil-sparks-sheet-48x16.webp
     size: 48x16
     format: webp
-    bytes: 1586
-  - path: assets/generated/sprites/prop-anvil-sparks-sheet-48x16.json
+    bytes: 1216
+  - path: public/assets/generated/sprites/prop-anvil-sparks-sheet-48x16.json
     size: 48x16
     format: json
     bytes: 673

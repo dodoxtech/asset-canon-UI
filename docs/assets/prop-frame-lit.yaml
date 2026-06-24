@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Lit gallery sample frames"
 animation:
-  sheet: assets/generated/sprites/prop-frame-lit-sheet-120x24.png
+  sheet: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.png
   cell: { w: 24, h: 24 }
   columns: 5
   count: 5
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { frame-lit: [0, 4] }
 files:
-  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.png
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.png
     size: 120x24
     format: png
-    bytes: 8898
-  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.webp
+    bytes: 7913
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.webp
     size: 120x24
     format: webp
-    bytes: 6316
-  - path: assets/generated/sprites/prop-frame-lit-sheet-120x24.json
+    bytes: 5792
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.json
     size: 120x24
     format: json
     bytes: 843

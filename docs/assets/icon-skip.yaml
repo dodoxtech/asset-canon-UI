@@ -22,11 +22,11 @@ safe_area: full
 accessibility:
   alt_text: "Skip icon"
 files:
-  - path: assets/generated/icons/icon-skip-16x16.png
+  - path: public/assets/generated/icons/icon-skip-16x16.png
     size: 16x16
     format: png
     bytes: 1000
-  - path: assets/generated/icons/icon-skip-16x16.webp
+  - path: public/assets/generated/icons/icon-skip-16x16.webp
     size: 16x16
     format: webp
     bytes: 800

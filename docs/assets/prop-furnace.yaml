@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Forge furnace prop"
 animation:
-  sheet: assets/generated/sprites/prop-furnace-sheet-160x32.png
+  sheet: public/assets/generated/sprites/prop-furnace-sheet-160x32.png
   cell: { w: 32, h: 32 }
   columns: 5
   count: 5
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { furnace: [0, 4] }
 files:
-  - path: assets/generated/sprites/prop-furnace-sheet-160x32.png
+  - path: public/assets/generated/sprites/prop-furnace-sheet-160x32.png
     size: 160x32
     format: png
-    bytes: 14697
-  - path: assets/generated/sprites/prop-furnace-sheet-160x32.webp
+    bytes: 11810
+  - path: public/assets/generated/sprites/prop-furnace-sheet-160x32.webp
     size: 160x32
     format: webp
-    bytes: 10408
-  - path: assets/generated/sprites/prop-furnace-sheet-160x32.json
+    bytes: 8976
+  - path: public/assets/generated/sprites/prop-furnace-sheet-160x32.json
     size: 160x32
     format: json
     bytes: 830

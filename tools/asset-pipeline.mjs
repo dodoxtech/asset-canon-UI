@@ -33,6 +33,11 @@ function ensureDir(file) {
 
 export async function cropResize(source, rect, out, width, height, options = {}) {
   ensureDir(out);
+  if (options.alphaKey && options.keyBeforeResize) {
+    const buf = await keyedFrame(source, rect, { w: width, h: height }, options);
+    await sharp(buf).png({ compressionLevel: 9 }).toFile(abs(out));
+    return;
+  }
   let img = sharp(source).extract(rect).resize(width, height, {
     kernel: sharp.kernel.nearest,
     fit: options.fit ?? "fill",
@@ -170,11 +175,13 @@ export async function contactCrop(source, rects, out, cell, columns, options = {
   const rows = Math.ceil(rects.length / columns);
   const composites = [];
   for (let i = 0; i < rects.length; i += 1) {
-    const buf = await sharp(source)
-      .extract(rects[i])
-      .resize(cell.w, cell.h, { kernel: sharp.kernel.nearest, fit: "fill" })
-      .png()
-      .toBuffer();
+    const buf = options.alphaKey
+      ? await keyedFrame(source, rects[i], cell, options)
+      : await sharp(source)
+          .extract(rects[i])
+          .resize(cell.w, cell.h, { kernel: sharp.kernel.nearest, fit: "fill" })
+          .png()
+          .toBuffer();
     composites.push({
       input: buf,
       left: (i % columns) * cell.w,
@@ -193,6 +200,53 @@ export async function contactCrop(source, rects, out, cell, columns, options = {
     .composite(composites)
     .png({ compressionLevel: 9 })
     .toFile(abs(out));
+}
+
+async function keyedFrame(source, rect, cell, options) {
+  const key = options.alphaKey ?? "#FF00FF";
+  const tolerance = options.tolerance ?? 100;
+  const img = sharp(source).extract(rect).ensureAlpha().raw();
+  const { data, info } = await img.toBuffer({ resolveWithObject: true });
+  const [kr, kg, kb] = hexToRgb(key);
+  const visited = new Uint8Array(info.width * info.height);
+  const queue = [];
+
+  const enqueue = (x, y) => {
+    if (x < 0 || y < 0 || x >= info.width || y >= info.height) return;
+    const p = y * info.width + x;
+    if (visited[p]) return;
+    const i = p * 4;
+    const d = Math.abs(data[i] - kr) + Math.abs(data[i + 1] - kg) + Math.abs(data[i + 2] - kb);
+    if (d > tolerance) return;
+    visited[p] = 1;
+    queue.push(p);
+  };
+
+  for (let x = 0; x < info.width; x += 1) {
+    enqueue(x, 0);
+    enqueue(x, info.height - 1);
+  }
+  for (let y = 0; y < info.height; y += 1) {
+    enqueue(0, y);
+    enqueue(info.width - 1, y);
+  }
+
+  for (let qi = 0; qi < queue.length; qi += 1) {
+    const p = queue[qi];
+    const x = p % info.width;
+    const y = Math.floor(p / info.width);
+    const i = p * 4;
+    data[i + 3] = 0;
+    enqueue(x + 1, y);
+    enqueue(x - 1, y);
+    enqueue(x, y + 1);
+    enqueue(x, y - 1);
+  }
+
+  return sharp(data, { raw: info })
+    .resize(cell.w, cell.h, { kernel: sharp.kernel.nearest, fit: "fill" })
+    .png()
+    .toBuffer();
 }
 
 function indent(text) {

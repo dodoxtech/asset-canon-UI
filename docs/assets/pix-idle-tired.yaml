@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Pix tired idle animation"
 animation:
-  sheet: assets/generated/sprites/pix-idle-tired-sheet-32x24.png
+  sheet: public/assets/generated/sprites/pix-idle-tired-sheet-32x24.png
   cell: { w: 16, h: 24 }
   columns: 2
   count: 2
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { idle_tired: [0, 1] }
 files:
-  - path: assets/generated/sprites/pix-idle-tired-sheet-32x24.png
+  - path: public/assets/generated/sprites/pix-idle-tired-sheet-32x24.png
     size: 32x24
     format: png
-    bytes: 2457
-  - path: assets/generated/sprites/pix-idle-tired-sheet-32x24.webp
+    bytes: 1755
+  - path: public/assets/generated/sprites/pix-idle-tired-sheet-32x24.webp
     size: 32x24
     format: webp
-    bytes: 1946
-  - path: assets/generated/sprites/pix-idle-tired-sheet-32x24.json
+    bytes: 1460
+  - path: public/assets/generated/sprites/pix-idle-tired-sheet-32x24.json
     size: 32x24
     format: json
     bytes: 566

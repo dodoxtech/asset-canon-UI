@@ -22,30 +22,30 @@ safe_area: full
 accessibility:
   alt_text: "Canon Shard emblem"
 files:
-  - path: assets/generated/icons/favicon-512x512.png
+  - path: public/assets/generated/icons/favicon-512x512.png
     size: 512x512
     format: png
-    bytes: 7165
-  - path: assets/generated/icons/favicon-16x16.png
+    bytes: 5107
+  - path: public/assets/generated/icons/favicon-16x16.png
     size: 16x16
     format: png
-    bytes: 905
-  - path: assets/generated/icons/favicon-32x32.png
+    bytes: 616
+  - path: public/assets/generated/icons/favicon-32x32.png
     size: 32x32
     format: png
-    bytes: 1032
-  - path: assets/generated/icons/favicon-48x48.png
+    bytes: 693
+  - path: public/assets/generated/icons/favicon-48x48.png
     size: 48x48
     format: png
-    bytes: 1084
-  - path: assets/generated/icons/favicon-180x180.png
+    bytes: 722
+  - path: public/assets/generated/icons/favicon-180x180.png
     size: 180x180
     format: png
-    bytes: 1809
-  - path: assets/generated/icons/favicon-192x192.png
+    bytes: 1306
+  - path: public/assets/generated/icons/favicon-192x192.png
     size: 192x192
     format: png
-    bytes: 1877
+    bytes: 1319
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

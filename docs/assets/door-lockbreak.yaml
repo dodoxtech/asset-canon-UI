@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Door lock break animation"
 animation:
-  sheet: assets/generated/sprites/door-lockbreak-sheet-72x32.png
+  sheet: public/assets/generated/sprites/door-lockbreak-sheet-72x32.png
   cell: { w: 24, h: 32 }
   columns: 3
   count: 3
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { lockbreak: [0, 2] }
 files:
-  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.png
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.png
     size: 72x32
     format: png
-    bytes: 6650
-  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.webp
+    bytes: 5179
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.webp
     size: 72x32
     format: webp
-    bytes: 5062
-  - path: assets/generated/sprites/door-lockbreak-sheet-72x32.json
+    bytes: 4326
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.json
     size: 72x32
     format: json
     bytes: 657

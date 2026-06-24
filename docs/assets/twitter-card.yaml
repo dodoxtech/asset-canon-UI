@@ -22,11 +22,11 @@ safe_area: inner 90%
 accessibility:
   alt_text: "CANON QUEST social card"
 files:
-  - path: assets/generated/social/twitter-card-1200x600.png
+  - path: public/assets/generated/social/twitter-card-1200x600.png
     size: 1200x600
     format: png
     bytes: 990959
-  - path: assets/generated/social/twitter-card-1200x600.webp
+  - path: public/assets/generated/social/twitter-card-1200x600.webp
     size: 1200x600
     format: webp
     bytes: 578096

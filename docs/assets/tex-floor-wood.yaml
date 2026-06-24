@@ -25,15 +25,15 @@ tileable: true
 tile_size: 32x32
 tonality: low-contrast
 files:
-  - path: assets/generated/textures/tex-floor-wood-32x32.png
+  - path: public/assets/generated/textures/tex-floor-wood-32x32.png
     size: 32x32
     format: png
     bytes: 2646
-  - path: assets/generated/textures/tex-floor-wood-32x32.webp
+  - path: public/assets/generated/textures/tex-floor-wood-32x32.webp
     size: 32x32
     format: webp
     bytes: 1800
-  - path: assets/generated/textures/tex-floor-wood-repeat-64x64.png
+  - path: public/assets/generated/textures/tex-floor-wood-repeat-64x64.png
     size: 64x64
     format: png
     bytes: 3151

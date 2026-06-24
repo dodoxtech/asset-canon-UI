@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Assemble glow FX"
 animation:
-  sheet: assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
+  sheet: public/assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
   cell: { w: 64, h: 64 }
   columns: 8
   count: 8
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-assemble-glow: [0, 7] }
 files:
-  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
+  - path: public/assets/generated/sprites/fx-assemble-glow-sheet-512x64.png
     size: 512x64
     format: png
-    bytes: 54504
-  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.webp
+    bytes: 24646
+  - path: public/assets/generated/sprites/fx-assemble-glow-sheet-512x64.webp
     size: 512x64
     format: webp
-    bytes: 37798
-  - path: assets/generated/sprites/fx-assemble-glow-sheet-512x64.json
+    bytes: 21042
+  - path: public/assets/generated/sprites/fx-assemble-glow-sheet-512x64.json
     size: 512x64
     format: json
     bytes: 1151

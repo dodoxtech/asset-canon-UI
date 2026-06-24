@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Cano floating companion animation"
 animation:
-  sheet: assets/generated/sprites/cano-float-sheet-48x12.png
+  sheet: public/assets/generated/sprites/cano-float-sheet-48x12.png
   cell: { w: 12, h: 12 }
   columns: 4
   count: 4
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { float: [0, 3] }
 files:
-  - path: assets/generated/sprites/cano-float-sheet-48x12.png
+  - path: public/assets/generated/sprites/cano-float-sheet-48x12.png
     size: 48x12
     format: png
-    bytes: 1837
-  - path: assets/generated/sprites/cano-float-sheet-48x12.webp
+    bytes: 1262
+  - path: public/assets/generated/sprites/cano-float-sheet-48x12.webp
     size: 48x12
     format: webp
-    bytes: 1370
-  - path: assets/generated/sprites/cano-float-sheet-48x12.json
+    bytes: 1016
+  - path: public/assets/generated/sprites/cano-float-sheet-48x12.json
     size: 48x12
     format: json
     bytes: 725

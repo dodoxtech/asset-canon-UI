@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "HUD bar"
 files:
-  - path: assets/generated/icons/hud-bar-480x16.png
+  - path: public/assets/generated/icons/hud-bar-480x16.png
     size: 480x16
     format: png
-    bytes: 19555
-  - path: assets/generated/icons/hud-bar-480x16.webp
+    bytes: 10464
+  - path: public/assets/generated/icons/hud-bar-480x16.webp
     size: 480x16
     format: webp
-    bytes: 9242
+    bytes: 5964
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

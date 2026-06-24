@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Cano happy reaction animation"
 animation:
-  sheet: assets/generated/sprites/cano-react-sheet-24x12.png
+  sheet: public/assets/generated/sprites/cano-react-sheet-24x12.png
   cell: { w: 12, h: 12 }
   columns: 2
   count: 2
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { react: [0, 1] }
 files:
-  - path: assets/generated/sprites/cano-react-sheet-24x12.png
+  - path: public/assets/generated/sprites/cano-react-sheet-24x12.png
     size: 24x12
     format: png
-    bytes: 931
-  - path: assets/generated/sprites/cano-react-sheet-24x12.webp
+    bytes: 630
+  - path: public/assets/generated/sprites/cano-react-sheet-24x12.webp
     size: 24x12
     format: webp
-    bytes: 696
-  - path: assets/generated/sprites/cano-react-sheet-24x12.json
+    bytes: 530
+  - path: public/assets/generated/sprites/cano-react-sheet-24x12.json
     size: 24x12
     format: json
     bytes: 549

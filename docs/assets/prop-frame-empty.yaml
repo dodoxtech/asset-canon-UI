@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Empty gallery frame prop"
 animation:
-  sheet: assets/generated/sprites/prop-frame-empty-sheet-24x24.png
+  sheet: public/assets/generated/sprites/prop-frame-empty-sheet-24x24.png
   cell: { w: 24, h: 24 }
   columns: 1
   count: 1
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 1]
   clips: { frame-empty: [0, 0] }
 files:
-  - path: assets/generated/sprites/prop-frame-empty-sheet-24x24.png
+  - path: public/assets/generated/sprites/prop-frame-empty-sheet-24x24.png
     size: 24x24
     format: png
-    bytes: 1730
-  - path: assets/generated/sprites/prop-frame-empty-sheet-24x24.webp
+    bytes: 1516
+  - path: public/assets/generated/sprites/prop-frame-empty-sheet-24x24.webp
     size: 24x24
     format: webp
-    bytes: 1190
-  - path: assets/generated/sprites/prop-frame-empty-sheet-24x24.json
+    bytes: 1120
+  - path: public/assets/generated/sprites/prop-frame-empty-sheet-24x24.json
     size: 24x24
     format: json
     bytes: 480

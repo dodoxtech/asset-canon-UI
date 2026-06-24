@@ -1,4 +1,4 @@
-import { contactCrop, descriptor, keyPng, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b416caffc8191bef7dfcbef18c831.png";
 const prompt = "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate.";
@@ -114,8 +114,7 @@ for (const job of jobs) {
   const h = job.cell.h * Math.ceil(job.rects.length / job.columns);
   const png = `public/assets/generated/${job.dir}/${job.id}-sheet-${w}x${h}.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, job.rects, png, job.cell, job.columns);
-  await keyPng(png);
+  await contactCrop(source, job.rects, png, job.cell, job.columns, { alphaKey: "#FF00FF", tolerance: 130 });
   await webpFromPng(png, webp);
   await makeAtlas({
     slug: job.id,

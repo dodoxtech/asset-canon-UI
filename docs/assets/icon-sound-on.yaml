@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "Sound on icon"
 files:
-  - path: assets/generated/icons/icon-sound-on-16x16.png
+  - path: public/assets/generated/icons/icon-sound-on-16x16.png
     size: 16x16
     format: png
-    bytes: 851
-  - path: assets/generated/icons/icon-sound-on-16x16.webp
+    bytes: 807
+  - path: public/assets/generated/icons/icon-sound-on-16x16.webp
     size: 16x16
     format: webp
-    bytes: 672
+    bytes: 660
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

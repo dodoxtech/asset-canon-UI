@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Assembled Canon artifact"
 animation:
-  sheet: assets/generated/sprites/canon-artifact-sheet-64x32.png
+  sheet: public/assets/generated/sprites/canon-artifact-sheet-64x32.png
   cell: { w: 32, h: 32 }
   columns: 2
   count: 2
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { loop: [0, 1] }
 files:
-  - path: assets/generated/sprites/canon-artifact-sheet-64x32.png
+  - path: public/assets/generated/sprites/canon-artifact-sheet-64x32.png
     size: 64x32
     format: png
-    bytes: 6142
-  - path: assets/generated/sprites/canon-artifact-sheet-64x32.webp
+    bytes: 4469
+  - path: public/assets/generated/sprites/canon-artifact-sheet-64x32.webp
     size: 64x32
     format: webp
-    bytes: 5086
-  - path: assets/generated/sprites/canon-artifact-sheet-64x32.json
+    bytes: 3800
+  - path: public/assets/generated/sprites/canon-artifact-sheet-64x32.json
     size: 64x32
     format: json
     bytes: 562

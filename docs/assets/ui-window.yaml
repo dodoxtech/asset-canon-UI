@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "UI window skin"
 files:
-  - path: assets/generated/icons/ui-window-48x48.png
+  - path: public/assets/generated/icons/ui-window-48x48.png
     size: 48x48
     format: png
-    bytes: 3043
-  - path: assets/generated/icons/ui-window-48x48.webp
+    bytes: 3307
+  - path: public/assets/generated/icons/ui-window-48x48.webp
     size: 48x48
     format: webp
-    bytes: 1876
+    bytes: 2316
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

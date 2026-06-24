@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Holographic easter egg sticker pickup"
 animation:
-  sheet: assets/generated/sprites/sticker-easteregg-sheet-32x16.png
+  sheet: public/assets/generated/sprites/sticker-easteregg-sheet-32x16.png
   cell: { w: 16, h: 16 }
   columns: 2
   count: 2
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { loop: [0, 1] }
 files:
-  - path: assets/generated/sprites/sticker-easteregg-sheet-32x16.png
+  - path: public/assets/generated/sprites/sticker-easteregg-sheet-32x16.png
     size: 32x16
     format: png
-    bytes: 1777
-  - path: assets/generated/sprites/sticker-easteregg-sheet-32x16.webp
+    bytes: 1334
+  - path: public/assets/generated/sprites/sticker-easteregg-sheet-32x16.webp
     size: 32x16
     format: webp
-    bytes: 1454
-  - path: assets/generated/sprites/sticker-easteregg-sheet-32x16.json
+    bytes: 1120
+  - path: public/assets/generated/sprites/sticker-easteregg-sheet-32x16.json
     size: 32x16
     format: json
     bytes: 571

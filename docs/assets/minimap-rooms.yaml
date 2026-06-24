@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "Minimap room glyph sheet"
 files:
-  - path: assets/generated/icons/minimap-rooms-96x16.png
+  - path: public/assets/generated/icons/minimap-rooms-96x16.png
     size: 96x16
     format: png
-    bytes: 4819
-  - path: assets/generated/icons/minimap-rooms-96x16.webp
+    bytes: 4348
+  - path: public/assets/generated/icons/minimap-rooms-96x16.webp
     size: 96x16
     format: webp
-    bytes: 3636
+    bytes: 3494
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

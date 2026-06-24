@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Pipeline Scroll pickup"
 animation:
-  sheet: assets/generated/sprites/shard-pipeline-sheet-64x16.png
+  sheet: public/assets/generated/sprites/shard-pipeline-sheet-64x16.png
   cell: { w: 16, h: 16 }
   columns: 4
   count: 4
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { loop: [0, 3] }
 files:
-  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.png
+  - path: public/assets/generated/sprites/shard-pipeline-sheet-64x16.png
     size: 64x16
     format: png
-    bytes: 3235
-  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.webp
+    bytes: 2594
+  - path: public/assets/generated/sprites/shard-pipeline-sheet-64x16.webp
     size: 64x16
     format: webp
-    bytes: 2796
-  - path: assets/generated/sprites/shard-pipeline-sheet-64x16.json
+    bytes: 2292
+  - path: public/assets/generated/sprites/shard-pipeline-sheet-64x16.json
     size: 64x16
     format: json
     bytes: 746

@@ -22,14 +22,14 @@ safe_area: full
 accessibility:
   alt_text: "Primary CTA button skin"
 files:
-  - path: assets/generated/icons/btn-cta-primary-96x24.png
+  - path: public/assets/generated/icons/btn-cta-primary-96x24.png
     size: 96x24
     format: png
-    bytes: 5706
-  - path: assets/generated/icons/btn-cta-primary-96x24.webp
+    bytes: 5118
+  - path: public/assets/generated/icons/btn-cta-primary-96x24.webp
     size: 96x24
     format: webp
-    bytes: 3274
+    bytes: 3108
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

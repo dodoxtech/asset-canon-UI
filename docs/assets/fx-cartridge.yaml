@@ -22,7 +22,7 @@ safe_area: full
 accessibility:
   alt_text: "Boot cartridge FX"
 animation:
-  sheet: assets/generated/sprites/fx-cartridge-sheet-192x48.png
+  sheet: public/assets/generated/sprites/fx-cartridge-sheet-192x48.png
   cell: { w: 64, h: 48 }
   columns: 3
   count: 3
@@ -31,15 +31,15 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-cartridge: [0, 2] }
 files:
-  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.png
+  - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.png
     size: 192x48
     format: png
-    bytes: 22494
-  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.webp
+    bytes: 17573
+  - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.webp
     size: 192x48
     format: webp
-    bytes: 12716
-  - path: assets/generated/sprites/fx-cartridge-sheet-192x48.json
+    bytes: 10206
+  - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.json
     size: 192x48
     format: json
     bytes: 655

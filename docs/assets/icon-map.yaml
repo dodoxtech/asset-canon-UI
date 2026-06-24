@@ -22,11 +22,11 @@ safe_area: full
 accessibility:
   alt_text: "Map icon"
 files:
-  - path: assets/generated/icons/icon-map-16x16.png
+  - path: public/assets/generated/icons/icon-map-16x16.png
     size: 16x16
     format: png
     bytes: 993
-  - path: assets/generated/icons/icon-map-16x16.webp
+  - path: public/assets/generated/icons/icon-map-16x16.webp
     size: 16x16
     format: webp
     bytes: 836
