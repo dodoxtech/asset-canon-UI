@@ -1,0 +1,49 @@
+id: tiles-gallery
+type: sprite
+subject: gallery prop tileset
+description: >
+  Gallery prop tiles: frame mounts, velvet rope, bench, spotlight housing, plaques, banners.
+keywords: ["tiles", "gallery", "tileset", "props"]
+placement:
+  intended_use: "room-specific foreground prop tiles"
+  context: "16x16 tilemap foreground and decorative collision layer"
+  do: ["snap to 16x16 grid", "mix with tiles-base"]
+  dont: ["scale non-integer", "use as far-wall backdrop"]
+style:
+  art_style: "GBA pixel tileset"
+  stroke: "1px selective ink outline"
+  shading: "flat cel with dithered texture"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: transparent
+dimensions:
+  master: 64x32
+  aspect: "2:1"
+safe_area: full
+accessibility:
+  alt_text: "tiles-gallery tileset"
+animation:
+  sheet: assets/generated/tilesets/tiles-gallery-sheet-64x32.png
+  cell: { w: 16, h: 16 }
+  columns: 4
+  count: 8
+  fps: 1
+  loop: false
+  anchor: [0, 0]
+  clips: { tiles: [0, 7] }
+files:
+  - path: assets/generated/tilesets/tiles-gallery-sheet-64x32.png
+    size: 64x32
+    format: png
+    bytes: 5497
+  - path: assets/generated/tilesets/tiles-gallery-sheet-64x32.webp
+    size: 64x32
+    format: webp
+    bytes: 4548
+  - path: assets/generated/tilesets/tiles-gallery-sheet-64x32.json
+    size: 64x32
+    format: json
+    bytes: 1106
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate."
+  generated: 2026-06-24

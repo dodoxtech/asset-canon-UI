@@ -1,0 +1,43 @@
+id: tex-floor-wood
+type: texture
+subject: warm low-contrast wood plank floor
+description: >
+  seamless plank wood floor texture
+keywords: ["tex", "floor", "wood", "texture", "tileable"]
+placement:
+  intended_use: "repeatable surface fill for room floors, walls, or glow overlays"
+  context: "CSS/canvas pattern fills behind or beneath tiles"
+  do: ["repeat at 32x32 native size", "use low opacity for glow swatch when needed"]
+  dont: ["stretch unevenly", "use under body text at high contrast"]
+style:
+  art_style: "GBA pixel texture"
+  stroke: "none"
+  shading: "low-contrast dithered surface"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
+background: full-bleed
+dimensions:
+  master: 32x32
+  aspect: "1:1"
+safe_area: full
+accessibility:
+  alt_text: "warm low-contrast wood plank floor"
+tileable: true
+tile_size: 32x32
+tonality: low-contrast
+files:
+  - path: assets/generated/textures/tex-floor-wood-32x32.png
+    size: 32x32
+    format: png
+    bytes: 2646
+  - path: assets/generated/textures/tex-floor-wood-32x32.webp
+    size: 32x32
+    format: webp
+    bytes: 1800
+  - path: assets/generated/textures/tex-floor-wood-repeat-64x64.png
+    size: 64x64
+    format: png
+    bytes: 3151
+source:
+  model: "built-in image_gen"
+  prompt: "CANON QUEST tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate."
+  generated: 2026-06-24
