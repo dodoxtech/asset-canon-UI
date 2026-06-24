@@ -1,0 +1,50 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  /* Full-viewport game: no scroll, no rubber-banding, black letterbox. */
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: #000;
+  color: #e8ecf8;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  /* Don't let mobile long-press/selection steal game gestures. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: none;
+}
+
+/* Full-viewport flex container that centers the stage; its padding is the
+   safe-area inset so the stage never sits under a notch / home indicator.
+   100dvh tracks the *dynamic* viewport so mobile URL-bar show/hide is handled. */
+.stage-container {
+  position: fixed;
+  inset: 0;
+  height: 100dvh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.stage-canvas {
+  display: block;
+  image-rendering: pixelated;
+  /* Sized in JS (CSS px); these are guards against any layout interference. */
+  max-width: 100%;
+  max-height: 100%;
+}
