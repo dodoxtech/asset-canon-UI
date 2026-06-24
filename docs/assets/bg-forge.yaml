@@ -1,11 +1,11 @@
-id: bg-workshop
+id: bg-forge
 type: illustration
-subject: Workshop home room backdrop
+subject: Forge room backdrop
 description: >
-  cozy artist workshop with easels, paint cans, lamp, dusk window. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
-keywords: ["bg", "workshop", "room", "backdrop", "gba"]
+  lit forge with furnace, anvil, chimney, and tools. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+keywords: ["bg", "forge", "room", "backdrop", "gba"]
 placement:
-  intended_use: "Workshop home room backdrop far-wall background"
+  intended_use: "Forge room backdrop far-wall background"
   context: "stage backdrop behind walkable tile and prop layers"
   do: ["draw behind sprites and tilemaps", "keep foreground path clear"]
   dont: ["treat as collision geometry", "scale non-integer in-game"]
@@ -20,17 +20,17 @@ dimensions:
   aspect: "16:9"
 safe_area: full
 accessibility:
-  alt_text: "Workshop home room backdrop"
+  alt_text: "Forge room backdrop"
 composition: "Far-wall illustration with lower foreground kept usable for player, collectibles, and prop overlays."
 files:
-  - path: assets/generated/backdrops/bg-workshop-480x270.png
+  - path: assets/generated/backdrops/bg-forge-480x270.png
     size: 480x270
     format: png
-    bytes: 311790
-  - path: assets/generated/backdrops/bg-workshop-480x270.webp
+    bytes: 294862
+  - path: assets/generated/backdrops/bg-forge-480x270.webp
     size: 480x270
     format: webp
-    bytes: 191324
+    bytes: 180896
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."

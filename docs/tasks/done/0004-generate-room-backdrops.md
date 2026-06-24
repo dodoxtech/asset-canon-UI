@@ -1,6 +1,6 @@
 # 0004. Generate room backdrops
 
-- **Status:** backlog
+- **Status:** done
 - **Owner:** unassigned
 - **Created:** 2026-06-24
 
