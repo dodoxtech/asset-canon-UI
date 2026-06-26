@@ -3,7 +3,7 @@ type: sprite
 subject: Boot cartridge FX
 description: >
   Boot cartridge click-in shudder frames.
-keywords: ["fx", "cartridge", "canon-quest"]
+keywords: ["fx", "cartridge", "assets-canon"]
 placement:
   intended_use: "Boot cartridge FX"
   context: "boot, pickup, HUD, and cutscene animation"
@@ -45,5 +45,5 @@ files:
     bytes: 673
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

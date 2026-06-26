@@ -1,0 +1,40 @@
+id: style-run-magic-tool
+type: illustration
+subject: oversized glowing paintbrush-wrench magic tool
+description: >
+  A single oversized hybrid tool combining a paintbrush and wrench, with gold wrench
+  jaws, blue enamel panels, wrapped leather grip, pale bristles, star charms, and a
+  restrained sky-blue glow. Reads as the third standalone render in the Style Profile
+  First example.
+keywords: [magic-tool, paintbrush, wrench, prop, storybook, generation-pass]
+placement:
+  intended_use: Style Profile First section card for generation pass 03
+  context: landing page section demonstrating separate image generations sharing one style profile
+  do: [use as a standalone prop thumbnail, pair with generation pass 03 label]
+  dont: [do not rotate into a weapon pose, do not present as part of a single four-panel generation]
+style:
+  art_style: polished storybook family-animation prop concept art
+  stroke: clean rounded ink outline
+  shading: soft cel shading with warm brass texture and subtle glow
+palette: ["#2A1B12", "#F2DCB1", "#2E6F98", "#A33A23", "#D8A63E", "#6B3F22", "#57B9D7"]
+background: opaque parchment
+dimensions:
+  master: 1254x1254
+  aspect: "1:1"
+safe_area: centered diagonal prop with generous padding
+accessibility:
+  alt_text: "Generated magic tool: oversized paintbrush-wrench with gold and blue highlights"
+files:
+  - path: public/assets/generated/illustrations/style-run-magic-tool-1254x1254.png
+    size: 1254x1254
+    format: png
+    bytes: 2225189
+  - path: public/assets/generated/illustrations/style-run-magic-tool-720x720.webp
+    size: 720x720
+    format: webp
+    bytes: 39502
+source:
+  model: built-in image_gen
+  prompt: "Magic tool — oversized glowing paintbrush-wrench, same highlight colors, same outline weight, same material rules."
+  generated: 2026-06-26
+

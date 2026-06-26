@@ -1,9 +1,9 @@
 id: twitter-card
 type: social
-subject: twitter-card CANON QUEST share card
+subject: twitter-card ASSET CANON share card
 description: >
-  Opaque social share card showing Pix in the lit workshop with the CANON QUEST title, tagline, and PLAY cue.
-keywords: ["social", "og", "twitter", "canon-quest", "share-card"]
+  Opaque social share card showing Pix in the lit workshop with the ASSET CANON title, tagline, and PLAY cue.
+keywords: ["social", "og", "twitter", "assets-canon", "share-card"]
 placement:
   intended_use: "twitter-card link-preview image"
   context: "Open Graph / Twitter summary-large-image metadata"
@@ -20,7 +20,7 @@ dimensions:
   aspect: "1200:600"
 safe_area: inner 90%
 accessibility:
-  alt_text: "CANON QUEST social card"
+  alt_text: "ASSET CANON social card"
 files:
   - path: public/assets/generated/social/twitter-card-1200x600.png
     size: 1200x600
@@ -32,5 +32,5 @@ files:
     bytes: 578096
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

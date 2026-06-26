@@ -1,7 +1,7 @@
 import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-06-props-doors.png";
-const prompt = "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate.";
+const prompt = "ASSET CANON animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate.";
 
 const jobs = [
   ["prop-lamp", "Workshop hanging lamp with off and warm on/flicker frames.", "Workshop lamp prop", { w: 16, h: 24 }, 2, 2, 4, [[70, 35, 120, 145], [245, 35, 120, 145]]],
@@ -42,7 +42,7 @@ for (const [id, desc, subject, cell0, columns, count, fps, rectList] of jobs) {
     description: desc,
     keywords: id.split("-").concat(["prop", "animation"]),
     placement: {
-      intended_use: `${subject} in the CANON QUEST room reward flow`,
+      intended_use: `${subject} in the ASSET CANON room reward flow`,
       context: "interactive props, reveal states, and room activation animations",
       do: ["use atlas metadata for state frames", "render at native size then integer-scale"],
       dont: ["anti-alias", "stretch cells", "detach lit/on frames from pickup state"],

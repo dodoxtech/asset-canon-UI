@@ -1,12 +1,12 @@
 # docs/style-profile.yaml
-# Shared style brief for every asset on the asset-canon landing page ("CANON QUEST").
+# Shared style brief for every asset on the asset-canon landing page ("ASSET CANON").
 # Authored from docs/landing-page/art-direction.md — that doc is the human-readable
 # source of truth; this file is the machine-readable input every generation inherits.
 # Apply on EVERY generation: append `prompt_suffix`, append `Avoid: <negative>`,
 # carry `seed` if the backend supports one.
 
-id: canon-quest
-name: CANON QUEST — GBA pixel workshop
+id: assets-canon
+name: ASSET CANON — GBA pixel workshop
 description: >
   Late-era Game Boy Advance pixel-art look (Minish Cap / Golden Sun / Pokémon
   Emerald): chunky readable pixels, warm interior workshop lighting, depth via

@@ -3,7 +3,7 @@ type: sprite
 subject: Gold pickup sparkle FX
 description: >
   Shared four-frame gold pickup sparkle.
-keywords: ["fx", "sparkle", "canon-quest"]
+keywords: ["fx", "sparkle", "assets-canon"]
 placement:
   intended_use: "Gold pickup sparkle FX"
   context: "boot, pickup, HUD, and cutscene animation"
@@ -45,5 +45,5 @@ files:
     bytes: 768
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

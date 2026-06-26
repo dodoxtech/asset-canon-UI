@@ -1,7 +1,7 @@
 import { cropResize, descriptor, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-04-backdrops.png";
-const prompt = "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels.";
+const prompt = "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels.";
 
 const rooms = [
   ["bg-boot", "dark cartridge-slot and CRT glow boot backdrop", "Boot/title screen CRT chamber", { left: 20, top: 20, width: 765, height: 282 }],
@@ -22,7 +22,7 @@ for (const [id, desc, subject, rect] of rooms) {
     id,
     type: "illustration",
     subject,
-    description: `${desc}. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.`,
+    description: `${desc}. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.`,
     keywords: id.split("-").concat(["room", "backdrop", "gba"]),
     placement: {
       intended_use: `${subject} far-wall background`,

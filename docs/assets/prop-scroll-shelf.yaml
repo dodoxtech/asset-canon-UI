@@ -5,7 +5,7 @@ description: >
   Archive YAML-scroll shelf, dark to glowing four-frame ramp.
 keywords: ["prop", "scroll", "shelf", "prop", "animation"]
 placement:
-  intended_use: "Glowing scroll shelf prop in the CANON QUEST room reward flow"
+  intended_use: "Glowing scroll shelf prop in the ASSET CANON room reward flow"
   context: "interactive props, reveal states, and room activation animations"
   do: ["use atlas metadata for state frames", "render at native size then integer-scale"]
   dont: ["anti-alias", "stretch cells", "detach lit/on frames from pickup state"]
@@ -45,5 +45,5 @@ files:
     bytes: 803
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."
+  prompt: "ASSET CANON animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."
   generated: 2026-06-24

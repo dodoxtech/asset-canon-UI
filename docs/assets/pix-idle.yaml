@@ -5,7 +5,7 @@ description: >
   Two-frame default Pix idle, upright and alert after the studio lights up.
 keywords: ["pix", "idle", "sprite", "animation"]
 placement:
-  intended_use: "Pix default idle animation in the CANON QUEST stage"
+  intended_use: "Pix default idle animation in the ASSET CANON stage"
   context: "player and companion animation sheets"
   do: ["render at native size then integer-scale", "use atlas metadata for frame timing"]
   dont: ["anti-alias", "stretch cells", "recolor outside the shared palette"]
@@ -45,5 +45,5 @@ files:
     bytes: 572
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."
+  prompt: "ASSET CANON character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."
   generated: 2026-06-24

@@ -2,7 +2,7 @@ id: bg-boot
 type: illustration
 subject: Boot/title screen CRT chamber
 description: >
-  dark cartridge-slot and CRT glow boot backdrop. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  dark cartridge-slot and CRT glow boot backdrop. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "boot", "room", "backdrop", "gba"]
 placement:
   intended_use: "Boot/title screen CRT chamber far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 137990
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

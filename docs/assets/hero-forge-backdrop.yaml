@@ -1,0 +1,80 @@
+id: hero-forge-backdrop
+type: illustration
+subject: pixel-art asset forge workshop hero backdrop
+description: >
+  A full-bleed GBA-era pixel-art workshop at night, with a dark readable
+  negative-space zone on the left and a glowing asset forge, conveyor, shelves,
+  shards, and production machinery on the right. Built as the first-viewport
+  hero backdrop for the asset-canon landing page.
+keywords: [hero, backdrop, forge, workshop, pixel-art, asset-canon, landing-page]
+placement:
+  intended_use: full-bleed website hero background
+  context: first viewport behind headline, CTA, and animated HUD overlays
+  do: [use with dark veil overlays, keep text in the left negative-space zone, render pixelated]
+  dont: [do not place body copy over the bright forge core, do not blur, do not upscale beyond master]
+style:
+  art_style: 16-bit GBA-era pixel art
+  stroke: 1px selective dark ink
+  shading: flat cel shading with ordered dithering
+  perspective: side-view workshop with layered parallax depth
+palette:
+  - "#0B0E1A"
+  - "#141A30"
+  - "#1E2A44"
+  - "#324063"
+  - "#5B6B96"
+  - "#8A9AC8"
+  - "#E8ECF8"
+  - "#00B140"
+  - "#3CE07A"
+  - "#157A3A"
+  - "#FFC83C"
+  - "#C8821E"
+  - "#3CA0FF"
+  - "#FF5C5C"
+background: full-bleed
+dimensions:
+  master: 1672x941
+  aspect: "approximately 16:9, cropped exports are exact 16:9"
+safe_area: left and center-left negative space for headline and CTA
+composition: "dark readable area on the left; bright forge machine and conveyor on the right third"
+accessibility:
+  alt_text: "Pixel-art asset forge workshop with glowing machinery and shelves of generated assets"
+files:
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-master-1672x941.png
+    size: 1672x941
+    format: png
+    bytes: 2541229
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-1600x900.png
+    size: 1600x900
+    format: png
+    bytes: 2383684
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-1600x900.webp
+    size: 1600x900
+    format: webp
+    bytes: 156748
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-1200x675.png
+    size: 1200x675
+    format: png
+    bytes: 1388146
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-1200x675.webp
+    size: 1200x675
+    format: webp
+    bytes: 109680
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-800x450.png
+    size: 800x450
+    format: png
+    bytes: 634530
+  - path: public/assets/generated/backdrops/hero-forge-backdrop-800x450.webp
+    size: 800x450
+    format: webp
+    bytes: 65104
+source:
+  model: built-in image_gen
+  style_profile: docs/style-profile.yaml
+  prompt: >
+    Create a premium GBA-era pixel-art hero backdrop for asset-canon: a cozy
+    nocturnal asset forge with shelves, shards, conveyor, glowing machine on
+    the right, generous dark negative space on the left, no text, no labels,
+    no UI chrome, strict shared palette, crisp pixel-perfect rendering.
+  generated: 2026-06-26

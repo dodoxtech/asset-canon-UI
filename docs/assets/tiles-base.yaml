@@ -45,5 +45,5 @@ files:
     bytes: 1791
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate."
+  prompt: "ASSET CANON style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate."
   generated: 2026-06-24

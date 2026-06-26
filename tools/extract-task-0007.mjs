@@ -4,7 +4,7 @@ import { contactCrop, cropResize, descriptor, makeAtlas, packSheet, webpFromPng 
 
 const uiSource = "public/assets/tmp/generated-image-07-fx-hud-icons.png";
 const socialSource = "public/assets/tmp/generated-image-08-social.png";
-const prompt = "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style.";
+const prompt = "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style.";
 
 const spriteJobs = [
   ["fx-cartridge", "Boot cartridge click-in shudder frames.", "Boot cartridge FX", { w: 64, h: 48 }, 3, 3, 8, [[35, 80, 145, 130], [210, 80, 145, 130], [382, 80, 170, 135]]],
@@ -48,7 +48,7 @@ for (const [id, desc, subject, cell0, columns, count, fps, rectList] of spriteJo
     type: id.startsWith("ui-") ? "icon" : "sprite",
     subject,
     description: desc,
-    keywords: id.split("-").concat(["canon-quest"]),
+    keywords: id.split("-").concat(["assets-canon"]),
     placement: {
       intended_use: subject,
       context: "boot, pickup, HUD, and cutscene animation",
@@ -70,7 +70,7 @@ for (const [id, desc, subject, cell0, columns, count, fps, rectList] of spriteJo
 }
 
 const singles = [
-  ["logo-canonquest", "sprites", "CANON QUEST pixel title lockup", "CANON QUEST title logo", { left: 610, top: 80, width: 350, height: 300 }, 240, 72],
+  ["logo-canonquest", "sprites", "ASSET CANON pixel title lockup", "ASSET CANON title logo", { left: 610, top: 80, width: 350, height: 300 }, 240, 72],
   ["hud-pip-filled", "icons", "Filled shard pip for HUD counter.", "Filled shard pip", { left: 42, top: 690, width: 60, height: 80 }, 8, 8],
   ["hud-pip-empty", "icons", "Empty shard pip for HUD counter.", "Empty shard pip", { left: 160, top: 690, width: 60, height: 80 }, 8, 8],
   ["hud-bar", "icons", "Top status bar frame/background for HUD items.", "HUD bar", { left: 275, top: 690, width: 520, height: 80 }, 480, 16],
@@ -165,9 +165,9 @@ for (const [id, rect, w, h] of socials) {
   await descriptor({
     id,
     type: "social",
-    subject: `${id} CANON QUEST share card`,
-    description: "Opaque social share card showing Pix in the lit workshop with the CANON QUEST title, tagline, and PLAY cue.",
-    keywords: ["social", "og", "twitter", "canon-quest", "share-card"],
+    subject: `${id} ASSET CANON share card`,
+    description: "Opaque social share card showing Pix in the lit workshop with the ASSET CANON title, tagline, and PLAY cue.",
+    keywords: ["social", "og", "twitter", "assets-canon", "share-card"],
     placement: {
       intended_use: `${id} link-preview image`,
       context: "Open Graph / Twitter summary-large-image metadata",
@@ -177,7 +177,7 @@ for (const [id, rect, w, h] of socials) {
     style: { art_style: "GBA pixel social card", stroke: "pixel title and frame outlines", shading: "warm dithered workshop lighting" },
     background: "full-bleed",
     dimensions: { master: `${w}x${h}`, aspect: `${w}:${h}` },
-    alt_text: "CANON QUEST social card",
+    alt_text: "ASSET CANON social card",
     files: [
       { path: png, size: `${w}x${h}`, format: "png" },
       { path: webp, size: `${w}x${h}`, format: "webp" },

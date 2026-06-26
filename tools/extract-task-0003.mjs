@@ -1,7 +1,7 @@
 import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-03-collectibles.png";
-const prompt = "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate.";
+const prompt = "ASSET CANON collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate.";
 const xs4 = [330, 515, 700, 885];
 const xs2 = [325, 515];
 
@@ -38,7 +38,7 @@ for (const [id, desc, subject, cellSize, frames, y, xs] of jobs) {
     description: desc,
     keywords: id.split("-").concat(["collectible", "pickup"]),
     placement: {
-      intended_use: `${subject} collectible in CANON QUEST`,
+      intended_use: `${subject} collectible in ASSET CANON`,
       context: "pickup sprites, HUD arcs, and reward cutscenes",
       do: ["play as short looping sparkle while uncollected", "render at native size then integer-scale"],
       dont: ["use on a non-integer scale", "place on very bright backgrounds without outline"],

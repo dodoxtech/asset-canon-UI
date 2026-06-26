@@ -3,7 +3,7 @@ type: sprite
 subject: Dust puff FX
 description: >
   Three-frame ground dust puff.
-keywords: ["fx", "dust", "puff", "canon-quest"]
+keywords: ["fx", "dust", "puff", "assets-canon"]
 placement:
   intended_use: "Dust puff FX"
   context: "boot, pickup, HUD, and cutscene animation"
@@ -45,5 +45,5 @@ files:
     bytes: 687
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

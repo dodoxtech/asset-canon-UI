@@ -5,7 +5,7 @@ description: >
   Descriptor Rune pickup, a magenta runestone with abstract YAML-like engraving and pulsing sparkle.
 keywords: ["shard", "rune", "collectible", "pickup"]
 placement:
-  intended_use: "Descriptor Rune pickup collectible in CANON QUEST"
+  intended_use: "Descriptor Rune pickup collectible in ASSET CANON"
   context: "pickup sprites, HUD arcs, and reward cutscenes"
   do: ["play as short looping sparkle while uncollected", "render at native size then integer-scale"]
   dont: ["use on a non-integer scale", "place on very bright backgrounds without outline"]
@@ -45,5 +45,5 @@ files:
     bytes: 761
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate."
+  prompt: "ASSET CANON collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate."
   generated: 2026-06-24

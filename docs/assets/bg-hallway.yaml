@@ -2,7 +2,7 @@ id: bg-hallway
 type: illustration
 subject: Pipeline hallway backdrop
 description: >
-  pipeline hallway with conveyor rig and node mounts. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  pipeline hallway with conveyor rig and node mounts. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "hallway", "room", "backdrop", "gba"]
 placement:
   intended_use: "Pipeline hallway backdrop far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 148040
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

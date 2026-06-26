@@ -2,7 +2,7 @@ id: bg-gallery
 type: illustration
 subject: Gallery room backdrop
 description: >
-  gallery wall with five empty frames, banners, spotlights, and rope. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  gallery wall with five empty frames, banners, spotlights, and rope. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "gallery", "room", "backdrop", "gba"]
 placement:
   intended_use: "Gallery room backdrop far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 157976
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

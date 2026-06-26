@@ -1,7 +1,7 @@
 import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-01-style-anchors.png";
-const prompt = "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate.";
+const prompt = "ASSET CANON style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate.";
 
 await contactCrop(
   source,
@@ -68,7 +68,7 @@ await descriptor({
   keywords: ["pix", "hero", "idle", "artist", "sprite"],
   placement: {
     intended_use: "default player idle after the first shard lights the studio",
-    context: "CANON QUEST side-scrolling stage",
+    context: "ASSET CANON side-scrolling stage",
     do: ["render at native 16x24 then integer-scale", "flip in code for facing left"],
     dont: ["anti-alias", "stretch frames", "recolor outside the shared palette"],
   },

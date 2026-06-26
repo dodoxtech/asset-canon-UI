@@ -3,7 +3,7 @@ type: sprite
 subject: Dust motes FX
 description: >
   Subtle four-frame drifting dust motes loop.
-keywords: ["fx", "dust", "motes", "canon-quest"]
+keywords: ["fx", "dust", "motes", "assets-canon"]
 placement:
   intended_use: "Dust motes FX"
   context: "boot, pickup, HUD, and cutscene animation"
@@ -45,5 +45,5 @@ files:
     bytes: 785
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

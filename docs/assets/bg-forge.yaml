@@ -2,7 +2,7 @@ id: bg-forge
 type: illustration
 subject: Forge room backdrop
 description: >
-  lit forge with furnace, anvil, chimney, and tools. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  lit forge with furnace, anvil, chimney, and tools. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "forge", "room", "backdrop", "gba"]
 placement:
   intended_use: "Forge room backdrop far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 180896
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

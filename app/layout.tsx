@@ -14,7 +14,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://asset-canon.dev"
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "CANON QUEST — asset-canon",
+  title: "ASSET CANON — asset-canon",
   description: DESCRIPTION,
   icons: {
     icon: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    title: "CANON QUEST — asset-canon",
+    title: "ASSET CANON — asset-canon",
     description: DESCRIPTION,
     url: SITE_URL,
     siteName: "asset-canon",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CANON QUEST — asset-canon",
+    title: "ASSET CANON — asset-canon",
     description: DESCRIPTION,
     images: [`${SOCIAL}/twitter-card-1200x600.png`],
   },
@@ -77,6 +77,10 @@ export default function RootLayout({
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap"
         />
       </head>
       <body>{children}</body>

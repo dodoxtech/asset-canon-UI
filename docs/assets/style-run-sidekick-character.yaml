@@ -1,0 +1,39 @@
+id: style-run-sidekick-character
+type: illustration
+subject: tiny clockwork helper sidekick character
+description: >
+  A palm-sized clockwork helper with a brass body, large rounded eyes, soft friendly
+  silhouette, blue scarf, red fabric accent, tiny claw hands, and visible clockwork
+  details. Reads as the second standalone render in the Style Profile First example.
+keywords: [sidekick, clockwork, helper, character, storybook, generation-pass]
+placement:
+  intended_use: Style Profile First section card for generation pass 02
+  context: landing page section demonstrating separate image generations sharing one style profile
+  do: [use as a standalone thumbnail, pair with generation pass 02 label]
+  dont: [do not recolor away from brass and blue, do not present as part of a single four-panel generation]
+style:
+  art_style: polished storybook family-animation concept art
+  stroke: clean rounded ink outline
+  shading: soft cel shading with warm metal texture
+palette: ["#2A1B12", "#F2DCB1", "#2E6F98", "#A33A23", "#C68A2E", "#6B3F22"]
+background: opaque parchment
+dimensions:
+  master: 1024x1536
+  aspect: "2:3"
+safe_area: centered character with generous padding
+accessibility:
+  alt_text: "Generated sidekick character: tiny clockwork helper with matching palette and eye shape"
+files:
+  - path: public/assets/generated/illustrations/style-run-sidekick-character-1024x1536.png
+    size: 1024x1536
+    format: png
+    bytes: 2593220
+  - path: public/assets/generated/illustrations/style-run-sidekick-character-512x768.webp
+    size: 512x768
+    format: webp
+    bytes: 38558
+source:
+  model: built-in image_gen
+  prompt: "Sidekick character — tiny clockwork helper, same eye shape, same palette, same soft storybook silhouette rules."
+  generated: 2026-06-26
+

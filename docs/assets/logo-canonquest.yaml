@@ -1,11 +1,11 @@
 id: logo-canonquest
 type: icon
-subject: CANON QUEST title logo
+subject: ASSET CANON title logo
 description: >
-  CANON QUEST pixel title lockup
+  ASSET CANON pixel title lockup
 keywords: ["logo", "canonquest", "ui"]
 placement:
-  intended_use: "CANON QUEST title logo"
+  intended_use: "ASSET CANON title logo"
   context: "HUD, controls, title, or call-to-action UI"
   do: ["render at native size then integer-scale", "use as a 9-slice where named"]
   dont: ["anti-alias", "stretch icons without 9-slice rules"]
@@ -20,7 +20,7 @@ dimensions:
   aspect: "240:72"
 safe_area: full
 accessibility:
-  alt_text: "CANON QUEST title logo"
+  alt_text: "ASSET CANON title logo"
 files:
   - path: public/assets/generated/sprites/logo-canonquest-240x72.png
     size: 240x72
@@ -32,5 +32,5 @@ files:
     bytes: 29300
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

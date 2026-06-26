@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import { sections } from "../data/sections"
-import { Cursor, RevealWords, FadeUp, Stagger, StaggerItem, Marquee } from "./effects"
+import { Cursor, RevealWords, FadeUp, Stagger, StaggerItem, Marquee, SpriteDirectionDemo } from "./effects"
 
 const REPO    = "https://github.com/dodoxtech/asset-canon"
 const DOCS    = "https://github.com/dodoxtech/asset-canon#readme"
@@ -9,6 +9,7 @@ const INSTALL = "npx skills add github:dodoxtech/asset-canon"
 const B = "/assets/generated/backdrops"
 const S = "/assets/generated/sprites"
 const C = "/assets/generated/comparisons"
+const D = "/assets/generated/sprites"
 
 const STEPS = ["BRIEF", "PLAN", "GENERATE", "OPTIMIZE", "WRITE", "REPORT"] as const
 
@@ -51,10 +52,38 @@ negative:
   - off-palette colors`
 
 const STYLE_RUNS = [
-  { step: "01", title: "Hero character", body: "Brave kid inventor, warm family-animation proportions, round expressive face, same costume language." },
-  { step: "02", title: "Sidekick character", body: "Tiny clockwork helper, same eye shape, same palette, same soft storybook silhouette rules." },
-  { step: "03", title: "Magic tool", body: "Oversized glowing paintbrush-wrench, same highlight colors, same outline weight, same material rules." },
-  { step: "04", title: "Prop set", body: "Backpack, compass, star badge, and potion bottle generated later but still reading as one world." },
+  {
+    step: "01",
+    title: "Hero character",
+    body: "Brave kid inventor, warm family-animation proportions, round expressive face, same costume language.",
+    img: "/assets/generated/illustrations/style-run-hero-character-512x768.webp",
+    alt: "Generated hero character: brave kid inventor in a warm storybook animation style",
+    pass: "generation pass 01",
+  },
+  {
+    step: "02",
+    title: "Sidekick character",
+    body: "Tiny clockwork helper, same eye shape, same palette, same soft storybook silhouette rules.",
+    img: "/assets/generated/illustrations/style-run-sidekick-character-512x768.webp",
+    alt: "Generated sidekick character: tiny clockwork helper with matching palette and eye shape",
+    pass: "generation pass 02",
+  },
+  {
+    step: "03",
+    title: "Magic tool",
+    body: "Oversized glowing paintbrush-wrench, same highlight colors, same outline weight, same material rules.",
+    img: "/assets/generated/illustrations/style-run-magic-tool-720x720.webp",
+    alt: "Generated magic tool: oversized paintbrush-wrench with gold and blue highlights",
+    pass: "generation pass 03",
+  },
+  {
+    step: "04",
+    title: "Prop set",
+    body: "Backpack, compass, star badge, and potion bottle generated later but still reading as one world.",
+    img: "/assets/generated/illustrations/style-run-prop-set-960x640.webp",
+    alt: "Generated prop set: backpack, compass, star badge, and potion bottle in one shared style",
+    pass: "generation pass 04",
+  },
 ] as const
 
 export default function LandingPage() {
@@ -87,39 +116,42 @@ export default function LandingPage() {
         </header>
 
         {/* ── HERO ─────────────────────────────────────────── */}
-        <section className="hero" aria-label="Hero">
+        <section className="hero hero-luxury" aria-label="Hero">
+          <div className="luxury-paper" aria-hidden="true" />
+
           <div className="hero-inner">
 
-            {/* Left: headline + meta */}
+            {/* Left: editorial headline + commands */}
             <div className="hero-left">
               <FadeUp delay={0.05}>
                 <div className="eyebrow-row">
                   <span className="live-dot" aria-hidden="true" />
-                  <span className="eyebrow-label">AI image-generation · for your coding agent</span>
+                  <span className="eyebrow-label">consistent image generation workflow</span>
                 </div>
               </FadeUp>
 
               <h1 className="headline">
                 <span className="headline-row">
-                  <RevealWords text="DESCRIBE." delay={0.15} />
+                  <RevealWords text="Generate" delay={0.15} />
                 </span>
                 <span className="headline-row headline-dim">
-                  <RevealWords text="GENERATE." delay={0.22} />
+                  <RevealWords text="images in" delay={0.22} />
                 </span>
                 <span className="headline-row headline-accent">
-                  <RevealWords text="SHIP." delay={0.29} />
+                  <RevealWords text="one style." delay={0.29} />
                 </span>
               </h1>
 
               <FadeUp delay={0.52}>
                 <p className="hero-sub">
-                  asset-canon turns your brief into production-ready image files —
-                  webp, png, ico — straight to your repo.
+                  asset-canon gives your coding agent a repeatable workflow for
+                  image generation: plan the brief, lock the style, generate the
+                  set, optimize the files, and document every asset.
                 </p>
               </FadeUp>
 
               <FadeUp delay={0.62}>
-                <div className="terminal-card">
+                <div className="terminal-card hero-terminal">
                   <span className="terminal-prompt">$</span>
                   <code className="terminal-cmd">{INSTALL}</code>
                 </div>
@@ -128,7 +160,7 @@ export default function LandingPage() {
               <FadeUp delay={0.72}>
                 <div className="hero-btns">
                   <a href={REPO} target="_blank" rel="noreferrer" className="btn-primary">
-                    ★ Star on GitHub
+                    Star on GitHub
                     <span className="btn-arrow" aria-hidden="true">↗</span>
                   </a>
                   <a href={DOCS} target="_blank" rel="noreferrer" className="btn-ghost">
@@ -136,23 +168,50 @@ export default function LandingPage() {
                   </a>
                 </div>
               </FadeUp>
+
+              <FadeUp delay={0.82}>
+                <div className="hero-stats" aria-label="asset-canon highlights">
+                  <div>
+                    <strong>05</strong>
+                    <span>specialists</span>
+                  </div>
+                  <div>
+                    <strong>1x</strong>
+                    <span>style profile</span>
+                  </div>
+                  <div>
+                    <strong>yaml</strong>
+                    <span>sidecars</span>
+                  </div>
+                </div>
+              </FadeUp>
             </div>
 
-            {/* Right: portal with Pix + Cano */}
+            {/* Right: quiet art-object preview */}
             <div className="hero-right" aria-hidden="true">
-              <div className="portal">
-                <img
-                  className="portal-bg"
-                  src={`${B}/bg-boot-480x270.webp`}
-                  alt=""
-                />
-                <div className="portal-vignette" />
-                <div className="lp-sprite lp-sprite-pix portal-pix" />
-                <div className="portal-ring" />
-                <div className="portal-ring portal-ring-outer" />
+              <div className="luxury-plate">
+                <picture className="luxury-visual">
+                  <source
+                    type="image/webp"
+                    srcSet={`${B}/hero-forge-backdrop-800x450.webp 800w, ${B}/hero-forge-backdrop-1200x675.webp 1200w, ${B}/hero-forge-backdrop-1600x900.webp 1600w`}
+                    sizes="(max-width: 1024px) 90vw, 42vw"
+                  />
+                  <img
+                    src={`${B}/hero-forge-backdrop-1200x675.png`}
+                    alt=""
+                    width={1200}
+                    height={675}
+                  />
+                </picture>
+                <div className="luxury-plate-caption">
+                  <span>01</span>
+                  <span>generated image asset</span>
+                </div>
               </div>
-              {/* Glow blob behind portal */}
-              <div className="portal-glow" />
+              <div className="luxury-proof">
+                <span>style-profile.yaml</span>
+                <span>webp · png · descriptors</span>
+              </div>
             </div>
           </div>
 
@@ -295,9 +354,8 @@ export default function LandingPage() {
                 />
                 <FadeUp delay={0.18}>
                   <p className="sect-body">
-                    The skill writes <code>docs/style-profile.yaml</code> before generating the batch.
-                    Every later image reads that file, so characters, tools, props, icons,
-                    and scenes keep the same palette, shape language, line weight, and negative prompts.
+                    The skill writes <code>docs/style-profile.yaml</code> first, then makes each image
+                    in a separate generation pass. Four prompts, four renders, one shared visual world.
                   </p>
                 </FadeUp>
                 <FadeUp delay={0.26}>
@@ -306,7 +364,7 @@ export default function LandingPage() {
                     <span>→</span>
                     <code>style-profile.yaml</code>
                     <span>→</span>
-                    <code>4 GENERATIONS</code>
+                    <code>4 SEPARATE IMAGE GENERATIONS</code>
                     <span>→</span>
                     <code>ONE WORLD</code>
                   </div>
@@ -335,7 +393,14 @@ negative:
             <Stagger className="profile-runs">
               {STYLE_RUNS.map((run) => (
                 <StaggerItem key={run.step} className="profile-run">
-                  <span className="run-step">{run.step}</span>
+                  <div className="run-media">
+                    <img src={run.img} alt={run.alt} width={960} height={960} loading="lazy" />
+                    <span className="run-pass">{run.pass}</span>
+                  </div>
+                  <div className="run-topline">
+                    <span className="run-step">{run.step}</span>
+                    <span className="run-separate">separate render</span>
+                  </div>
                   <h3>{run.title}</h3>
                   <p>{run.body}</p>
                 </StaggerItem>
@@ -371,23 +436,24 @@ negative:
             </div>
 
             {/* Shared prompt source card */}
-            <FadeUp delay={0.25} className="cmp-source-wrap">
+            <FadeUp delay={0.25}>
               <div className="cmp-source">
-                <span className="cmp-source-eyebrow">
+                <div className="cmp-source-top">
                   <span className="cmp-source-dot" aria-hidden="true" />
-                  SHARED PROMPT — sent to the model in both cases
-                </span>
+                  <span className="cmp-source-label">SHARED PROMPT</span>
+                  <span className="cmp-source-sublabel">sent to the model in both cases</span>
+                </div>
                 <p className="cmp-source-text">"{SHARED_PROMPT}"</p>
-              </div>
-              {/* Fork lines connecting source to panels */}
-              <div className="cmp-fork" aria-hidden="true">
-                <span className="cmp-fork-l" />
-                <span className="cmp-fork-mid" />
-                <span className="cmp-fork-r" />
               </div>
             </FadeUp>
 
-            {/* Two recipe panels */}
+            {/* Two arrows pointing down to panels */}
+            <div className="cmp-arrows" aria-hidden="true">
+              <span className="cmp-arrow-down" />
+              <span className="cmp-arrow-down" />
+            </div>
+
+            {/* Two comparison panels — image on top for immediate visual alignment */}
             <div className="cmp-panels">
 
               {/* LEFT — without skill */}
@@ -397,31 +463,25 @@ negative:
                   <span className="cmp-panel-note">Raw model output</span>
                 </div>
 
+                {/* Image FIRST — immediate visual comparison */}
+                <div className="cmp-img-wrap">
+                  <img
+                    className="cmp-img cmp-img-bad"
+                    src={`${C}/comparison-without-skill-960x540.webp`}
+                    alt="Raw prompt output, inconsistent style, no palette lock"
+                    width={960} height={540}
+                  />
+                </div>
+
+                {/* Only STYLE row — PROMPT already shown in shared source card above */}
                 <div className="cmp-recipe">
                   <div className="cmp-row">
-                    <span className="cmp-row-num">01</span>
-                    <div className="cmp-row-content">
-                      <span className="cmp-row-label">PROMPT</span>
-                      <code className="cmp-row-val cmp-row-same">"{SHARED_PROMPT}"</code>
-                    </div>
-                  </div>
-                  <div className="cmp-row cmp-row-style-none">
-                    <span className="cmp-row-num">02</span>
+                    <span className="cmp-row-num">—</span>
                     <div className="cmp-row-content">
                       <span className="cmp-row-label">STYLE</span>
                       <span className="cmp-none-tag">none</span>
                     </div>
                   </div>
-                </div>
-
-                <div className="cmp-img-wrap cmp-img-bad">
-                  <img
-                    className="cmp-img"
-                    src={`${C}/comparison-without-skill-960x540.webp`}
-                    alt="Raw prompt output — inconsistent style, no palette lock"
-                    width={960} height={540}
-                  />
-                  <span className="cmp-img-label">No style guidance applied</span>
                 </div>
               </FadeUp>
 
@@ -432,17 +492,20 @@ negative:
                   <span className="cmp-panel-note">style-profile.yaml auto-loaded</span>
                 </div>
 
+                {/* Image FIRST */}
+                <div className="cmp-img-wrap">
+                  <img
+                    className="cmp-img"
+                    src={`${C}/comparison-with-skill-960x540.webp`}
+                    alt="Skill output, GBA pixel art, locked palette, consistent style"
+                    width={960} height={540}
+                  />
+                </div>
+
+                {/* Only STYLE row with YAML diff */}
                 <div className="cmp-recipe">
                   <div className="cmp-row">
-                    <span className="cmp-row-num">01</span>
-                    <div className="cmp-row-content">
-                      <span className="cmp-row-label">PROMPT</span>
-                      <code className="cmp-row-val cmp-row-same">"{SHARED_PROMPT}"</code>
-                      <span className="cmp-same-badge" aria-label="identical to left panel">= same</span>
-                    </div>
-                  </div>
-                  <div className="cmp-row cmp-row-style-added">
-                    <span className="cmp-row-num cmp-row-num-green">02</span>
+                    <span className="cmp-row-num cmp-row-num-green">+</span>
                     <div className="cmp-row-content">
                       <span className="cmp-row-label cmp-row-label-green">STYLE</span>
                       <div className="cmp-yaml-wrap">
@@ -454,16 +517,6 @@ negative:
                       </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="cmp-img-wrap cmp-img-good">
-                  <img
-                    className="cmp-img"
-                    src={`${C}/comparison-with-skill-960x540.webp`}
-                    alt="Skill output — GBA pixel art, locked palette, consistent style"
-                    width={960} height={540}
-                  />
-                  <span className="cmp-img-label cmp-img-label-good">GBA pixel art · palette locked · style consistent</span>
                 </div>
               </FadeUp>
 
@@ -510,17 +563,103 @@ negative:
           </div>
         </section>
 
-        {/* ── RELIABILITY ──────────────────────────────────── */}
-        <section className="sect sect-dark" aria-labelledby="s6">
-          <img className="sect-bg" src={`${B}/bg-forge-480x270.webp`} alt="" aria-hidden="true" />
-          <div className="sect-overlay ol-left" aria-hidden="true" />
+        {/* ── ASSET-SPRITE PLAYABLE DEMO ───────────────────── */}
+        <section className="sect sect-dark sprite-demo-sect" aria-labelledby="s6">
+          <img className="sect-bg" src={`${B}/bg-workshop-480x270.webp`} alt="" aria-hidden="true" />
+          <div className="sect-overlay ol-center" aria-hidden="true" />
 
           <div className="sect-inner">
             <div className="sect-num" aria-hidden="true">06</div>
 
+            <div className="sprite-demo-head">
+              <div>
+                <FadeUp>
+                  <span className="tag">06 — asset-sprite demo</span>
+                </FadeUp>
+                <RevealWords
+                  text="RAW PLATE TO PLAYABLE CHARACTER."
+                  className="sect-title"
+                  as="h2"
+                  delay={0.08}
+                />
+              </div>
+              <FadeUp delay={0.2}>
+                <p className="sect-sub">
+                  The same generated character is shown before keying, after background removal,
+                  and as a final atlas-driven sprite you can control with WASD.
+                </p>
+              </FadeUp>
+            </div>
+
+            <div className="sprite-demo-grid">
+              <div className="sprite-pipeline">
+                <FadeUp delay={0.16} className="sprite-output-card">
+                  <div className="sprite-card-top">
+                    <span>01</span>
+                    <strong>source render</strong>
+                  </div>
+                  <div className="sprite-image-wrap sprite-image-green">
+                    <img
+                      src={`${D}/demo-navigator-source-256x512.png`}
+                      alt="Original generated character sprite sheet on chroma green background"
+                      width={256}
+                      height={512}
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Generated on a locked chroma plate so the background can be removed deterministically.</p>
+                </FadeUp>
+
+                <FadeUp delay={0.24} className="sprite-output-card">
+                  <div className="sprite-card-top">
+                    <span>02</span>
+                    <strong>background removed</strong>
+                  </div>
+                  <div className="sprite-image-wrap sprite-image-alpha">
+                    <img
+                      src={`${D}/demo-navigator-alpha-sheet-256x512.webp`}
+                      alt="Alpha-keyed character sprite sheet with transparent background"
+                      width={256}
+                      height={512}
+                      loading="lazy"
+                    />
+                  </div>
+                  <p>Green is keyed to alpha; no green pixels are reserved inside the character palette.</p>
+                </FadeUp>
+              </div>
+
+              <FadeUp delay={0.32} className="sprite-live-card">
+                <div className="sprite-live-top">
+                  <span>03</span>
+                  <strong>usable output</strong>
+                  <code>64x64 · 32 frames · atlas.json</code>
+                </div>
+                <SpriteDirectionDemo />
+                <div className="sprite-links" aria-label="Generated sprite files">
+                  <a href={`${D}/demo-navigator-alpha-sheet-256x512.png`} target="_blank" rel="noreferrer">
+                    PNG sheet
+                  </a>
+                  <a href={`${D}/demo-navigator-alpha-sheet-256x512.json`} target="_blank" rel="noreferrer">
+                    atlas JSON
+                  </a>
+                  <span>docs/assets/demo-navigator.yaml</span>
+                </div>
+              </FadeUp>
+            </div>
+          </div>
+        </section>
+
+        {/* ── RELIABILITY ──────────────────────────────────── */}
+        <section className="sect sect-dark" aria-labelledby="s7">
+          <img className="sect-bg" src={`${B}/bg-forge-480x270.webp`} alt="" aria-hidden="true" />
+          <div className="sect-overlay ol-left" aria-hidden="true" />
+
+          <div className="sect-inner">
+            <div className="sect-num" aria-hidden="true">07</div>
+
             <div className="rel-head">
               <FadeUp>
-                <span className="tag">06 — Reliability</span>
+                <span className="tag">07 — Reliability</span>
               </FadeUp>
               <RevealWords
                 text={sections["shard-rune"].title}

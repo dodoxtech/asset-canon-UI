@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, type ElementType, type ReactNode } from "react"
+import { useEffect, useRef, useState, type ElementType, type ReactNode } from "react"
 import { motion } from "framer-motion"
 
 // ── Custom Cursor ──────────────────────────────────────────────
@@ -85,8 +85,8 @@ export function FadeUp({
   return (
     <motion.div
       className={className}
-      initial={{ y: 36, opacity: 0, filter: "blur(8px)" }}
-      animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
+      initial={{ y: 36, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1], delay }}
     >
       {children}
@@ -137,6 +137,151 @@ export function Marquee({ children }: { children: ReactNode }) {
         <span className="marquee-set">{children}</span>
         <span className="marquee-set">{children}</span>
         <span className="marquee-set">{children}</span>
+      </div>
+    </div>
+  )
+}
+
+type SpriteDirection = "down" | "up" | "right" | "left"
+
+const KEY_TO_DIRECTION: Record<string, SpriteDirection> = {
+  s: "down",
+  w: "up",
+  d: "right",
+  a: "left",
+}
+
+const IDLE_ROWS: Record<SpriteDirection, number> = {
+  down: 0,
+  up: 1,
+  right: 2,
+  left: 3,
+}
+
+const WALK_ROWS: Record<SpriteDirection, number> = {
+  down: 4,
+  up: 5,
+  right: 6,
+  left: 7,
+}
+
+const DIRECTION_LABELS: Record<SpriteDirection, string> = {
+  down: "front",
+  up: "back",
+  right: "right",
+  left: "left",
+}
+
+export function SpriteDirectionDemo() {
+  const pressed = useRef<Set<string>>(new Set())
+  const [direction, setDirection] = useState<SpriteDirection>("down")
+  const [moving, setMoving] = useState(false)
+  const [frame, setFrame] = useState(0)
+
+  useEffect(() => {
+    const updateFromKeys = () => {
+      const nextKey = ["w", "a", "s", "d"].find((key) => pressed.current.has(key))
+      if (!nextKey) {
+        setMoving(false)
+        return
+      }
+      setDirection(KEY_TO_DIRECTION[nextKey])
+      setMoving(true)
+    }
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase()
+      if (!KEY_TO_DIRECTION[key]) return
+      event.preventDefault()
+      pressed.current.add(key)
+      setDirection(KEY_TO_DIRECTION[key])
+      setMoving(true)
+    }
+
+    const onKeyUp = (event: KeyboardEvent) => {
+      const key = event.key.toLowerCase()
+      if (!KEY_TO_DIRECTION[key]) return
+      event.preventDefault()
+      pressed.current.delete(key)
+      updateFromKeys()
+    }
+
+    window.addEventListener("keydown", onKeyDown)
+    window.addEventListener("keyup", onKeyUp)
+    return () => {
+      window.removeEventListener("keydown", onKeyDown)
+      window.removeEventListener("keyup", onKeyUp)
+    }
+  }, [])
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setFrame((current) => (current + 1) % 4)
+    }, moving ? 125 : 360)
+    return () => window.clearInterval(timer)
+  }, [moving])
+
+  const row = moving ? WALK_ROWS[direction] : IDLE_ROWS[direction]
+  const scale = 3
+  const cell = 64
+  const spriteSize = cell * scale
+  const backgroundSize = `${256 * scale}px ${512 * scale}px`
+  const backgroundPosition = `-${frame * spriteSize}px -${row * spriteSize}px`
+
+  const pressVirtualKey = (key: string) => {
+    pressed.current.add(key)
+    setDirection(KEY_TO_DIRECTION[key])
+    setMoving(true)
+  }
+
+  const releaseVirtualKey = (key: string) => {
+    pressed.current.delete(key)
+    const nextKey = ["w", "a", "s", "d"].find((candidate) => pressed.current.has(candidate))
+    if (nextKey) {
+      setDirection(KEY_TO_DIRECTION[nextKey])
+      setMoving(true)
+    } else {
+      setMoving(false)
+    }
+  }
+
+  return (
+    <div className="sprite-playground" data-hover>
+      <div className="sprite-stage" aria-live="polite">
+        <div
+          className="sprite-avatar"
+          role="img"
+          aria-label={`Demo character ${moving ? "walking" : "idle"} facing ${DIRECTION_LABELS[direction]}`}
+          style={{
+            width: spriteSize,
+            height: spriteSize,
+            backgroundSize,
+            backgroundPosition,
+          }}
+        />
+        <div className="sprite-ground" aria-hidden="true" />
+      </div>
+
+      <div className="sprite-status">
+        <span>{moving ? "walking" : "idle"}</span>
+        <strong>{DIRECTION_LABELS[direction]}</strong>
+      </div>
+
+      <div className="wasd-pad" aria-label="WASD direction controls">
+        {["w", "a", "s", "d"].map((key) => (
+          <button
+            key={key}
+            type="button"
+            className={`wasd-key wasd-key-${key}`}
+            aria-label={`Hold ${key.toUpperCase()}`}
+            onPointerDown={() => pressVirtualKey(key)}
+            onPointerUp={() => releaseVirtualKey(key)}
+            onPointerCancel={() => releaseVirtualKey(key)}
+            onPointerLeave={() => releaseVirtualKey(key)}
+          >
+            {key.toUpperCase()}
+          </button>
+        ))}
       </div>
     </div>
   )

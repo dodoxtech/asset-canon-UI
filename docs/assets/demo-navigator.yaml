@@ -1,0 +1,66 @@
+id: demo-navigator
+type: sprite
+subject: Four-direction controllable demo character
+description: >
+  Pixel-art navigator character generated for the asset-sprite demo. The source
+  render uses a chroma-green plate, the output sheet is alpha-keyed, and the
+  atlas exposes idle and walk clips for down, up, right, and left movement.
+keywords: ["sprite", "character", "wasd", "animation", "asset-sprite"]
+placement:
+  intended_use: "Interactive WASD demo on the ASSET CANON landing page"
+  context: "asset-sprite generation workflow demonstration"
+  do: ["render at native size then integer-scale", "use atlas clips for direction state"]
+  dont: ["stretch cells", "use chroma plate color inside the sprite", "ignore anchor metadata"]
+style:
+  art_style: "GBA-style pixel sprite"
+  stroke: "1px selective ink outline"
+  shading: "flat cel shading"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#3CA0FF", "#2468B4", "#E8ECF8", "#FFC83C", "#C8821E", "#FF5C5C", "#FF2CC0"]
+background:
+  source: "#00B140 chroma plate"
+  output: transparent
+dimensions:
+  master: 256x512
+  cell: 64x64
+  aspect: "1:2"
+safe_area: full
+accessibility:
+  alt_text: "Four-direction pixel character sprite sheet with idle and walk states"
+animation:
+  sheet: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.png
+  cell: { w: 64, h: 64 }
+  columns: 4
+  count: 32
+  fps: 8
+  loop: true
+  anchor: [0.5, 1]
+  clips:
+    idle-down: [0, 3]
+    idle-up: [4, 7]
+    idle-right: [8, 11]
+    idle-left: [12, 15]
+    walk-down: [16, 19]
+    walk-up: [20, 23]
+    walk-right: [24, 27]
+    walk-left: [28, 31]
+files:
+  - path: public/assets/generated/sprites/demo-navigator-source-256x512.png
+    size: 256x512
+    format: png
+    bytes: 4598
+  - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.png
+    size: 256x512
+    format: png
+    bytes: 4239
+  - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.webp
+    size: 256x512
+    format: webp
+    bytes: 1084
+  - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.json
+    size: 256x512
+    format: json
+    bytes: 3763
+source:
+  tool: "tools/generate-sprite-demo.mjs"
+  prompt: "asset-sprite demo: four-direction pixel navigator on #00B140 chroma plate, keyed to transparent output, row-major atlas with idle and walk clips."
+  generated: 2026-06-26

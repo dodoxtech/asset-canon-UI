@@ -1,0 +1,39 @@
+id: style-run-prop-set
+type: illustration
+subject: backpack compass star badge and potion bottle prop set
+description: >
+  A tidy prop set containing a leather backpack with blue cloth roll, brass compass,
+  gold star badge, and small glass potion bottle with sky-blue liquid. Reads as the
+  fourth standalone render in the Style Profile First example while still belonging
+  to the same storybook world.
+keywords: [prop-set, backpack, compass, star-badge, potion, storybook, generation-pass]
+placement:
+  intended_use: Style Profile First section card for generation pass 04
+  context: landing page section demonstrating separate image generations sharing one style profile
+  do: [use as a standalone prop-set thumbnail, pair with generation pass 04 label]
+  dont: [do not split into unrelated styles, do not present as part of a single four-panel generation]
+style:
+  art_style: polished storybook family-animation prop sheet
+  stroke: clean rounded ink outline
+  shading: soft cel shading with warm material texture
+palette: ["#2A1B12", "#F2DCB1", "#2E6F98", "#A33A23", "#D8A63E", "#6B3F22", "#57B9D7"]
+background: opaque parchment
+dimensions:
+  master: 1536x1024
+  aspect: "3:2"
+safe_area: four props arranged with clear breathing room
+accessibility:
+  alt_text: "Generated prop set: backpack, compass, star badge, and potion bottle in one shared style"
+files:
+  - path: public/assets/generated/illustrations/style-run-prop-set-1536x1024.png
+    size: 1536x1024
+    format: png
+    bytes: 2908732
+  - path: public/assets/generated/illustrations/style-run-prop-set-960x640.webp
+    size: 960x640
+    format: webp
+    bytes: 69850
+source:
+  model: built-in image_gen
+  prompt: "Prop set — backpack, compass, star badge, and potion bottle generated later but still reading as one world."
+  generated: 2026-06-26

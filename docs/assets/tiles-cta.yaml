@@ -45,5 +45,5 @@ files:
     bytes: 1070
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate."
+  prompt: "ASSET CANON tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate."
   generated: 2026-06-24

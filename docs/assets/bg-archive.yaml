@@ -2,7 +2,7 @@ id: bg-archive
 type: illustration
 subject: Archive room backdrop
 description: >
-  archive shelves, scrolls, card catalog, and dusty light shaft. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  archive shelves, scrolls, card catalog, and dusty light shaft. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "archive", "room", "backdrop", "gba"]
 placement:
   intended_use: "Archive room backdrop far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 171180
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

@@ -2,7 +2,7 @@ id: bg-workshop
 type: illustration
 subject: Workshop home room backdrop
 description: >
-  cozy artist workshop with easels, paint cans, lamp, dusk window. Opaque 480x270 far-wall room painting for the fixed CANON QUEST virtual stage.
+  cozy artist workshop with easels, paint cans, lamp, dusk window. Opaque 480x270 far-wall room painting for the fixed ASSET CANON virtual stage.
 keywords: ["bg", "workshop", "room", "backdrop", "gba"]
 placement:
   intended_use: "Workshop home room backdrop far-wall background"
@@ -33,5 +33,5 @@ files:
     bytes: 191324
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
+  prompt: "ASSET CANON seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels."
   generated: 2026-06-24

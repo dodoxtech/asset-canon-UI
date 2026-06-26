@@ -2,7 +2,7 @@ import sharp from "sharp";
 import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-05-tilesets-textures.png";
-const prompt = "CANON QUEST tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate.";
+const prompt = "ASSET CANON tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate.";
 
 const tilePanels = [
   ["tiles-workshop", "Workshop prop tiles: workbench, stool, easel, paint cans, rug, brush cup, crate, shelf.", 84, 93],

@@ -3,7 +3,7 @@ type: icon
 subject: Blinking UI cursor
 description: >
   Two-frame blinking advance/menu cursor.
-keywords: ["ui", "cursor", "canon-quest"]
+keywords: ["ui", "cursor", "assets-canon"]
 placement:
   intended_use: "Blinking UI cursor"
   context: "boot, pickup, HUD, and cutscene animation"
@@ -45,5 +45,5 @@ files:
     bytes: 559
 source:
   model: "built-in image_gen"
-  prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
+  prompt: "ASSET CANON FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."
   generated: 2026-06-24

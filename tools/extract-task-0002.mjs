@@ -1,7 +1,7 @@
 import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
 const source = "public/assets/tmp/generated-image-02-characters.png";
-const prompt = "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate.";
+const prompt = "ASSET CANON character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate.";
 
 const jobs = [
   {
@@ -128,7 +128,7 @@ for (const job of jobs) {
     description: job.desc,
     keywords: job.id.split("-").concat(["sprite", "animation"]),
     placement: {
-      intended_use: `${job.subject} in the CANON QUEST stage`,
+      intended_use: `${job.subject} in the ASSET CANON stage`,
       context: "player and companion animation sheets",
       do: ["render at native size then integer-scale", "use atlas metadata for frame timing"],
       dont: ["anti-alias", "stretch cells", "recolor outside the shared palette"],
