@@ -29,11 +29,26 @@ const SKILLS = [
   { sprite: "lp-sprite-shard-cog",      name: "asset-social",       desc: "OG cards at exact sizes", rotate: -1.3 },
 ] as const
 
-const BASE_PROMPT =
-  "A tiny magical workshop where a coding agent turns a short asset brief into polished web game art."
+// The identical base prompt used for BOTH comparison images
+const SHARED_PROMPT =
+  "A small friendly coding-agent character at a wooden workbench, a glowing asset shard, " +
+  "neat shelves of sprites and icons. Wide 16:9. No text, no labels, no UI chrome."
 
-const SKILL_PROMPT =
-  "Same base prompt + style-profile.yaml auto loaded."
+// Compact excerpt from docs/style-profile.yaml shown as the "added" diff
+const PROFILE_YAML = `id: canon-quest
+prompt_suffix: >
+  16-bit GBA-era pixel art, 16×16 tile
+  grid, 1px selective ink (#0B0E1A),
+  flat cel shading, ordered dithering
+  — never smooth gradients
+palette:
+  "#0B0E1A" "#141A30" "#1E2A44"
+  "#00B140" "#3CE07A" "#FFC83C"
+  "#3CA0FF" "#FF5C5C" +7 more
+negative:
+  - smooth gradients, anti-aliasing
+  - photorealistic rendering
+  - off-palette colors`
 
 const STYLE_RUNS = [
   { step: "01", title: "Hero character", body: "Brave kid inventor, warm family-animation proportions, round expressive face, same costume language." },
@@ -337,60 +352,121 @@ negative:
           <div className="sect-inner">
             <div className="sect-num" aria-hidden="true">04</div>
 
-            <div className="compare-head">
+            {/* Header */}
+            <div className="cmp-head">
               <FadeUp>
                 <span className="tag">04 — Same Prompt</span>
               </FadeUp>
               <RevealWords
-                text="SKILL ON. SKILL OFF."
+                text="SAME BRIEF. DIFFERENT OUTCOME."
                 className="sect-title"
                 as="h2"
                 delay={0.08}
               />
-              <FadeUp delay={0.18}>
+              <FadeUp delay={0.2}>
                 <p className="sect-sub">
-                  Same base prompt: a tiny magical workshop where a coding agent turns
-                  a short asset brief into polished web game art.
+                  The only difference between these two outputs is a 50-line YAML file.
                 </p>
               </FadeUp>
             </div>
 
-            <div className="compare-grid">
-              <FadeUp delay={0.1} className="compare-panel">
-                <div className="compare-meta">
-                  <span className="compare-kicker">Without skill</span>
-                  <span className="compare-note">Raw prompt</span>
+            {/* Shared prompt source card */}
+            <FadeUp delay={0.25} className="cmp-source-wrap">
+              <div className="cmp-source">
+                <span className="cmp-source-eyebrow">
+                  <span className="cmp-source-dot" aria-hidden="true" />
+                  SHARED PROMPT — sent to the model in both cases
+                </span>
+                <p className="cmp-source-text">"{SHARED_PROMPT}"</p>
+              </div>
+              {/* Fork lines connecting source to panels */}
+              <div className="cmp-fork" aria-hidden="true">
+                <span className="cmp-fork-l" />
+                <span className="cmp-fork-mid" />
+                <span className="cmp-fork-r" />
+              </div>
+            </FadeUp>
+
+            {/* Two recipe panels */}
+            <div className="cmp-panels">
+
+              {/* LEFT — without skill */}
+              <FadeUp delay={0.35} className="cmp-panel cmp-panel-bad">
+                <div className="cmp-panel-header">
+                  <span className="cmp-badge cmp-badge-bad">✕ Without skill</span>
+                  <span className="cmp-panel-note">Raw model output</span>
                 </div>
-                <img
-                  className="compare-img"
-                  src={`${C}/comparison-without-skill-960x540.webp`}
-                  alt="Raw prompt generation with crowded labels and mixed visual style"
-                  width={960}
-                  height={540}
-                />
-                <div className="prompt-strip">
-                  <span className="prompt-label">Prompt used</span>
-                  <p>{BASE_PROMPT}</p>
+
+                <div className="cmp-recipe">
+                  <div className="cmp-row">
+                    <span className="cmp-row-num">01</span>
+                    <div className="cmp-row-content">
+                      <span className="cmp-row-label">PROMPT</span>
+                      <code className="cmp-row-val cmp-row-same">"{SHARED_PROMPT}"</code>
+                    </div>
+                  </div>
+                  <div className="cmp-row cmp-row-style-none">
+                    <span className="cmp-row-num">02</span>
+                    <div className="cmp-row-content">
+                      <span className="cmp-row-label">STYLE</span>
+                      <span className="cmp-none-tag">none</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="cmp-img-wrap cmp-img-bad">
+                  <img
+                    className="cmp-img"
+                    src={`${C}/comparison-without-skill-960x540.webp`}
+                    alt="Raw prompt output — inconsistent style, no palette lock"
+                    width={960} height={540}
+                  />
+                  <span className="cmp-img-label">No style guidance applied</span>
                 </div>
               </FadeUp>
 
-              <FadeUp delay={0.18} className="compare-panel compare-panel-good">
-                <div className="compare-meta">
-                  <span className="compare-kicker">With asset-canon</span>
-                  <span className="compare-note">style-profile.yaml auto loaded</span>
+              {/* RIGHT — with skill */}
+              <FadeUp delay={0.45} className="cmp-panel cmp-panel-good">
+                <div className="cmp-panel-header">
+                  <span className="cmp-badge cmp-badge-good">✓ With asset-canon</span>
+                  <span className="cmp-panel-note">style-profile.yaml auto-loaded</span>
                 </div>
-                <img
-                  className="compare-img"
-                  src={`${C}/comparison-with-skill-960x540.webp`}
-                  alt="Skill-directed generation matching the landing page pixel-art style"
-                  width={960}
-                  height={540}
-                />
-                <div className="prompt-strip prompt-strip-good">
-                  <span className="prompt-label">Prompt used</span>
-                  <p>{SKILL_PROMPT}</p>
+
+                <div className="cmp-recipe">
+                  <div className="cmp-row">
+                    <span className="cmp-row-num">01</span>
+                    <div className="cmp-row-content">
+                      <span className="cmp-row-label">PROMPT</span>
+                      <code className="cmp-row-val cmp-row-same">"{SHARED_PROMPT}"</code>
+                      <span className="cmp-same-badge" aria-label="identical to left panel">= same</span>
+                    </div>
+                  </div>
+                  <div className="cmp-row cmp-row-style-added">
+                    <span className="cmp-row-num cmp-row-num-green">02</span>
+                    <div className="cmp-row-content">
+                      <span className="cmp-row-label cmp-row-label-green">STYLE</span>
+                      <div className="cmp-yaml-wrap">
+                        <div className="cmp-yaml-file">
+                          <span className="cmp-yaml-icon" aria-hidden="true">▣</span>
+                          <span>docs/style-profile.yaml</span>
+                        </div>
+                        <pre className="cmp-yaml">{PROFILE_YAML}</pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="cmp-img-wrap cmp-img-good">
+                  <img
+                    className="cmp-img"
+                    src={`${C}/comparison-with-skill-960x540.webp`}
+                    alt="Skill output — GBA pixel art, locked palette, consistent style"
+                    width={960} height={540}
+                  />
+                  <span className="cmp-img-label cmp-img-label-good">GBA pixel art · palette locked · style consistent</span>
                 </div>
               </FadeUp>
+
             </div>
           </div>
         </section>
