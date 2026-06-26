@@ -1,0 +1,40 @@
+id: comparison-without-skill
+type: illustration
+subject: raw prompt magical asset workshop
+description: >
+  A full-bleed fantasy workshop scene generated from the raw prompt alone. It
+  includes a wizard-like coding agent, many baked-in labels, interface panels,
+  checklist notes, and mixed painterly/game-art rendering. Used as the
+  "without skill" side of the landing page comparison.
+keywords: ["comparison", "without skill", "raw prompt", "workshop", "asset generation"]
+placement:
+  intended_use: "Left panel in the same-prompt comparison section"
+  context: "Landing page proof point showing prompt-only image generation drift"
+  do: ["pair beside comparison-with-skill", "label as raw prompt", "use as full-bleed 16:9 media"]
+  dont: ["do not use as canonical brand art", "do not crop into UI icons", "do not treat baked text as editable UI"]
+style:
+  art_style: "unconstrained fantasy illustration"
+  stroke: "mixed painterly edges"
+  shading: "soft lighting and semi-realistic rendering"
+palette: ["#0B0E1A", "#E8ECF8", "#3CA0FF", "#FF2CC0", "#FFC83C", "#00B140"]
+background: full-bleed
+dimensions:
+  master: 960x540
+  aspect: "16:9"
+safe_area: full
+accessibility:
+  alt_text: "Raw prompt generation with crowded labels and mixed visual style"
+composition: "Dense full-frame workshop with baked-in text and output panels"
+files:
+  - path: public/assets/generated/comparisons/comparison-without-skill-960x540.png
+    size: 960x540
+    format: png
+    bytes: 1267742
+  - path: public/assets/generated/comparisons/comparison-without-skill-960x540.webp
+    size: 960x540
+    format: webp
+    bytes: 146310
+source:
+  model: "Codex image generation"
+  prompt: "A tiny magical workshop where a coding agent turns a short asset brief into polished web game art."
+  generated: 2026-06-26

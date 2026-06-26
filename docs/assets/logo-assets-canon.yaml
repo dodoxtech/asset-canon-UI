@@ -1,0 +1,38 @@
+id: logo-assets-canon
+type: sprite
+subject: assets-canon pixel wordmark
+description: >
+  A transparent 16-bit pixel-art wordmark reading "assets-canon", with white
+  "assets", canon-green "canon", a dark navy outline, and a small green shard
+  accent at the far right. Designed for the landing page nav and footer.
+keywords: ["logo", "wordmark", "assets-canon", "brand", "pixel"]
+placement:
+  intended_use: "Primary site logo in navigation and footer"
+  context: "asset-canon landing page header, footer, and compact brand placements"
+  do: ["use at integer-scaled sizes", "keep on dark backgrounds", "preserve aspect ratio"]
+  dont: ["do not recolor", "do not stretch", "do not place on bright magenta backgrounds"]
+style:
+  art_style: "16-bit GBA pixel wordmark"
+  stroke: "1px selective dark outline"
+  shading: "flat cel shading with small pixel highlights"
+palette: ["#0B0E1A", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#3CA0FF"]
+background: transparent
+dimensions:
+  master: 240x72
+  aspect: "10:3"
+safe_area: full
+accessibility:
+  alt_text: "assets-canon logo"
+files:
+  - path: public/assets/generated/sprites/logo-assets-canon-240x72.png
+    size: 240x72
+    format: png
+    bytes: 12488
+  - path: public/assets/generated/sprites/logo-assets-canon-240x72.webp
+    size: 240x72
+    format: webp
+    bytes: 9620
+source:
+  model: "Codex image generation"
+  prompt: "Logo wordmark only. Exact readable text: assets-canon. Do not misspell it. Do not change any letter. Lowercase ASCII letters only, one hyphen between assets and canon. 16-bit pixel-art wordmark, clean blocky pixel font, white letters for assets, canon-green letters for canon, dark navy 1px outline, tiny green shard accent beside the word only."
+  generated: 2026-06-26

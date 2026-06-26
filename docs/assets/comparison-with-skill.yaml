@@ -1,0 +1,41 @@
+id: comparison-with-skill
+type: illustration
+subject: asset-canon styled magical asset workshop
+description: >
+  A full-bleed 16-bit pixel-art workshop scene generated from the same base
+  prompt with the asset-canon style profile and asset-illustration constraints
+  applied. It shows a small coding-agent character at a workbench, a green
+  glowing asset shard, shelves of sprites and icons, and open negative space
+  for layout use, with no baked-in text.
+keywords: ["comparison", "with skill", "asset-canon", "style profile", "pixel art"]
+placement:
+  intended_use: "Right panel in the same-prompt comparison section"
+  context: "Landing page proof point showing the result of using asset-canon"
+  do: ["pair beside comparison-without-skill", "use as full-bleed 16:9 media", "keep image-rendering pixelated"]
+  dont: ["do not add baked text over the art file", "do not recolor outside the shared palette"]
+style:
+  art_style: "16-bit GBA-era pixel illustration"
+  stroke: "1px selective dark-ink outline"
+  shading: "flat cel shading with ordered dithering"
+palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FFC83C", "#C8821E", "#3CA0FF"]
+background: full-bleed
+dimensions:
+  master: 960x540
+  aspect: "16:9"
+safe_area: full
+accessibility:
+  alt_text: "Skill-directed generation matching the landing page pixel-art style"
+composition: "Open darker negative space on the left, workbench and sprite shelf on the right"
+files:
+  - path: public/assets/generated/comparisons/comparison-with-skill-960x540.png
+    size: 960x540
+    format: png
+    bytes: 917965
+  - path: public/assets/generated/comparisons/comparison-with-skill-960x540.webp
+    size: 960x540
+    format: webp
+    bytes: 88408
+source:
+  model: "Codex image generation"
+  prompt: "Base prompt: A tiny magical workshop where a coding agent turns a short asset brief into polished web game art. Apply asset-canon / asset-illustration production direction: 16-bit GBA-era pixel art, low-resolution chunky pixels on a 16x16 tile grid, 1px selective dark-ink outline, flat cel shading with 3-step color ramps, ordered dithering, shared palette, no baked text."
+  generated: 2026-06-26
