@@ -25,27 +25,27 @@ files:
   - path: public/assets/generated/icons/favicon-512x512.png
     size: 512x512
     format: png
-    bytes: 5107
+    bytes: 23692
   - path: public/assets/generated/icons/favicon-16x16.png
     size: 16x16
     format: png
-    bytes: 616
+    bytes: 431
   - path: public/assets/generated/icons/favicon-32x32.png
     size: 32x32
     format: png
-    bytes: 693
+    bytes: 1296
   - path: public/assets/generated/icons/favicon-48x48.png
     size: 48x48
     format: png
-    bytes: 722
+    bytes: 2678
   - path: public/assets/generated/icons/favicon-180x180.png
     size: 180x180
     format: png
-    bytes: 1306
+    bytes: 19036
   - path: public/assets/generated/icons/favicon-192x192.png
     size: 192x192
     format: png
-    bytes: 1319
+    bytes: 19307
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

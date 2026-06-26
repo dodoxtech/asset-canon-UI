@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/icons/hud-pip-empty-8x8.png
     size: 8x8
     format: png
-    bytes: 203
+    bytes: 184
   - path: public/assets/generated/icons/hud-pip-empty-8x8.webp
     size: 8x8
     format: webp
-    bytes: 164
+    bytes: 124
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

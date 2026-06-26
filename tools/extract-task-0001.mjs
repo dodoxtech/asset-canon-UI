@@ -1,6 +1,6 @@
 import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b3f96228c8191944f059114022a22.png";
+const source = "public/assets/tmp/generated-image-01-style-anchors.png";
 const prompt = "CANON QUEST style anchors: Pix idle, cozy workshop backdrop, base structural tiles; GBA pixel art, shared palette, magenta chroma plate.";
 
 await contactCrop(

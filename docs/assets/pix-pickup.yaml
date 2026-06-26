@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 48x24
-  aspect: "48:24"
+  master: 528x264
+  aspect: "528:264"
 safe_area: full
 accessibility:
   alt_text: "Pix pickup animation"
 animation:
-  sheet: public/assets/generated/sprites/pix-pickup-sheet-48x24.png
-  cell: { w: 16, h: 24 }
+  sheet: public/assets/generated/sprites/pix-pickup-sheet-528x264.png
+  cell: { w: 176, h: 264 }
   columns: 3
   count: 3
   fps: 8
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { pickup: [0, 2] }
 files:
-  - path: public/assets/generated/sprites/pix-pickup-sheet-48x24.png
-    size: 48x24
+  - path: public/assets/generated/sprites/pix-pickup-sheet-528x264.png
+    size: 528x264
     format: png
-    bytes: 2114
-  - path: public/assets/generated/sprites/pix-pickup-sheet-48x24.webp
-    size: 48x24
+    bytes: 136435
+  - path: public/assets/generated/sprites/pix-pickup-sheet-528x264.webp
+    size: 528x264
     format: webp
-    bytes: 1710
-  - path: public/assets/generated/sprites/pix-pickup-sheet-48x24.json
-    size: 48x24
+    bytes: 73638
+  - path: public/assets/generated/sprites/pix-pickup-sheet-528x264.json
+    size: 528x264
     format: json
-    bytes: 638
+    bytes: 671
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."

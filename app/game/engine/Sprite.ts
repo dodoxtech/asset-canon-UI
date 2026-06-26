@@ -31,7 +31,10 @@ export function drawFrame(
 ): void {
   const f = atlas.frames[Math.max(0, Math.min(index, atlas.frames.length - 1))]
   if (!f) return
-  const scale = opts.scale ?? 1
+  // Frame rects are in source pixels; divide by density to get the logical
+  // (world) draw size, so higher-density art stays the same size in-game but
+  // samples from a richer source for extra on-screen detail.
+  const scale = (opts.scale ?? 1) / atlas.density
   const w = f.w * scale
   const h = f.h * scale
   const [ax, ay] = atlas.anchor

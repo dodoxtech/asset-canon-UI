@@ -1,6 +1,6 @@
 import { cropResize, descriptor, webpFromPng } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b484f0b308191843afce7a29393c1.png";
+const source = "public/assets/tmp/generated-image-04-backdrops.png";
 const prompt = "CANON QUEST seven-room backdrop sheet: boot, workshop, hallway, gallery, archive, forge, CTA; opaque GBA pixel-art panels.";
 
 const rooms = [

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "image": "pix-idle-sheet-320x240.png",
+    "sheet": {
+      "w": 320,
+      "h": 240
+    },
+    "cell": {
+      "w": 160,
+      "h": 240
+    },
+    "gutter": 0,
+    "columns": 2,
+    "count": 2,
+    "fps": 3,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "density": 10,
+    "clips": {
+      "idle": [
+        0,
+        1
+      ]
+    }
+  },
+  "frames": {
+    "pix-idle_00": {
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 240
+    },
+    "pix-idle_01": {
+      "x": 160,
+      "y": 0,
+      "w": 160,
+      "h": 240
+    }
+  }
+}

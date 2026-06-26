@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 72x32
-  aspect: "72:32"
+  master: 648x288
+  aspect: "648:288"
 safe_area: full
 accessibility:
   alt_text: "Door lock break animation"
 animation:
-  sheet: public/assets/generated/sprites/door-lockbreak-sheet-72x32.png
-  cell: { w: 24, h: 32 }
+  sheet: public/assets/generated/sprites/door-lockbreak-sheet-648x288.png
+  cell: { w: 216, h: 288 }
   columns: 3
   count: 3
   fps: 8
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { lockbreak: [0, 2] }
 files:
-  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.png
-    size: 72x32
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-648x288.png
+    size: 648x288
     format: png
-    bytes: 5179
-  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.webp
-    size: 72x32
+    bytes: 145903
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-648x288.webp
+    size: 648x288
     format: webp
-    bytes: 4326
-  - path: public/assets/generated/sprites/door-lockbreak-sheet-72x32.json
-    size: 72x32
+    bytes: 79130
+  - path: public/assets/generated/sprites/door-lockbreak-sheet-648x288.json
+    size: 648x288
     format: json
-    bytes: 657
+    bytes: 689
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."

@@ -26,6 +26,8 @@ export interface Atlas {
   readonly cellW: number
   readonly cellH: number
   readonly count: number
+  /** Source pixels per logical pixel; drawFrame divides frame size by this. */
+  readonly density: number
 }
 
 /** Raw shape of the atlas JSON we author. */
@@ -36,6 +38,7 @@ interface AtlasJson {
     fps: number
     anchor: [number, number]
     count: number
+    density?: number
   }
   frames: Record<string, FrameRect>
 }
@@ -83,6 +86,7 @@ export class AssetStore {
         cellW: json.meta.cell.w,
         cellH: json.meta.cell.h,
         count: json.meta.count,
+        density: json.meta.density ?? 1,
       })
     })
 

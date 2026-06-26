@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/icons/ui-btn-a-24x24.png
     size: 24x24
     format: png
-    bytes: 1446
+    bytes: 1367
   - path: public/assets/generated/icons/ui-btn-a-24x24.webp
     size: 24x24
     format: webp
-    bytes: 1068
+    bytes: 1006
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "image": "key-canon-sheet-832x208.png",
+    "sheet": {
+      "w": 832,
+      "h": 208
+    },
+    "cell": {
+      "w": 208,
+      "h": 208
+    },
+    "gutter": 0,
+    "columns": 4,
+    "count": 4,
+    "fps": 8,
+    "loop": true,
+    "anchor": [
+      0.5,
+      0.5
+    ],
+    "density": 13,
+    "clips": {
+      "loop": [
+        0,
+        3
+      ]
+    }
+  },
+  "frames": {
+    "key-canon_00": {
+      "x": 0,
+      "y": 0,
+      "w": 208,
+      "h": 208
+    },
+    "key-canon_01": {
+      "x": 208,
+      "y": 0,
+      "w": 208,
+      "h": 208
+    },
+    "key-canon_02": {
+      "x": 416,
+      "y": 0,
+      "w": 208,
+      "h": 208
+    },
+    "key-canon_03": {
+      "x": 624,
+      "y": 0,
+      "w": 208,
+      "h": 208
+    }
+  }
+}

@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 48x12
-  aspect: "48:12"
+  master: 720x180
+  aspect: "720:180"
 safe_area: full
 accessibility:
   alt_text: "Cano floating companion animation"
 animation:
-  sheet: public/assets/generated/sprites/cano-float-sheet-48x12.png
-  cell: { w: 12, h: 12 }
+  sheet: public/assets/generated/sprites/cano-float-sheet-720x180.png
+  cell: { w: 180, h: 180 }
   columns: 4
   count: 4
   fps: 6
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { float: [0, 3] }
 files:
-  - path: public/assets/generated/sprites/cano-float-sheet-48x12.png
-    size: 48x12
+  - path: public/assets/generated/sprites/cano-float-sheet-720x180.png
+    size: 720x180
     format: png
-    bytes: 1262
-  - path: public/assets/generated/sprites/cano-float-sheet-48x12.webp
-    size: 48x12
+    bytes: 58620
+  - path: public/assets/generated/sprites/cano-float-sheet-720x180.webp
+    size: 720x180
     format: webp
-    bytes: 1016
-  - path: public/assets/generated/sprites/cano-float-sheet-48x12.json
-    size: 48x12
+    bytes: 35838
+  - path: public/assets/generated/sprites/cano-float-sheet-720x180.json
+    size: 720x180
     format: json
-    bytes: 725
+    bytes: 761
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."

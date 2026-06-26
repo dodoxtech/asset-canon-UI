@@ -34,15 +34,15 @@ files:
   - path: public/assets/generated/icons/ui-cursor-sheet-16x8.png
     size: 16x8
     format: png
-    bytes: 261
+    bytes: 164
   - path: public/assets/generated/icons/ui-cursor-sheet-16x8.webp
     size: 16x8
     format: webp
-    bytes: 222
+    bytes: 158
   - path: public/assets/generated/icons/ui-cursor-sheet-16x8.json
     size: 16x8
     format: json
-    bytes: 541
+    bytes: 559
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

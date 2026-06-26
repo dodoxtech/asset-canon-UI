@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/icons/minimap-rooms-96x16.png
     size: 96x16
     format: png
-    bytes: 4348
+    bytes: 3996
   - path: public/assets/generated/icons/minimap-rooms-96x16.webp
     size: 96x16
     format: webp
-    bytes: 3494
+    bytes: 3080
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

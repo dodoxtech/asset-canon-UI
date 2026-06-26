@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/icons/icon-skip-16x16.png
     size: 16x16
     format: png
-    bytes: 1000
+    bytes: 969
   - path: public/assets/generated/icons/icon-skip-16x16.webp
     size: 16x16
     format: webp
-    bytes: 800
+    bytes: 760
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "image": "canon-artifact-sheet-512x256.png",
+    "sheet": {
+      "w": 512,
+      "h": 256
+    },
+    "cell": {
+      "w": 256,
+      "h": 256
+    },
+    "gutter": 0,
+    "columns": 2,
+    "count": 2,
+    "fps": 4,
+    "loop": true,
+    "anchor": [
+      0.5,
+      0.5
+    ],
+    "density": 8,
+    "clips": {
+      "loop": [
+        0,
+        1
+      ]
+    }
+  },
+  "frames": {
+    "canon-artifact_00": {
+      "x": 0,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    },
+    "canon-artifact_01": {
+      "x": 256,
+      "y": 0,
+      "w": 256,
+      "h": 256
+    }
+  }
+}

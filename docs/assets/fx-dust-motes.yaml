@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 128x32
-  aspect: "128:32"
+  master: 640x160
+  aspect: "640:160"
 safe_area: full
 accessibility:
   alt_text: "Dust motes FX"
 animation:
-  sheet: public/assets/generated/sprites/fx-dust-motes-sheet-128x32.png
-  cell: { w: 32, h: 32 }
+  sheet: public/assets/generated/sprites/fx-dust-motes-sheet-640x160.png
+  cell: { w: 160, h: 160 }
   columns: 4
   count: 4
   fps: 4
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-dust-motes: [0, 3] }
 files:
-  - path: public/assets/generated/sprites/fx-dust-motes-sheet-128x32.png
-    size: 128x32
+  - path: public/assets/generated/sprites/fx-dust-motes-sheet-640x160.png
+    size: 640x160
     format: png
-    bytes: 841
-  - path: public/assets/generated/sprites/fx-dust-motes-sheet-128x32.webp
-    size: 128x32
+    bytes: 6604
+  - path: public/assets/generated/sprites/fx-dust-motes-sheet-640x160.webp
+    size: 640x160
     format: webp
-    bytes: 662
-  - path: public/assets/generated/sprites/fx-dust-motes-sheet-128x32.json
-    size: 128x32
+    bytes: 3938
+  - path: public/assets/generated/sprites/fx-dust-motes-sheet-640x160.json
+    size: 640x160
     format: json
-    bytes: 750
+    bytes: 785
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

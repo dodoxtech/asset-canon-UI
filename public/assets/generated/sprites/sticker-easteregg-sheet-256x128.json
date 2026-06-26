@@ -1,0 +1,43 @@
+{
+  "meta": {
+    "image": "sticker-easteregg-sheet-256x128.png",
+    "sheet": {
+      "w": 256,
+      "h": 128
+    },
+    "cell": {
+      "w": 128,
+      "h": 128
+    },
+    "gutter": 0,
+    "columns": 2,
+    "count": 2,
+    "fps": 4,
+    "loop": true,
+    "anchor": [
+      0.5,
+      0.5
+    ],
+    "density": 8,
+    "clips": {
+      "loop": [
+        0,
+        1
+      ]
+    }
+  },
+  "frames": {
+    "sticker-easteregg_00": {
+      "x": 0,
+      "y": 0,
+      "w": 128,
+      "h": 128
+    },
+    "sticker-easteregg_01": {
+      "x": 128,
+      "y": 0,
+      "w": 128,
+      "h": 128
+    }
+  }
+}

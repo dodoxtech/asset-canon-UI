@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 128x24
-  aspect: "128:24"
+  master: 896x168
+  aspect: "896:168"
 safe_area: full
 accessibility:
   alt_text: "CTA treasure chest prop"
 animation:
-  sheet: public/assets/generated/sprites/prop-chest-sheet-128x24.png
-  cell: { w: 32, h: 24 }
+  sheet: public/assets/generated/sprites/prop-chest-sheet-896x168.png
+  cell: { w: 224, h: 168 }
   columns: 4
   count: 4
   fps: 8
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { chest: [0, 3] }
 files:
-  - path: public/assets/generated/sprites/prop-chest-sheet-128x24.png
-    size: 128x24
+  - path: public/assets/generated/sprites/prop-chest-sheet-896x168.png
+    size: 896x168
     format: png
-    bytes: 7205
-  - path: public/assets/generated/sprites/prop-chest-sheet-128x24.webp
-    size: 128x24
+    bytes: 171937
+  - path: public/assets/generated/sprites/prop-chest-sheet-896x168.webp
+    size: 896x168
     format: webp
-    bytes: 5690
-  - path: public/assets/generated/sprites/prop-chest-sheet-128x24.json
-    size: 128x24
+    bytes: 89910
+  - path: public/assets/generated/sprites/prop-chest-sheet-896x168.json
+    size: 896x168
     format: json
-    bytes: 727
+    bytes: 760
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."

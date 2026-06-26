@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/sprites/logo-canonquest-240x72.png
     size: 240x72
     format: png
-    bytes: 46645
+    bytes: 43941
   - path: public/assets/generated/sprites/logo-canonquest-240x72.webp
     size: 240x72
     format: webp
-    bytes: 31088
+    bytes: 29300
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

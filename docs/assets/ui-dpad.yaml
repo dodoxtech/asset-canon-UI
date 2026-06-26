@@ -25,11 +25,11 @@ files:
   - path: public/assets/generated/icons/ui-dpad-48x48.png
     size: 48x48
     format: png
-    bytes: 3071
+    bytes: 2953
   - path: public/assets/generated/icons/ui-dpad-48x48.webp
     size: 48x48
     format: webp
-    bytes: 2132
+    bytes: 2018
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b4a1c9fbc819190d38ba7d9ad715f.png";
+const source = "public/assets/tmp/generated-image-05-tilesets-textures.png";
 const prompt = "CANON QUEST tileset and seamless texture sheet: room prop tiles and four surface swatches, GBA pixel art on magenta chroma plate.";
 
 const tilePanels = [
@@ -22,7 +22,7 @@ for (const [id, desc, x0, y0] of tilePanels) {
   }
   const png = `public/assets/generated/tilesets/${id}-sheet-64x32.png`;
   const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, rects, png, { w: 16, h: 16 }, 4, { alphaKey: "#FF00FF", tolerance: 130 });
+  await contactCrop(source, rects, png, { w: 16, h: 16 }, 4, { alphaKey: "#FF00FF", anchor: [0, 0] });
   await webpFromPng(png, webp);
   await makeAtlas({
     slug: id,

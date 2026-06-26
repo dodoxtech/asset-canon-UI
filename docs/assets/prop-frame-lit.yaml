@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 120x24
-  aspect: "120:24"
+  master: 840x168
+  aspect: "840:168"
 safe_area: full
 accessibility:
   alt_text: "Lit gallery sample frames"
 animation:
-  sheet: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.png
-  cell: { w: 24, h: 24 }
+  sheet: public/assets/generated/sprites/prop-frame-lit-sheet-840x168.png
+  cell: { w: 168, h: 168 }
   columns: 5
   count: 5
   fps: 1
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { frame-lit: [0, 4] }
 files:
-  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.png
-    size: 120x24
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-840x168.png
+    size: 840x168
     format: png
-    bytes: 7913
-  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.webp
-    size: 120x24
+    bytes: 246883
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-840x168.webp
+    size: 840x168
     format: webp
-    bytes: 5792
-  - path: public/assets/generated/sprites/prop-frame-lit-sheet-120x24.json
-    size: 120x24
+    bytes: 121410
+  - path: public/assets/generated/sprites/prop-frame-lit-sheet-840x168.json
+    size: 840x168
     format: json
-    bytes: 843
+    bytes: 879
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."

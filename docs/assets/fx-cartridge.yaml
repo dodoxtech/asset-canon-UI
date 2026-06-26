@@ -34,15 +34,15 @@ files:
   - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.png
     size: 192x48
     format: png
-    bytes: 17573
+    bytes: 2512
   - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.webp
     size: 192x48
     format: webp
-    bytes: 10206
+    bytes: 1828
   - path: public/assets/generated/sprites/fx-cartridge-sheet-192x48.json
     size: 192x48
     format: json
-    bytes: 655
+    bytes: 673
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

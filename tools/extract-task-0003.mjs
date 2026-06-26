@@ -1,6 +1,6 @@
-import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b43917cfc81918328743bdeb86ce4.png";
+const source = "public/assets/tmp/generated-image-03-collectibles.png";
 const prompt = "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate.";
 const xs4 = [330, 515, 700, 885];
 const xs2 = [325, 515];
@@ -20,20 +20,15 @@ const jobs = [
 for (const [id, desc, subject, cellSize, frames, y, xs] of jobs) {
   const rectSize = id === "canon-artifact" ? { w: 170, h: 165 } : { w: 120, h: 100 };
   const rects = xs.slice(0, frames).map((x) => ({ left: x, top: y, width: rectSize.w, height: rectSize.h }));
-  const width = cellSize * frames;
-  const height = cellSize;
-  const png = `public/assets/generated/sprites/${id}-sheet-${width}x${height}.png`;
-  const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, rects, png, { w: cellSize, h: cellSize }, frames, { alphaKey: "#FF00FF", tolerance: 110 });
-  await webpFromPng(png, webp);
-  await makeAtlas({
-    slug: id,
-    image: png,
-    cell: { w: cellSize, h: cellSize },
+  const r = await packSheet({
+    source,
+    rects,
+    dir: "sprites",
+    id,
+    nativeCell: { w: cellSize, h: cellSize },
     columns: frames,
-    count: frames,
-    fps: frames === 2 ? 4 : 8,
     anchor: [0.5, 0.5],
+    fps: frames === 2 ? 4 : 8,
     clips: { loop: [0, frames - 1] },
   });
   await descriptor({
@@ -50,16 +45,16 @@ for (const [id, desc, subject, cellSize, frames, y, xs] of jobs) {
     },
     style: { art_style: "GBA pixel pickup", stroke: "1px selective ink outline", shading: "flat cel with dithered glow" },
     background: "transparent",
-    dimensions: { master: `${width}x${height}`, aspect: `${width}:${height}` },
+    dimensions: { master: `${r.w}x${r.h}`, aspect: `${r.w}:${r.h}` },
     alt_text: subject,
     files: [
-      { path: png, size: `${width}x${height}`, format: "png" },
-      { path: webp, size: `${width}x${height}`, format: "webp" },
-      { path: png.replace(/\.png$/, ".json"), size: `${width}x${height}`, format: "json" },
+      { path: r.png, size: `${r.w}x${r.h}`, format: "png" },
+      { path: r.webp, size: `${r.w}x${r.h}`, format: "webp" },
+      { path: r.json, size: `${r.w}x${r.h}`, format: "json" },
     ],
     animation: {
-      sheet: png,
-      cell: { w: cellSize, h: cellSize },
+      sheet: r.png,
+      cell: r.cell,
       columns: frames,
       count: frames,
       fps: frames === 2 ? 4 : 8,

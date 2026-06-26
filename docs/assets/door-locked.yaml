@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 24x32
-  aspect: "24:32"
+  master: 144x192
+  aspect: "144:192"
 safe_area: full
 accessibility:
   alt_text: "Locked final door"
 animation:
-  sheet: public/assets/generated/sprites/door-locked-sheet-24x32.png
-  cell: { w: 24, h: 32 }
+  sheet: public/assets/generated/sprites/door-locked-sheet-144x192.png
+  cell: { w: 144, h: 192 }
   columns: 1
   count: 1
   fps: 1
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { locked: [0, 0] }
 files:
-  - path: public/assets/generated/sprites/door-locked-sheet-24x32.png
-    size: 24x32
+  - path: public/assets/generated/sprites/door-locked-sheet-144x192.png
+    size: 144x192
     format: png
-    bytes: 1842
-  - path: public/assets/generated/sprites/door-locked-sheet-24x32.webp
-    size: 24x32
+    bytes: 51810
+  - path: public/assets/generated/sprites/door-locked-sheet-144x192.webp
+    size: 144x192
     format: webp
-    bytes: 1472
-  - path: public/assets/generated/sprites/door-locked-sheet-24x32.json
-    size: 24x32
+    bytes: 26904
+  - path: public/assets/generated/sprites/door-locked-sheet-144x192.json
+    size: 144x192
     format: json
-    bytes: 465
+    bytes: 491
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate."

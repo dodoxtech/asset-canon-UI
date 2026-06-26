@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 64x16
-  aspect: "64:16"
+  master: 832x208
+  aspect: "832:208"
 safe_area: full
 accessibility:
   alt_text: "Specialist Keyring pickup"
 animation:
-  sheet: public/assets/generated/sprites/shard-keyring-sheet-64x16.png
-  cell: { w: 16, h: 16 }
+  sheet: public/assets/generated/sprites/shard-keyring-sheet-832x208.png
+  cell: { w: 208, h: 208 }
   columns: 4
   count: 4
   fps: 8
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 0.5]
   clips: { loop: [0, 3] }
 files:
-  - path: public/assets/generated/sprites/shard-keyring-sheet-64x16.png
-    size: 64x16
+  - path: public/assets/generated/sprites/shard-keyring-sheet-832x208.png
+    size: 832x208
     format: png
-    bytes: 2148
-  - path: public/assets/generated/sprites/shard-keyring-sheet-64x16.webp
-    size: 64x16
+    bytes: 71145
+  - path: public/assets/generated/sprites/shard-keyring-sheet-832x208.webp
+    size: 832x208
     format: webp
-    bytes: 1836
-  - path: public/assets/generated/sprites/shard-keyring-sheet-64x16.json
-    size: 64x16
+    bytes: 50518
+  - path: public/assets/generated/sprites/shard-keyring-sheet-832x208.json
+    size: 832x208
     format: json
-    bytes: 741
+    bytes: 777
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST collectible sheet: shards, key, coin, sticker, fused canon artifact; GBA pixel pickups on magenta chroma plate."

@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 64x16
-  aspect: "64:16"
+  master: 576x144
+  aspect: "576:144"
 safe_area: full
 accessibility:
   alt_text: "Gold pickup sparkle FX"
 animation:
-  sheet: public/assets/generated/sprites/fx-sparkle-sheet-64x16.png
-  cell: { w: 16, h: 16 }
+  sheet: public/assets/generated/sprites/fx-sparkle-sheet-576x144.png
+  cell: { w: 144, h: 144 }
   columns: 4
   count: 4
   fps: 10
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-sparkle: [0, 3] }
 files:
-  - path: public/assets/generated/sprites/fx-sparkle-sheet-64x16.png
-    size: 64x16
+  - path: public/assets/generated/sprites/fx-sparkle-sheet-576x144.png
+    size: 576x144
     format: png
-    bytes: 826
-  - path: public/assets/generated/sprites/fx-sparkle-sheet-64x16.webp
-    size: 64x16
+    bytes: 14294
+  - path: public/assets/generated/sprites/fx-sparkle-sheet-576x144.webp
+    size: 576x144
     format: webp
-    bytes: 678
-  - path: public/assets/generated/sprites/fx-sparkle-sheet-64x16.json
-    size: 64x16
+    bytes: 9484
+  - path: public/assets/generated/sprites/fx-sparkle-sheet-576x144.json
+    size: 576x144
     format: json
-    bytes: 731
+    bytes: 768
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "image": "prop-anvil-sparks-sheet-480x160.png",
+    "sheet": {
+      "w": 480,
+      "h": 160
+    },
+    "cell": {
+      "w": 160,
+      "h": 160
+    },
+    "gutter": 0,
+    "columns": 3,
+    "count": 3,
+    "fps": 10,
+    "loop": true,
+    "anchor": [
+      0.5,
+      1
+    ],
+    "density": 10,
+    "clips": {
+      "anvil-sparks": [
+        0,
+        2
+      ]
+    }
+  },
+  "frames": {
+    "prop-anvil-sparks_00": {
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 160
+    },
+    "prop-anvil-sparks_01": {
+      "x": 160,
+      "y": 0,
+      "w": 160,
+      "h": 160
+    },
+    "prop-anvil-sparks_02": {
+      "x": 320,
+      "y": 0,
+      "w": 160,
+      "h": 160
+    }
+  }
+}

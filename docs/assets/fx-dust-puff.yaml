@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 48x16
-  aspect: "48:16"
+  master: 384x128
+  aspect: "384:128"
 safe_area: full
 accessibility:
   alt_text: "Dust puff FX"
 animation:
-  sheet: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.png
-  cell: { w: 16, h: 16 }
+  sheet: public/assets/generated/sprites/fx-dust-puff-sheet-384x128.png
+  cell: { w: 128, h: 128 }
   columns: 3
   count: 3
   fps: 10
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 0.5]
   clips: { fx-dust-puff: [0, 2] }
 files:
-  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.png
-    size: 48x16
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-384x128.png
+    size: 384x128
     format: png
-    bytes: 1226
-  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.webp
-    size: 48x16
+    bytes: 27812
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-384x128.webp
+    size: 384x128
     format: webp
-    bytes: 978
-  - path: public/assets/generated/sprites/fx-dust-puff-sheet-48x16.json
-    size: 48x16
+    bytes: 15050
+  - path: public/assets/generated/sprites/fx-dust-puff-sheet-384x128.json
+    size: 384x128
     format: json
-    bytes: 653
+    bytes: 687
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style."

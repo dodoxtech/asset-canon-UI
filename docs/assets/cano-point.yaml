@@ -16,14 +16,14 @@ style:
 palette: ["#0B0E1A", "#141A30", "#1E2A44", "#324063", "#5B6B96", "#8A9AC8", "#E8ECF8", "#00B140", "#3CE07A", "#157A3A", "#FF2CC0", "#FFC83C", "#C8821E", "#3CA0FF", "#FF5C5C"]
 background: transparent
 dimensions:
-  master: 24x12
-  aspect: "24:12"
+  master: 432x216
+  aspect: "432:216"
 safe_area: full
 accessibility:
   alt_text: "Cano pointing companion animation"
 animation:
-  sheet: public/assets/generated/sprites/cano-point-sheet-24x12.png
-  cell: { w: 12, h: 12 }
+  sheet: public/assets/generated/sprites/cano-point-sheet-432x216.png
+  cell: { w: 216, h: 216 }
   columns: 2
   count: 2
   fps: 4
@@ -31,18 +31,18 @@ animation:
   anchor: [0.5, 1]
   clips: { point: [0, 1] }
 files:
-  - path: public/assets/generated/sprites/cano-point-sheet-24x12.png
-    size: 24x12
+  - path: public/assets/generated/sprites/cano-point-sheet-432x216.png
+    size: 432x216
     format: png
-    bytes: 617
-  - path: public/assets/generated/sprites/cano-point-sheet-24x12.webp
-    size: 24x12
+    bytes: 22244
+  - path: public/assets/generated/sprites/cano-point-sheet-432x216.webp
+    size: 432x216
     format: webp
-    bytes: 514
-  - path: public/assets/generated/sprites/cano-point-sheet-24x12.json
-    size: 24x12
+    bytes: 13436
+  - path: public/assets/generated/sprites/cano-point-sheet-432x216.json
+    size: 432x216
     format: json
-    bytes: 549
+    bytes: 579
 source:
   model: "built-in image_gen"
   prompt: "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate."

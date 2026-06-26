@@ -1,6 +1,6 @@
-import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b416caffc8191bef7dfcbef18c831.png";
+const source = "public/assets/tmp/generated-image-02-characters.png";
 const prompt = "CANON QUEST character production sheet: Pix idle/tired/walk/pickup and Cano float/react/point, GBA pixel art, magenta chroma plate.";
 
 const jobs = [
@@ -110,18 +110,14 @@ const jobs = [
 ];
 
 for (const job of jobs) {
-  const w = job.cell.w * job.columns;
-  const h = job.cell.h * Math.ceil(job.rects.length / job.columns);
-  const png = `public/assets/generated/${job.dir}/${job.id}-sheet-${w}x${h}.png`;
-  const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, job.rects, png, job.cell, job.columns, { alphaKey: "#FF00FF", tolerance: 130 });
-  await webpFromPng(png, webp);
-  await makeAtlas({
-    slug: job.id,
-    image: png,
-    cell: job.cell,
+  const r = await packSheet({
+    source,
+    rects: job.rects,
+    dir: job.dir,
+    id: job.id,
+    nativeCell: job.cell,
     columns: job.columns,
-    count: job.rects.length,
+    anchor: [0.5, 1.0],
     fps: job.fps,
     clips: job.clips,
   });
@@ -139,16 +135,16 @@ for (const job of jobs) {
     },
     style: { art_style: "GBA pixel sprite", stroke: "1px selective ink outline", shading: "flat cel with ordered dithering" },
     background: "transparent",
-    dimensions: { master: `${w}x${h}`, aspect: `${w}:${h}` },
+    dimensions: { master: `${r.w}x${r.h}`, aspect: `${r.w}:${r.h}` },
     alt_text: job.subject,
     files: [
-      { path: png, size: `${w}x${h}`, format: "png" },
-      { path: webp, size: `${w}x${h}`, format: "webp" },
-      { path: png.replace(/\.png$/, ".json"), size: `${w}x${h}`, format: "json" },
+      { path: r.png, size: `${r.w}x${r.h}`, format: "png" },
+      { path: r.webp, size: `${r.w}x${r.h}`, format: "webp" },
+      { path: r.json, size: `${r.w}x${r.h}`, format: "json" },
     ],
     animation: {
-      sheet: png,
-      cell: job.cell,
+      sheet: r.png,
+      cell: r.cell,
       columns: job.columns,
       count: job.rects.length,
       fps: job.fps,

@@ -1,6 +1,6 @@
-import { contactCrop, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { descriptor, packSheet } from "./asset-pipeline.mjs";
 
-const source = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b4bb76cd48191a6053da70cc02b6e.png";
+const source = "public/assets/tmp/generated-image-06-props-doors.png";
 const prompt = "CANON QUEST animated props and doors sheet: lamps, conveyor, pipeline nodes, frames, scroll shelf, furnace, anvil sparks, doors, chest on magenta chroma plate.";
 
 const jobs = [
@@ -21,21 +21,16 @@ const jobs = [
   ["prop-chest", "Treasure chest closed then three-frame lid bounce-open with golden burst.", "CTA treasure chest prop", { w: 32, h: 24 }, 4, 4, 8, [[55, 1360, 170, 125], [255, 1360, 170, 125], [490, 1360, 170, 125], [730, 1360, 170, 125]]],
 ];
 
-for (const [id, desc, subject, cell, columns, count, fps, rectList] of jobs) {
+for (const [id, desc, subject, cell0, columns, count, fps, rectList] of jobs) {
   const rects = rectList.map(([left, top, width, height]) => ({ left, top, width, height }));
-  const rows = Math.ceil(count / columns);
-  const w = cell.w * columns;
-  const h = cell.h * rows;
-  const png = `public/assets/generated/sprites/${id}-sheet-${w}x${h}.png`;
-  const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(source, rects, png, cell, columns, { alphaKey: "#FF00FF", tolerance: 130 });
-  await webpFromPng(png, webp);
-  await makeAtlas({
-    slug: id,
-    image: png,
-    cell,
+  const r = await packSheet({
+    source,
+    rects,
+    dir: "sprites",
+    id,
+    nativeCell: cell0,
     columns,
-    count,
+    anchor: [0.5, 1.0],
     fps,
     loop: count > 1,
     clips: { [id.replace("prop-", "").replace("door-", "")]: [0, count - 1] },
@@ -54,16 +49,16 @@ for (const [id, desc, subject, cell, columns, count, fps, rectList] of jobs) {
     },
     style: { art_style: "GBA pixel prop sprite", stroke: "1px selective ink outline", shading: "flat cel with dithered glow" },
     background: "transparent",
-    dimensions: { master: `${w}x${h}`, aspect: `${w}:${h}` },
+    dimensions: { master: `${r.w}x${r.h}`, aspect: `${r.w}:${r.h}` },
     alt_text: subject,
     files: [
-      { path: png, size: `${w}x${h}`, format: "png" },
-      { path: webp, size: `${w}x${h}`, format: "webp" },
-      { path: png.replace(/\.png$/, ".json"), size: `${w}x${h}`, format: "json" },
+      { path: r.png, size: `${r.w}x${r.h}`, format: "png" },
+      { path: r.webp, size: `${r.w}x${r.h}`, format: "webp" },
+      { path: r.json, size: `${r.w}x${r.h}`, format: "json" },
     ],
     animation: {
-      sheet: png,
-      cell,
+      sheet: r.png,
+      cell: r.cell,
       columns,
       count,
       fps,

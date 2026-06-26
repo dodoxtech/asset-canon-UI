@@ -1,8 +1,9 @@
+import { readdirSync, readFileSync } from "node:fs";
 import sharp from "sharp";
-import { contactCrop, cropResize, descriptor, makeAtlas, webpFromPng } from "./asset-pipeline.mjs";
+import { contactCrop, cropResize, descriptor, makeAtlas, packSheet, webpFromPng } from "./asset-pipeline.mjs";
 
-const uiSource = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b51dae57881919e5cd59af05288cf.png";
-const socialSource = "/Users/taio/.codex/generated_images/019ef76d-46c9-7ff2-b5f0-d7c3db36d887/ig_080d646d68c04c32016a3b525cea5881919f6f4469ecb55598.png";
+const uiSource = "public/assets/tmp/generated-image-07-fx-hud-icons.png";
+const socialSource = "public/assets/tmp/generated-image-08-social.png";
 const prompt = "CANON QUEST FX/HUD/favicon/social batch: game UI and marketing cards in the locked GBA pixel-art style.";
 
 const spriteJobs = [
@@ -14,16 +15,34 @@ const spriteJobs = [
   ["ui-cursor", "Two-frame blinking advance/menu cursor.", "Blinking UI cursor", { w: 8, h: 8 }, 2, 2, 2, [[780, 835, 70, 70], [885, 835, 80, 80]]],
 ];
 
-for (const [id, desc, subject, cell, columns, count, fps, rectList] of spriteJobs) {
+// Canvas-rendered FX sheets the game loads via SHEETS are packed at full source
+// resolution (per-sheet `density`). DOM/unused sheets (cartridge, cursor) keep a
+// fixed cell so their filenames stay stable for the DOM references.
+const HD_SPRITES = new Set(["fx-sparkle", "fx-dust-puff", "fx-dust-motes", "fx-assemble-glow"]);
+
+for (const [id, desc, subject, cell0, columns, count, fps, rectList] of spriteJobs) {
   const rects = rectList.map(([left, top, width, height]) => ({ left, top, width, height }));
-  const w = cell.w * columns;
-  const h = cell.h * Math.ceil(count / columns);
   const dir = id.startsWith("ui-") ? "icons" : "sprites";
-  const png = `public/assets/generated/${dir}/${id}-sheet-${w}x${h}.png`;
-  const webp = png.replace(/\.png$/, ".webp");
-  await contactCrop(uiSource, rects, png, cell, columns, { alphaKey: "#FF00FF", tolerance: 130 });
-  await webpFromPng(png, webp);
-  await makeAtlas({ slug: id, image: png, cell, columns, count, fps, loop: count > 1, clips: { [id]: [0, count - 1] } });
+  let png;
+  let webp;
+  let json;
+  let w;
+  let h;
+  let cell;
+  if (HD_SPRITES.has(id)) {
+    const r = await packSheet({ source: uiSource, rects, dir, id, nativeCell: cell0, columns, anchor: [0.5, 0.5], fps, loop: count > 1, clips: { [id]: [0, count - 1] } });
+    ({ png, webp, json, w, h, cell } = r);
+  } else {
+    w = cell0.w * columns;
+    h = cell0.h * Math.ceil(count / columns);
+    cell = cell0;
+    png = `public/assets/generated/${dir}/${id}-sheet-${w}x${h}.png`;
+    webp = png.replace(/\.png$/, ".webp");
+    json = png.replace(/\.png$/, ".json");
+    await contactCrop(uiSource, rects, png, cell, columns, { alphaKey: "#FF00FF", anchor: [0.5, 0.5] });
+    await webpFromPng(png, webp);
+    await makeAtlas({ slug: id, image: png, cell, columns, count, fps, loop: count > 1, clips: { [id]: [0, count - 1] } });
+  }
   await descriptor({
     id,
     type: id.startsWith("ui-") ? "icon" : "sprite",
@@ -43,7 +62,7 @@ for (const [id, desc, subject, cell, columns, count, fps, rectList] of spriteJob
     files: [
       { path: png, size: `${w}x${h}`, format: "png" },
       { path: webp, size: `${w}x${h}`, format: "webp" },
-      { path: png.replace(/\.png$/, ".json"), size: `${w}x${h}`, format: "json" },
+      { path: json, size: `${w}x${h}`, format: "json" },
     ],
     animation: { sheet: png, cell, columns, count, fps, loop: count > 1, anchor: [0.5, 0.5], clips: { [id]: [0, count - 1] } },
     source: { model: "built-in image_gen", prompt },
@@ -96,9 +115,15 @@ for (const [id, dir, desc, subject, rect, w, h] of singles) {
   });
 }
 
+// Favicon = first frame of the (dynamically-sized) shard-canon sheet, upscaled.
+const shardJsonPath = readdirSync("public/assets/generated/sprites").find(
+  (f) => /^shard-canon-sheet-\d+x\d+\.json$/.test(f),
+);
+const shardAtlas = JSON.parse(readFileSync(`public/assets/generated/sprites/${shardJsonPath}`, "utf8"));
+const shardCell = shardAtlas.meta.cell;
 const favMaster = "public/assets/generated/icons/favicon-512x512.png";
-await sharp("public/assets/generated/sprites/shard-canon-sheet-64x16.png")
-  .extract({ left: 0, top: 0, width: 16, height: 16 })
+await sharp(`public/assets/generated/sprites/${shardAtlas.meta.image}`)
+  .extract({ left: 0, top: 0, width: shardCell.w, height: shardCell.h })
   .resize(512, 512, { kernel: sharp.kernel.nearest })
   .png({ compressionLevel: 9 })
   .toFile(favMaster);
