@@ -1567,11 +1567,11 @@ a { color: inherit; text-decoration: none; }
   flex-shrink: 0;                     /* never flex-grow into odd sizes */
   border-bottom: 1px solid var(--border);
   overflow: hidden;
+  aspect-ratio: 16 / 7;              /* shorter box — image center-cropped */
 }
 .cmp-img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  height: 100%;
   object-fit: cover;
   image-rendering: pixelated;
   display: block;
@@ -1788,6 +1788,7 @@ a { color: inherit; text-decoration: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
 }
 .run-pass {
   position: absolute;
@@ -1844,6 +1845,131 @@ a { color: inherit; text-decoration: none; }
   line-height: 1.65;
   color: var(--muted);
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   § 03 — Style Profile First · Disney-palette
+   ink #1a1a2e · cream #fef9f0 · sky #7ec8e3 · cherry #e84060 · gold #ffc83c
+   line: rounded clean outline · shading: soft cel · shape: warm, toy-like
+   ═══════════════════════════════════════════════════════════════ */
+#style-profile {
+  background: #fef9f0;
+}
+/* Soft ambient color blobs in the Disney palette */
+#style-profile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 78%, rgba(126,200,227,.13) 0%, transparent 38%),
+    radial-gradient(circle at 90% 18%, rgba(232,64,96,.07) 0%, transparent 32%),
+    radial-gradient(circle at 54% 96%, rgba(255,200,60,.09) 0%, transparent 28%);
+}
+#style-profile .sect-overlay {
+  background: linear-gradient(
+    to right,
+    rgba(254,249,240,1) 0%,
+    rgba(254,249,240,.88) 46%,
+    rgba(254,249,240,.36) 100%
+  );
+}
+#style-profile .sect-num {
+  -webkit-text-stroke-color: rgba(26,26,46,.042);
+}
+
+/* Tag — cherry pill */
+#style-profile .tag {
+  background: rgba(232,64,96,.09);
+  border-color: rgba(232,64,96,.3);
+  color: #bf2b48;
+}
+
+/* Heading & body text — warm ink on cream */
+#style-profile .sect-title { color: #1a1a2e; }
+#style-profile .sect-body  { color: #4a3f60; }
+#style-profile .sect-body code {
+  font-family: 'Courier New', ui-monospace, monospace;
+  color: #1788b0;
+  background: rgba(126,200,227,.14);
+  padding: 1px 6px;
+  border-radius: 5px;
+}
+
+/* Mini-flow — rounded pill steps, cherry arrows */
+#style-profile .profile-mini-flow code {
+  background: #fff;
+  border: 1.5px solid rgba(26,26,46,.14);
+  color: #1a1a2e;
+  border-radius: 999px;
+  padding: 8px 14px;
+}
+#style-profile .profile-mini-flow span {
+  color: #e84060;
+  font-size: 16px;
+}
+
+/* YAML code card — cream scroll with sky left-accent */
+#style-profile .profile-code {
+  background: #fff;
+  border: 1.5px solid rgba(26,26,46,.1);
+  border-left: 4px solid #7ec8e3;
+  border-radius: 18px;
+  box-shadow:
+    0 8px 32px rgba(26,26,46,.07),
+    0 2px 8px rgba(126,200,227,.1);
+}
+#style-profile .code-head {
+  background: rgba(126,200,227,.08);
+  border-bottom: 1px solid rgba(26,26,46,.08);
+  color: #6a5d80;
+  border-radius: 16px 16px 0 0;
+}
+#style-profile .code-head span:first-child { color: #1788b0; }
+#style-profile .code-head span:last-child {
+  background: rgba(255,200,60,.22);
+  color: #9a7400;
+  padding: 2px 10px;
+  border-radius: 999px;
+}
+#style-profile .profile-code pre { color: #2c1e40; }
+
+/* Run cards — white toy-like plates with color top stripe */
+#style-profile .profile-runs { gap: 18px; }
+#style-profile .profile-run {
+  background: #fff;
+  border: 1.5px solid rgba(26,26,46,.08);
+  border-radius: 24px;
+  box-shadow:
+    0 4px 20px rgba(26,26,46,.07),
+    0 1px 4px rgba(26,26,46,.05);
+  padding: 0 0 18px;
+}
+#style-profile .profile-run:nth-child(1) { border-top: 4px solid #7ec8e3; }
+#style-profile .profile-run:nth-child(2) { border-top: 4px solid #e84060; }
+#style-profile .profile-run:nth-child(3) { border-top: 4px solid #ffc83c; }
+#style-profile .profile-run:nth-child(4) { border-top: 4px solid #1a1a2e; }
+
+/* Image frame — light sky wash */
+#style-profile .run-media {
+  background: #edf6fc;
+  border: 1px solid rgba(126,200,227,.24);
+  border-radius: 14px;
+  margin: 10px 10px 16px;
+}
+/* Pass badge — warm ink on translucent */
+#style-profile .run-pass {
+  background: rgba(26,26,46,.7);
+  color: #fef9f0;
+  border-color: transparent;
+}
+/* Ghost step number */
+#style-profile .run-step    { color: rgba(26,26,46,.09); }
+/* "separate render" — cherry */
+#style-profile .run-separate { color: #e84060; }
+/* Card text — ink family */
+#style-profile .profile-run h3 { color: #1a1a2e; }
+#style-profile .profile-run p  { color: #5a4d72; }
 
 /* ── Section 4: Skills bento ─────────────────────────────────── */
 .skills-head { text-align: center; margin-bottom: 80px; }
@@ -1907,9 +2033,70 @@ a { color: inherit; text-decoration: none; }
 
 /* ── Section 6: asset-sprite demo ───────────────────────────── */
 .sprite-demo-sect {
+  isolation: isolate;
   background:
-    linear-gradient(180deg, rgba(8,11,20,.86), rgba(13,16,25,.96)),
-    #080b14;
+    radial-gradient(circle at 18% 12%, rgba(190,151,107,.28), transparent 34%),
+    radial-gradient(circle at 84% 24%, rgba(55,46,42,.62), transparent 42%),
+    radial-gradient(circle at 48% 92%, rgba(115,68,46,.3), transparent 40%),
+    linear-gradient(180deg, #19110f 0%, #241714 48%, #100d0c 100%);
+}
+.sprite-demo-sect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: .18;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(255,226,188,.32) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 78% 18%, rgba(55,32,24,.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 44% 72%, rgba(255,255,255,.16) 0 1px, transparent 1.5px);
+  background-size: 34px 30px, 46px 42px, 28px 38px;
+  mix-blend-mode: soft-light;
+}
+.sprite-demo-sect::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(9,7,7,.88) 0%, transparent 22%, transparent 76%, rgba(9,7,7,.82) 100%),
+    radial-gradient(ellipse at 50% 42%, transparent 0%, rgba(6,5,5,.42) 72%, rgba(6,5,5,.78) 100%);
+}
+.sprite-demo-sect .sect-bg {
+  opacity: .08;
+  filter: saturate(.35) sepia(.42) contrast(.9) brightness(.7);
+  mix-blend-mode: screen;
+}
+.sprite-demo-sect .sect-overlay {
+  background:
+    linear-gradient(180deg, rgba(20,12,10,.88) 0%, rgba(20,12,10,.32) 32%, rgba(20,12,10,.56) 100%);
+}
+.sprite-demo-sect .sect-num {
+  -webkit-text-stroke-color: rgba(246,202,149,.08);
+}
+.sprite-demo-sect .tag {
+  background: rgba(229,176,116,.12);
+  border-color: rgba(229,176,116,.34);
+  color: #e5b074;
+  border-radius: 8px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,196,.16),
+    0 8px 26px rgba(0,0,0,.28);
+}
+.sprite-demo-sect .sect-title {
+  max-width: 780px;
+  color: #f3dfc4;
+  text-shadow:
+    0 1px 0 rgba(255,235,198,.12),
+    0 22px 56px rgba(0,0,0,.42);
+  text-wrap: balance;
+}
+.sprite-demo-sect .sect-sub {
+  max-width: 520px;
+  color: #bda790;
+  text-wrap: pretty;
 }
 .sprite-demo-head {
   display: grid;
@@ -1931,18 +2118,38 @@ a { color: inherit; text-decoration: none; }
 }
 .sprite-output-card,
 .sprite-live-card {
-  border: 1px solid rgba(74,88,120,.38);
-  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(231,186,128,.18);
+  border-radius: 18px;
   background:
-    linear-gradient(135deg, rgba(60,160,255,.08), transparent 38%),
-    rgba(17,23,38,.82);
-  box-shadow: 0 24px 70px rgba(0,0,0,.3);
+    radial-gradient(circle at 18% 10%, rgba(255,230,190,.12), transparent 34%),
+    radial-gradient(circle at 85% 85%, rgba(57,34,27,.64), transparent 48%),
+    linear-gradient(145deg, rgba(57,42,35,.94), rgba(24,18,17,.94));
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,198,.12),
+    inset 0 -20px 42px rgba(10,7,7,.2),
+    0 28px 80px rgba(0,0,0,.42),
+    0 10px 28px rgba(79,41,25,.18);
+}
+.sprite-output-card::before,
+.sprite-live-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: .22;
+  background:
+    radial-gradient(circle at 16% 20%, rgba(255,255,255,.22) 0 1px, transparent 1.7px),
+    radial-gradient(circle at 76% 64%, rgba(0,0,0,.18) 0 1px, transparent 1.8px);
+  background-size: 24px 28px, 34px 30px;
+  mix-blend-mode: soft-light;
 }
 .sprite-output-card {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  padding: 12px;
+  padding: 14px;
 }
 .sprite-card-top,
 .sprite-live-top {
@@ -1955,21 +2162,21 @@ a { color: inherit; text-decoration: none; }
 }
 .sprite-card-top span,
 .sprite-live-top span {
-  color: var(--gold);
+  color: #d9a267;
   font-size: 11px;
   font-weight: 800;
 }
 .sprite-card-top strong,
 .sprite-live-top strong {
   min-width: 0;
-  color: var(--text);
+  color: #f3dfc4;
   font-size: 11px;
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   overflow-wrap: anywhere;
 }
 .sprite-live-top code {
   margin-left: auto;
-  color: var(--dim);
+  color: #8f7865;
   font-size: 10px;
   letter-spacing: .04em;
   text-transform: none;
@@ -1979,41 +2186,47 @@ a { color: inherit; text-decoration: none; }
   place-items: center;
   min-height: 372px;
   overflow: hidden;
-  border: 1px solid rgba(232,236,248,.1);
-  border-radius: 6px;
+  border: 1px solid rgba(243,223,196,.12);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,239,209,.08),
+    inset 0 -22px 52px rgba(0,0,0,.18);
 }
 .sprite-image-wrap img {
-  width: min(180px, 72%);
+  width: min(250px, 84%);
   height: auto;
-  image-rendering: pixelated;
+  image-rendering: auto;
+  filter: drop-shadow(0 18px 18px rgba(0,0,0,.28));
 }
 .sprite-image-green {
-  background: #00b140;
+  background:
+    radial-gradient(circle at 50% 46%, rgba(255,255,255,.12), transparent 34%),
+    #00b140;
 }
 .sprite-image-alpha {
-  background-color: #111726;
+  background-color: #191210;
   background-image:
-    linear-gradient(45deg, rgba(232,236,248,.09) 25%, transparent 25%),
-    linear-gradient(-45deg, rgba(232,236,248,.09) 25%, transparent 25%),
-    linear-gradient(45deg, transparent 75%, rgba(232,236,248,.09) 75%),
-    linear-gradient(-45deg, transparent 75%, rgba(232,236,248,.09) 75%);
-  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
-  background-size: 16px 16px;
+    linear-gradient(45deg, rgba(243,223,196,.08) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(243,223,196,.08) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(243,223,196,.08) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(243,223,196,.08) 75%);
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0;
+  background-size: 20px 20px;
 }
 .sprite-output-card p {
   min-height: 58px;
-  color: var(--muted);
+  color: #aa9580;
   font-size: 12px;
   line-height: 1.6;
 }
 .sprite-live-card {
   display: flex;
   flex-direction: column;
-  padding: 14px;
+  padding: 16px;
 }
 .sprite-live-top {
   padding: 0 2px 14px;
-  border-bottom: 1px solid rgba(74,88,120,.28);
+  border-bottom: 1px solid rgba(231,186,128,.16);
 }
 .sprite-playground {
   display: grid;
@@ -2028,33 +2241,37 @@ a { color: inherit; text-decoration: none; }
   place-items: center;
   min-height: 356px;
   overflow: hidden;
-  border: 1px solid rgba(232,236,248,.08);
-  border-radius: 6px;
+  border: 1px solid rgba(243,223,196,.12);
+  border-radius: 16px;
   background:
-    linear-gradient(rgba(232,236,248,.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(232,236,248,.035) 1px, transparent 1px),
-    radial-gradient(circle at 50% 64%, rgba(60,224,122,.14), transparent 27%),
-    #0a0e18;
-  background-size: 32px 32px, 32px 32px, auto, auto;
+    radial-gradient(ellipse at 50% 68%, rgba(159,102,68,.28), transparent 32%),
+    radial-gradient(circle at 18% 16%, rgba(255,232,198,.08), transparent 28%),
+    linear-gradient(rgba(243,223,196,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(243,223,196,.03) 1px, transparent 1px),
+    linear-gradient(180deg, #17100f, #0d0b0a);
+  background-size: auto, auto, 36px 36px, 36px 36px, auto;
+  box-shadow:
+    inset 0 1px 0 rgba(255,232,198,.1),
+    inset 0 -34px 70px rgba(0,0,0,.32);
 }
 .sprite-avatar {
   position: relative;
   z-index: 2;
-  background-image: url("/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.webp");
+  background-image: url("/assets/generated/sprites/john-wick-clay-preview-sheet-2048x2048.webp");
   background-repeat: no-repeat;
-  image-rendering: pixelated;
+  image-rendering: auto;
   filter: drop-shadow(0 18px 18px rgba(0,0,0,.34));
 }
 .sprite-ground {
   position: absolute;
   left: 50%;
-  bottom: 82px;
-  width: 176px;
-  height: 24px;
+  bottom: 80px;
+  width: 190px;
+  height: 28px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: rgba(0,0,0,.28);
-  filter: blur(2px);
+  background: rgba(0,0,0,.34);
+  filter: blur(3px);
 }
 .sprite-status {
   display: flex;
@@ -2063,19 +2280,20 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   gap: 12px;
   padding: 12px 14px;
-  border: 1px solid rgba(74,88,120,.32);
-  border-radius: 6px;
-  background: rgba(8,11,20,.58);
+  border: 1px solid rgba(231,186,128,.16);
+  border-radius: 12px;
+  background:
+    linear-gradient(180deg, rgba(63,43,35,.84), rgba(28,20,18,.9));
   font-family: 'Courier New', ui-monospace, monospace;
   font-size: 11px;
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 .sprite-status span {
-  color: var(--muted);
+  color: #9e8974;
 }
 .sprite-status strong {
-  color: var(--green-lt);
+  color: #e5b074;
 }
 .wasd-pad {
   display: grid;
@@ -2092,27 +2310,40 @@ a { color: inherit; text-decoration: none; }
   place-items: center;
   width: 34px;
   height: 34px;
-  border: 1px solid rgba(74,88,120,.55);
-  border-radius: 6px;
-  background: rgba(232,236,248,.06);
-  color: var(--text);
+  border: 1px solid rgba(231,186,128,.24);
+  border-radius: 10px;
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255,240,214,.18), transparent 38%),
+    linear-gradient(180deg, #5a3a2d, #2a1c19);
+  color: #f3dfc4;
   font-family: 'Courier New', ui-monospace, monospace;
   font-size: 12px;
   font-weight: 800;
   cursor: none;
-  transition: border-color .18s, background .18s, color .18s, transform .18s;
+  box-shadow:
+    inset 0 1px 0 rgba(255,235,200,.2),
+    inset 0 -5px 10px rgba(0,0,0,.24),
+    0 10px 20px rgba(0,0,0,.28);
+  transition: border-color .18s, background .18s, color .18s, transform .18s, box-shadow .18s;
 }
 .wasd-key:hover,
 .wasd-key:focus-visible {
-  border-color: rgba(60,224,122,.8);
-  background: rgba(60,224,122,.16);
-  color: var(--green-lt);
+  border-color: rgba(229,176,116,.72);
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255,240,214,.24), transparent 38%),
+    linear-gradient(180deg, #6a4435, #32211d);
+  color: #ffd6a0;
   outline: none;
 }
 .wasd-key:active {
   transform: translateY(1px);
-  background: rgba(255,200,60,.18);
-  color: var(--gold);
+  background:
+    radial-gradient(circle at 38% 28%, rgba(255,240,214,.12), transparent 38%),
+    linear-gradient(180deg, #2d1e1b, #5a3a2d);
+  color: #e5b074;
+  box-shadow:
+    inset 0 5px 12px rgba(0,0,0,.34),
+    0 4px 10px rgba(0,0,0,.22);
 }
 .wasd-key-w { grid-column: 2; grid-row: 1; }
 .wasd-key-a { grid-column: 1; grid-row: 2; }
@@ -2130,20 +2361,24 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   min-height: 30px;
   padding: 0 10px;
-  border: 1px solid rgba(74,88,120,.35);
-  border-radius: 6px;
-  background: rgba(8,11,20,.44);
-  color: var(--muted);
+  border: 1px solid rgba(231,186,128,.2);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, rgba(75,50,40,.72), rgba(28,20,18,.82));
+  color: #9e8974;
   font-family: 'Courier New', ui-monospace, monospace;
   font-size: 10px;
+  box-shadow: inset 0 1px 0 rgba(255,232,198,.08);
 }
 .sprite-links a {
-  color: var(--green-lt);
-  transition: border-color .2s, background .2s;
+  color: #e5b074;
+  transition: border-color .2s, background .2s, transform .2s;
 }
 .sprite-links a:hover {
-  border-color: rgba(60,224,122,.58);
-  background: rgba(60,224,122,.08);
+  transform: translateY(-1px);
+  border-color: rgba(229,176,116,.52);
+  background:
+    linear-gradient(180deg, rgba(91,59,46,.86), rgba(38,26,22,.92));
 }
 
 /* ── Section 7: Reliability pillars ─────────────────────────── */

@@ -153,16 +153,16 @@ const KEY_TO_DIRECTION: Record<string, SpriteDirection> = {
 
 const IDLE_ROWS: Record<SpriteDirection, number> = {
   down: 0,
-  up: 1,
-  right: 2,
-  left: 3,
+  left: 2,
+  right: 4,
+  up: 6,
 }
 
 const WALK_ROWS: Record<SpriteDirection, number> = {
-  down: 4,
-  up: 5,
-  right: 6,
-  left: 7,
+  down: 1,
+  left: 3,
+  right: 5,
+  up: 7,
 }
 
 const DIRECTION_LABELS: Record<SpriteDirection, string> = {
@@ -216,17 +216,20 @@ export function SpriteDirectionDemo() {
 
   useEffect(() => {
     const timer = window.setInterval(() => {
-      setFrame((current) => (current + 1) % 4)
+      setFrame((current) => (current + 1) % (moving ? 8 : 4))
     }, moving ? 125 : 360)
     return () => window.clearInterval(timer)
   }, [moving])
 
   const row = moving ? WALK_ROWS[direction] : IDLE_ROWS[direction]
-  const scale = 3
-  const cell = 64
+  const frameCount = moving ? 8 : 4
+  const displayFrame = frame % frameCount
+  const scale = 1
+  const cell = 256
+  const sheet = 2048
   const spriteSize = cell * scale
-  const backgroundSize = `${256 * scale}px ${512 * scale}px`
-  const backgroundPosition = `-${frame * spriteSize}px -${row * spriteSize}px`
+  const backgroundSize = `${sheet * scale}px ${sheet * scale}px`
+  const backgroundPosition = `-${displayFrame * spriteSize}px -${row * spriteSize}px`
 
   const pressVirtualKey = (key: string) => {
     pressed.current.add(key)

@@ -335,7 +335,7 @@ export default function LandingPage() {
         </section>
 
         {/* ── STYLE PROFILE FIRST ──────────────────────────── */}
-        <section className="sect sect-dark" aria-labelledby="s3">
+        <section id="style-profile" className="sect sect-dark" aria-labelledby="s3">
           <div className="sect-overlay ol-left" aria-hidden="true" />
 
           <div className="sect-inner">
@@ -577,7 +577,7 @@ negative:
                   <span className="tag">06 — asset-sprite demo</span>
                 </FadeUp>
                 <RevealWords
-                  text="RAW PLATE TO PLAYABLE CHARACTER."
+                  text="CLAY SHEET TO PLAYABLE ASSASSIN."
                   className="sect-title"
                   as="h2"
                   delay={0.08}
@@ -585,8 +585,8 @@ negative:
               </div>
               <FadeUp delay={0.2}>
                 <p className="sect-sub">
-                  The same generated character is shown before keying, after background removal,
-                  and as a final atlas-driven sprite you can control with WASD.
+                  A realistic clay-style assassin moves from chroma plate to clean alpha,
+                  then into a crisp atlas-driven WASD preview.
                 </p>
               </FadeUp>
             </div>
@@ -600,14 +600,14 @@ negative:
                   </div>
                   <div className="sprite-image-wrap sprite-image-green">
                     <img
-                      src={`${D}/demo-navigator-source-256x512.png`}
-                      alt="Original generated character sprite sheet on chroma green background"
-                      width={256}
-                      height={512}
+                      src={`${D}/john-wick-clay-source-1024x1024.png`}
+                      alt="Original generated realistic clay assassin sprite sheet on chroma green background"
+                      width={1024}
+                      height={1024}
                       loading="lazy"
                     />
                   </div>
-                  <p>Generated on a locked chroma plate so the background can be removed deterministically.</p>
+                  <p>Generated on a chroma clay board so the silhouette can be cut cleanly.</p>
                 </FadeUp>
 
                 <FadeUp delay={0.24} className="sprite-output-card">
@@ -617,14 +617,14 @@ negative:
                   </div>
                   <div className="sprite-image-wrap sprite-image-alpha">
                     <img
-                      src={`${D}/demo-navigator-alpha-sheet-256x512.webp`}
-                      alt="Alpha-keyed character sprite sheet with transparent background"
-                      width={256}
-                      height={512}
+                      src={`${D}/john-wick-clay-sheet-1024x1024.webp`}
+                      alt="Alpha-keyed realistic clay assassin sprite sheet with transparent background"
+                      width={1024}
+                      height={1024}
                       loading="lazy"
                     />
                   </div>
-                  <p>Green is keyed to alpha; no green pixels are reserved inside the character palette.</p>
+                  <p>The key plate is removed and the matte clay edge stays intact.</p>
                 </FadeUp>
               </div>
 
@@ -632,17 +632,17 @@ negative:
                 <div className="sprite-live-top">
                   <span>03</span>
                   <strong>usable output</strong>
-                  <code>64x64 · 32 frames · atlas.json</code>
+                  <code>128x128 · 64 frames · atlas.json</code>
                 </div>
                 <SpriteDirectionDemo />
                 <div className="sprite-links" aria-label="Generated sprite files">
-                  <a href={`${D}/demo-navigator-alpha-sheet-256x512.png`} target="_blank" rel="noreferrer">
+                  <a href={`${D}/john-wick-clay-sheet-1024x1024.png`} target="_blank" rel="noreferrer">
                     PNG sheet
                   </a>
-                  <a href={`${D}/demo-navigator-alpha-sheet-256x512.json`} target="_blank" rel="noreferrer">
+                  <a href={`${D}/john-wick-clay-sheet-1024x1024.json`} target="_blank" rel="noreferrer">
                     atlas JSON
                   </a>
-                  <span>docs/assets/demo-navigator.yaml</span>
+                  <span>docs/assets/john-wick-clay.yaml</span>
                 </div>
               </FadeUp>
             </div>

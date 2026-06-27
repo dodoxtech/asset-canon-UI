@@ -1,0 +1,80 @@
+id: john-wick-clay
+type: sprite
+subject: John Wick-inspired realistic handmade clay assassin sprite sheet
+description: >
+  Complete 8-row handmade polymer-clay assassin sprite sheet. The sheet keeps a
+  power-of-two 128x128 cell grid, alpha background, row-major frame math, and
+  atlas clips for idle and walk animations in down, left, right, and up facings.
+keywords: ["john wick", "assassin", "clay", "sprite", "character", "walk", "idle", "game asset"]
+placement:
+  intended_use: "2D game character animation sheet"
+  context: "asset-sprite generated character workflow"
+  do: ["use atlas clips", "render at native size then scale", "keep feet anchored at bottom center"]
+  dont: ["stretch cells", "add external shadows", "treat repeated idle columns as walk frames"]
+style:
+  art_style: "handmade polymer clay"
+  material: "matte clay with subtle fingerprints"
+  camera: "orthographic"
+  lighting: "consistent studio lighting"
+palette: ["black suit", "white dress shirt", "black tie", "black dress shoes", "warm skin", "dark clay hair"]
+background:
+  source: "#00B140 chroma plate"
+  output: transparent
+dimensions:
+  master: 1024x1024
+  cell: 128x128
+  aspect: "1:1"
+safe_area: full
+accessibility:
+  alt_text: "Realistic handmade clay assassin sprite sheet with idle and walk animations facing down, left, right, and up"
+animation:
+  sheet: public/assets/generated/sprites/john-wick-clay-sheet-1024x1024.png
+  cell: { w: 128, h: 128 }
+  columns: 8
+  count: 64
+  fps: 10
+  loop: true
+  anchor: [0.5, 1]
+  clips:
+    idle-down: [0, 3]
+    walk-down: [8, 15]
+    idle-left: [16, 19]
+    walk-left: [24, 31]
+    idle-right: [32, 35]
+    walk-right: [40, 47]
+    idle-up: [48, 51]
+    walk-up: [56, 63]
+files:
+  - path: public/assets/generated/sprites/john-wick-clay-source-1024x1024.png
+    size: 1024x1024
+    format: png
+    bytes: 537945
+  - path: public/assets/generated/sprites/john-wick-clay-sheet-1024x1024.png
+    size: 1024x1024
+    format: png
+    bytes: 595402
+  - path: public/assets/generated/sprites/john-wick-clay-sheet-1024x1024.webp
+    size: 1024x1024
+    format: webp
+    bytes: 389590
+  - path: public/assets/generated/sprites/john-wick-clay-sheet-1024x1024.json
+    size: 1024x1024
+    format: json
+    bytes: 7038
+  - path: public/assets/generated/sprites/john-wick-clay-preview-source-2048x2048.png
+    size: 2048x2048
+    format: png
+    bytes: 569597
+  - path: public/assets/generated/sprites/john-wick-clay-preview-sheet-2048x2048.webp
+    size: 2048x2048
+    format: webp
+    bytes: 383594
+  - path: public/assets/generated/sprites/john-wick-clay-preview-sheet-2048x2048.png
+    size: 2048x2048
+    format: png
+    bytes: 631103
+source:
+  model: "built-in image_gen"
+  postprocess: "tools/postprocess-john-wick-clay-sprite.py"
+  prompt: "Create a complete 2D game sprite sheet of a realistic clay-style assassin inspired by John Wick. Handmade polymer clay, realistic stop-motion clay animation aesthetic, visible clay texture with subtle fingerprints, highly detailed handcrafted appearance, matte finish, dark cinematic color palette, professional AAA-quality game asset. Character: black tailored suit, white dress shirt, black tie, black dress shoes, medium-length dark hair, short beard, serious expression, athletic proportions, confident posture, no exaggerated cartoonish features. Orthographic, centered, consistent scale, no perspective changes. Rows: idle down 4, walk down 8, idle left 4, walk left 8, idle right 4, walk right 8, idle up 4, walk up 8. Transparent final output, no motion blur, no extra objects, no cropped body parts, identical lighting and colors."
+  generated: 2026-06-27

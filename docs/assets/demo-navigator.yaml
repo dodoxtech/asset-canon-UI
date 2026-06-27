@@ -1,21 +1,23 @@
 id: demo-navigator
 type: sprite
-subject: Four-direction controllable demo character
+subject: Side-view handmade clay adventurer demo character
 description: >
-  Pixel-art navigator character generated for the asset-sprite demo. The source
-  render uses a chroma-green plate, the output sheet is alpha-keyed, and the
-  atlas exposes idle and walk clips for down, up, right, and left movement.
-keywords: ["sprite", "character", "wasd", "animation", "asset-sprite"]
+  Handmade polymer-clay adventurer sprite sheet generated for the asset-sprite
+  demo. The source render uses a chroma-green plate, the output sheet is
+  alpha-keyed, and the atlas keeps the existing 64x64 cell contract for the
+  interactive demo.
+keywords: ["sprite", "character", "claymation", "wasd", "animation", "asset-sprite"]
 placement:
   intended_use: "Interactive WASD demo on the ASSET CANON landing page"
   context: "asset-sprite generation workflow demonstration"
-  do: ["render at native size then integer-scale", "use atlas clips for direction state"]
-  dont: ["stretch cells", "use chroma plate color inside the sprite", "ignore anchor metadata"]
+  do: ["render with atlas metadata", "preserve square 64x64 cells", "use alpha PNG/WebP output"]
+  dont: ["stretch cells", "reintroduce chroma-key pixels", "ignore anchor metadata"]
 style:
-  art_style: "GBA-style pixel sprite"
-  stroke: "1px selective ink outline"
-  shading: "flat cel shading"
-palette: ["#0B0E1A", "#141A30", "#1E2A44", "#3CA0FF", "#2468B4", "#E8ECF8", "#FFC83C", "#C8821E", "#FF5C5C", "#FF2CC0"]
+  art_style: "handmade polymer clay"
+  material: "soft matte clay with visible fingerprints"
+  camera: "orthographic side view"
+  lighting: "consistent studio lighting with soft self-shadows"
+palette: ["blue hoodie", "brown backpack", "white sneakers", "warm skin", "brown clay hair"]
 background:
   source: "#00B140 chroma plate"
   output: transparent
@@ -25,7 +27,7 @@ dimensions:
   aspect: "1:2"
 safe_area: full
 accessibility:
-  alt_text: "Four-direction pixel character sprite sheet with idle and walk states"
+  alt_text: "Side-view handmade clay adventurer sprite sheet with idle and walk states"
 animation:
   sheet: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.png
   cell: { w: 64, h: 64 }
@@ -47,20 +49,21 @@ files:
   - path: public/assets/generated/sprites/demo-navigator-source-256x512.png
     size: 256x512
     format: png
-    bytes: 4598
+    bytes: 189564
   - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.png
     size: 256x512
     format: png
-    bytes: 4239
+    bytes: 158924
   - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.webp
     size: 256x512
     format: webp
-    bytes: 1084
+    bytes: 126296
   - path: public/assets/generated/sprites/demo-navigator-alpha-sheet-256x512.json
     size: 256x512
     format: json
     bytes: 3763
 source:
-  tool: "tools/generate-sprite-demo.mjs"
-  prompt: "asset-sprite demo: four-direction pixel navigator on #00B140 chroma plate, keyed to transparent output, row-major atlas with idle and walk clips."
-  generated: 2026-06-26
+  model: "built-in image_gen"
+  postprocess: "tools/postprocess-clay-demo-sprite.py"
+  prompt: "Create a high-quality game sprite sheet of a cute handmade clay character. Style: handmade polymer clay, stop-motion claymation aesthetic, visible fingerprints and soft clay texture, rounded proportions, colorful but slightly matte finish, consistent lighting, soft studio shadows, clean silhouette, highly consistent appearance across every frame. Character: small adventurer, blue hoodie, brown backpack, white sneakers, friendly face, oversized head, short body, expressive eyes. Camera: perfect side view, orthographic, centered in every frame, identical camera angle, identical scale, no perspective changes."
+  generated: 2026-06-27
