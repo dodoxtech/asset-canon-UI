@@ -50,13 +50,31 @@ export function Cursor() {
   )
 }
 
+// Shared viewport config: reveal once when ~12% of the block enters the
+// viewport. Using whileInView (IntersectionObserver) instead of a mount
+// animation guarantees below-the-fold content reveals reliably on mobile,
+// where dozens of simultaneous mount animations could otherwise be dropped.
+//
+// NOTE: no negative bottom margin. A negative bottom rootMargin raises the
+// trigger line above the real viewport bottom, which means the last section
+// (the GET STARTED CTA, followed only by a short footer) can never be scrolled
+// far enough to cross it on short/mobile viewports — leaving its text stuck at
+// the hidden initial state. The small positive bottom margin instead reveals
+// content slightly *before* it enters, guaranteeing bottom-of-page reveals.
+const REVEAL_VIEWPORT = { once: true, amount: 0.12 as const, margin: "0px 0px 8% 0px" }
+
 // ── Word-clip reveal (staggered per word, clips from below) ────
 export function RevealWords({
-  text, className = "", delay = 0, as: Tag = "span",
+  text, className = "", delay = 0, as: Tag = "span", immediate = false,
 }: {
-  text: string; className?: string; delay?: number; as?: ElementType
+  text: string; className?: string; delay?: number; as?: ElementType; immediate?: boolean
 }) {
   const words = text.split(" ")
+  // Above-the-fold content (the hero) animates on mount; everything else
+  // reveals on scroll via the shared viewport config.
+  const trigger = immediate
+    ? { animate: { y: "0%" } }
+    : { whileInView: { y: "0%" }, viewport: REVEAL_VIEWPORT }
   return (
     <Tag className={className} aria-label={text}>
       {words.map((w, i) => (
@@ -64,7 +82,7 @@ export function RevealWords({
           <motion.span
             className="clip-word"
             initial={{ y: "115%" }}
-            animate={{ y: "0%" }}
+            {...trigger}
             transition={{ duration: 0.78, ease: [0.16, 1, 0.3, 1], delay: delay + i * 0.055 }}
           >
             {w}
@@ -78,15 +96,18 @@ export function RevealWords({
 
 // ── Fade + blur in on scroll ───────────────────────────────────
 export function FadeUp({
-  children, delay = 0, className = "",
+  children, delay = 0, className = "", immediate = false,
 }: {
-  children: ReactNode; delay?: number; className?: string
+  children: ReactNode; delay?: number; className?: string; immediate?: boolean
 }) {
+  const trigger = immediate
+    ? { animate: { y: 0, opacity: 1 } }
+    : { whileInView: { y: 0, opacity: 1 }, viewport: REVEAL_VIEWPORT }
   return (
     <motion.div
-      className={className}
+      className={`reveal-fx ${className}`.trim()}
       initial={{ y: 36, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      {...trigger}
       transition={{ duration: 0.72, ease: [0.16, 1, 0.3, 1], delay }}
     >
       {children}
@@ -100,7 +121,8 @@ export function Stagger({ children, className = "" }: { children: ReactNode; cla
     <motion.div
       className={className}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={REVEAL_VIEWPORT}
       variants={{ hidden: {}, show: { transition: { staggerChildren: 0.09 } } }}
     >
       {children}
@@ -115,7 +137,7 @@ export function StaggerItem({
 }) {
   return (
     <motion.div
-      className={className}
+      className={`reveal-fx ${className}`.trim()}
       variants={{
         hidden: { y: 48, opacity: 0, rotate: rotate - 2.5, filter: "blur(8px)" },
         show: {

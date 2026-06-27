@@ -123,7 +123,7 @@ export default function LandingPage() {
 
             {/* Left: editorial headline + commands */}
             <div className="hero-left">
-              <FadeUp delay={0.05}>
+              <FadeUp delay={0.05} immediate>
                 <div className="eyebrow-row">
                   <span className="live-dot" aria-hidden="true" />
                   <span className="eyebrow-label">consistent image generation workflow</span>
@@ -132,17 +132,17 @@ export default function LandingPage() {
 
               <h1 className="headline">
                 <span className="headline-row">
-                  <RevealWords text="Generate" delay={0.15} />
+                  <RevealWords text="Generate" delay={0.15} immediate />
                 </span>
                 <span className="headline-row headline-dim">
-                  <RevealWords text="images in" delay={0.22} />
+                  <RevealWords text="images in" delay={0.22} immediate />
                 </span>
                 <span className="headline-row headline-accent">
-                  <RevealWords text="one style." delay={0.29} />
+                  <RevealWords text="one style." delay={0.29} immediate />
                 </span>
               </h1>
 
-              <FadeUp delay={0.52}>
+              <FadeUp delay={0.52} immediate>
                 <p className="hero-sub">
                   asset-canon gives your coding agent a repeatable workflow for
                   image generation: plan the brief, lock the style, generate the
@@ -150,14 +150,14 @@ export default function LandingPage() {
                 </p>
               </FadeUp>
 
-              <FadeUp delay={0.62}>
+              <FadeUp delay={0.62} immediate>
                 <div className="terminal-card hero-terminal">
                   <span className="terminal-prompt">$</span>
                   <code className="terminal-cmd">{INSTALL}</code>
                 </div>
               </FadeUp>
 
-              <FadeUp delay={0.72}>
+              <FadeUp delay={0.72} immediate>
                 <div className="hero-btns">
                   <a href={REPO} target="_blank" rel="noreferrer" className="btn-primary">
                     Star on GitHub
@@ -169,7 +169,7 @@ export default function LandingPage() {
                 </div>
               </FadeUp>
 
-              <FadeUp delay={0.82}>
+              <FadeUp delay={0.82} immediate>
                 <div className="hero-stats" aria-label="asset-canon highlights">
                   <div>
                     <strong>05</strong>
@@ -696,7 +696,11 @@ negative:
           </div>
 
           <div className="cta-inner">
-            <FadeUp delay={0.05}>
+            {/* immediate: this is the last section (only a short footer below),
+                so the scroll observer has almost no runway to fire reliably.
+                Animate on mount like the hero — it's fully revealed by the
+                time the user scrolls here. */}
+            <FadeUp delay={0.05} immediate>
               <span className="tag tag-gold">GET STARTED</span>
             </FadeUp>
             <RevealWords
@@ -704,20 +708,20 @@ negative:
               className="cta-headline"
               as="h2"
               delay={0.1}
+              immediate
             />
-            <FadeUp delay={0.35}>
+            <FadeUp delay={0.35} immediate>
               <div className="cta-terminal">
                 <span className="terminal-prompt">$</span>
                 <code className="terminal-cmd">{INSTALL}</code>
               </div>
             </FadeUp>
-            <FadeUp delay={0.48}>
+            <FadeUp delay={0.48} immediate>
               <p className="cta-note">
                 Node 18+ · Codex CLI or <code>OPENAI_API_KEY</code> ·{" "}
-                <code>sharp</code> optional
               </p>
             </FadeUp>
-            <FadeUp delay={0.58}>
+            <FadeUp delay={0.58} immediate>
               <div className="cta-btns">
                 <a href={REPO} target="_blank" rel="noreferrer" className="btn-primary btn-lg">
                   ★ Star on GitHub
