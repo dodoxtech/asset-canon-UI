@@ -29,12 +29,12 @@ export function ComparisonSection() {
       <div className="sect-overlay ol-center" aria-hidden="true" />
 
       <div className="sect-inner">
-        <div className="sect-num" aria-hidden="true">04</div>
+        <div className="sect-num" aria-hidden="true">05</div>
 
         {/* Header */}
         <div className="cmp-head">
           <FadeUp>
-            <span className="tag">04 — Same Prompt</span>
+            <span className="tag">05 — Same Prompt</span>
           </FadeUp>
           <RevealWords
             text="SAME BRIEF. DIFFERENT OUTCOME."

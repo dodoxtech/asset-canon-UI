@@ -15,11 +15,11 @@ export function ReliabilitySection() {
       <div className="sect-overlay ol-left" aria-hidden="true" />
 
       <div className="sect-inner">
-        <div className="sect-num" aria-hidden="true">07</div>
+        <div className="sect-num" aria-hidden="true">08</div>
 
         <div className="rel-head">
           <FadeUp>
-            <span className="tag">07 — Reliability</span>
+            <span className="tag">08 — Reliability</span>
           </FadeUp>
           <RevealWords
             text={sections["shard-rune"].title}

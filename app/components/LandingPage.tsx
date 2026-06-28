@@ -5,6 +5,7 @@ import {
   WhatIsSection,
   PipelineSection,
   StyleProfileSection,
+  StyleExtractDemoSection,
   ComparisonSection,
   SkillsSection,
   SpriteDemoSection,
@@ -27,6 +28,7 @@ export default function LandingPage() {
         <WhatIsSection />
         <PipelineSection />
         <StyleProfileSection />
+        <StyleExtractDemoSection />
         <ComparisonSection />
         <SkillsSection />
         <SpriteDemoSection />

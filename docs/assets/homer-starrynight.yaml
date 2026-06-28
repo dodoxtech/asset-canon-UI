@@ -1,0 +1,76 @@
+id: homer-starrynight
+type: sprite
+status: generated
+created_at: 2026-06-28
+
+outputs:
+  source: public/assets/generated/sprites/homer-starrynight-source-1024x1024.png
+  alpha_png: public/assets/generated/sprites/homer-starrynight-sprite-1024x1024.png
+  alpha_webp: public/assets/generated/sprites/homer-starrynight-sprite-1024x1024.webp
+  run_front_source: public/assets/generated/sprites/homer-starrynight-run-front-source-2172x724.png
+  run_front_sheet_png: public/assets/generated/sprites/homer-starrynight-run-front-sheet-2048x256.png
+  run_front_sheet_webp: public/assets/generated/sprites/homer-starrynight-run-front-sheet-2048x256.webp
+  run_front_atlas: public/assets/generated/sprites/homer-starrynight-run-front-sheet-2048x256.json
+  style_profile: docs/assets/styles/ref-starrynight-v1.yaml
+
+source_prompt: >
+  Generate an 8-frame front-running sprite for Homer Simpson using the extracted
+  ref-starrynight-v1 style profile. Preserve the character-read as a bald
+  suburban dad in a white collared shirt and blue pants, then render it as
+  post-impressionist impasto oil with cobalt and ultramarine shadows, golden
+  luminous highlights, swirling directional brushstrokes, and visible canvas
+  texture.
+
+animation:
+  run_front:
+    sheet: public/assets/generated/sprites/homer-starrynight-run-front-sheet-2048x256.png
+    atlas: public/assets/generated/sprites/homer-starrynight-run-front-sheet-2048x256.json
+    cell: { w: 256, h: 256 }
+    columns: 8
+    count: 8
+    fps: 12
+    loop: true
+    anchor: [0.5, 1.0]
+
+generation_note: >
+  The image model rejected direct use of the protected character name, so the
+  project-bound render uses a brand-safe original suburban dad archetype while
+  keeping the requested Starry Night style-transfer demonstration intact.
+
+style_snapshot:
+  profile_id: ref-starrynight-v1
+  medium: painterly
+  palette:
+    - "#0B1320"
+    - "#1D212E"
+    - "#263961"
+    - "#45648E"
+    - "#6988A3"
+    - "#94A399"
+    - "#B2BDA3"
+    - "#CCCE7B"
+    - "#B4A640"
+  prompt_suffix: >
+    post-impressionist oil painting, thick impasto with visible swirling
+    directional brushstrokes, deep cobalt and ultramarine blue-dominant palette
+    with luminous golden-yellow accents, complementary blue/yellow harmony, warm
+    glowing halos around light sources against cool shadows, expressive swirling
+    motion, low-key nocturnal value range, heavy visible canvas texture
+  negative:
+    - flat color
+    - smooth gradients
+    - hard vector edges
+    - clean outlines
+    - photographic realism
+    - pillow shading
+    - digital airbrush smoothness
+    - AI plastic sheen
+
+postprocess:
+  chroma_key: "#07a72d"
+  method: auto-key border, soft matte, despill, edge-contract 1
+  dimensions: 1024x1024
+  alpha_validation:
+    corner_alpha: [0, 0, 0, 0]
+    opaque_pixels: 264846
+    partial_alpha_pixels: 11797

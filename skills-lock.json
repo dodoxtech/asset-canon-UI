@@ -5,31 +5,43 @@
       "source": "dodoxtech/asset-canon",
       "sourceType": "github",
       "skillPath": "skills/asset-canon/SKILL.md",
-      "computedHash": "fe556d4a822cf53368e2918fd31091e317e3e226a81aaaa8a0ded7517e96dacd"
+      "computedHash": "8f665428b341c415eec732e384027fac3bfe55a7c3f9279540b562f966ceb727"
     },
     "asset-icon": {
       "source": "dodoxtech/asset-canon",
       "sourceType": "github",
       "skillPath": "skills/asset-icon/SKILL.md",
-      "computedHash": "4ba57b806e01cbeb036e6ea89c22c644409c47bbde6ab842c1af4ee176e18daa"
+      "computedHash": "43ee62dd76b392803288001d66979227415ed39197b94c05b244f947ebe4d06f"
     },
     "asset-illustration": {
       "source": "dodoxtech/asset-canon",
       "sourceType": "github",
       "skillPath": "skills/asset-illustration/SKILL.md",
-      "computedHash": "9ab7ae3df97ac4932be8b7c8a252dbeeaddfd7b66b4028883e141d408df813e9"
+      "computedHash": "a80541151c544747c3c62e9ab0bd4cdf4bcdf1dbde904e9b9b50d91147a1fb39"
+    },
+    "asset-social": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-social/SKILL.md",
+      "computedHash": "b19955f21f8383b164f0981244defcd55dd94a2b5f8a5a48ee4b4ba7e3f83353"
     },
     "asset-sprite": {
       "source": "dodoxtech/asset-canon",
       "sourceType": "github",
       "skillPath": "skills/asset-sprite/SKILL.md",
-      "computedHash": "f88d9c7b784a208955e5a829b8295e5014d7a284ab022949a7afdd1c70db143b"
+      "computedHash": "3c07fb2de8397326da9175c90e2dc2514a761c006640fd5c1b195aa274844e79"
+    },
+    "asset-style-extract": {
+      "source": "dodoxtech/asset-canon",
+      "sourceType": "github",
+      "skillPath": "skills/asset-style-extract/SKILL.md",
+      "computedHash": "0198bdb005783666b3a41422bd231af1ae7388d5ae3fcd0d907b5da3dae8c37b"
     },
     "asset-texture": {
       "source": "dodoxtech/asset-canon",
       "sourceType": "github",
       "skillPath": "skills/asset-texture/SKILL.md",
-      "computedHash": "798b0f0fac57e3d59fc2fc50feb81f60687e57102d67dad536f37c37cf00b7c1"
+      "computedHash": "0070564c20c89d38da6174707511bf4f848c8472451a57a3f35345011434719a"
     },
     "brandkit": {
       "source": "Leonxlnx/taste-skill",

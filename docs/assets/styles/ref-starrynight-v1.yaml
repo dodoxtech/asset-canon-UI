@@ -1,0 +1,73 @@
+id: ref-starrynight-v1
+source_ref: docs/assets/refs/starry-night.jpg   # Van Gogh, The Starry Night (1889) — analyzed reference
+medium: painterly                                # post-impressionist impasto oil
+
+palette:                                          # required — FLAT hex list (validator-safe)
+  - "#0B1320"   # near-black blue (darkest sky/cypress)
+  - "#1D212E"   # deep night blue
+  - "#263961"   # ultramarine shadow
+  - "#45648E"   # mid cobalt
+  - "#6988A3"   # light steel blue (swirls)
+  - "#94A399"   # pale grey-green (sky highlights)
+  - "#B2BDA3"   # warm off-white green (light bands)
+  - "#CCCE7B"   # pale luminous yellow (moon/star cores)
+  - "#B4A640"   # golden yellow accent (star halos)
+
+swatches:                                         # measured roles + area weight
+  - { hex: "#1D212E", role: bg,      weight: 0.14 }
+  - { hex: "#45648E", role: subject, weight: 0.11 }
+  - { hex: "#0B1320", role: shadow,  weight: 0.11 }
+  - { hex: "#6988A3", role: subject, weight: 0.10 }
+  - { hex: "#263961", role: shadow,  weight: 0.09 }
+  - { hex: "#94A399", role: subject, weight: 0.07 }
+  - { hex: "#B2BDA3", role: subject, weight: 0.07 }
+  - { hex: "#B4A640", role: accent,  weight: 0.013 }
+  - { hex: "#CCCE7B", role: accent,  weight: 0.005 }
+
+ramps:                                            # shadow -> midtone -> highlight
+  sky:        ["#0B1320", "#263961", "#6988A3"]
+  light_core: ["#B4A640", "#CCCE7B", "#E8E6B0"]   # star/moon glow
+
+color:                                            # measured character of the palette
+  saturation: muted                               # mean S ~37%
+  temperature: cool                               # 71% cool-hue area vs 7% warm
+  contrast: medium                                # mean L ~37%, low-key nocturnal
+  harmony: complementary                          # blue field vs golden-yellow accents
+  hue_shift: "shadows deep cool blue; light sources warm golden with glowing halos"
+
+line: none                                        # no outlines — form built from strokes
+shading: soft-gradient                            # value built from short directional impasto strokes
+values_per_material: 4
+lighting: "luminous point-sources (stars/moon), low-key nocturnal"
+fx: [bloom, grain]                                # glowing halos around lights; visible canvas/impasto
+
+proportions: { stylization: expressive }          # post-impressionist, semi-abstract swirling motion
+camera: landscape                                 # eye-level, slightly elevated horizon
+
+# required — positive STYLE anchor (no subject from the reference)
+prompt_suffix: "post-impressionist oil painting, thick impasto with visible swirling directional brushstrokes, deep cobalt and ultramarine blue-dominant palette with luminous golden-yellow accents, complementary blue/yellow harmony, warm glowing halos around light sources against cool shadows, expressive swirling motion, low-key nocturnal value range, heavy visible canvas texture"
+
+# anti-slop guard — what the reference does NOT do
+negative:
+  - "flat color"
+  - "smooth gradients"
+  - "hard vector edges"
+  - "clean outlines"
+  - "photographic realism"
+  - "pillow shading"
+  - "digital airbrush smoothness"
+  - "AI plastic sheen"
+
+confidence:
+  palette: high          # measured
+  saturation: high       # measured
+  temperature: high      # measured
+  contrast: high         # measured
+  medium: high           # unmistakable impasto oil
+  line: high
+  shading: medium        # painterly soft-gradient is a read, not a measurement
+  lighting: high
+  hue_shift: medium
+  harmony: high
+
+seed: 18890

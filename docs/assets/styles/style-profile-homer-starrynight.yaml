@@ -1,0 +1,40 @@
+id: style-profile-homer-starrynight
+extends: ref-starrynight-v1
+source_profile: docs/assets/styles/ref-starrynight-v1.yaml
+asset: docs/assets/homer-starrynight.yaml
+created_at: 2026-06-28
+
+resolved_style:
+  medium: painterly
+  camera: orthographic-front-sprite
+  lighting: "luminous point-sources, cool blue shadows, warm golden highlights"
+  line: none
+  shading: soft-gradient impasto strokes
+  fx: [bloom, grain]
+  palette:
+    - "#0B1320"
+    - "#1D212E"
+    - "#263961"
+    - "#45648E"
+    - "#6988A3"
+    - "#94A399"
+    - "#B2BDA3"
+    - "#CCCE7B"
+    - "#B4A640"
+
+prompt_suffix: >
+  post-impressionist oil painting, thick impasto with visible swirling
+  directional brushstrokes, deep cobalt and ultramarine blue-dominant palette
+  with luminous golden-yellow accents, complementary blue/yellow harmony, warm
+  glowing halos around light sources against cool shadows, expressive swirling
+  motion, low-key nocturnal value range, heavy visible canvas texture
+
+negative:
+  - flat color
+  - smooth gradients
+  - hard vector edges
+  - clean outlines
+  - photographic realism
+  - pillow shading
+  - digital airbrush smoothness
+  - AI plastic sheen

@@ -8,12 +8,12 @@ export function SpriteDemoSection() {
       <div className="sect-overlay ol-center" aria-hidden="true" />
 
       <div className="sect-inner">
-        <div className="sect-num" aria-hidden="true">06</div>
+        <div className="sect-num" aria-hidden="true">07</div>
 
         <div className="sprite-demo-head">
           <div>
             <FadeUp>
-              <span className="tag">06 — asset-sprite demo</span>
+              <span className="tag">07 — asset-sprite demo</span>
             </FadeUp>
             <RevealWords
               text="CLAY SHEET TO PLAYABLE ASSASSIN."
